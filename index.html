@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="LeanPro Academy — professional, certified training in Lean Manufacturing, Six Sigma and Operational Excellence.">
+<link rel="icon" href="logo.png">
+<title>LeanPro Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Cormorant+Garamond:wght@600;700&display=swap">
+<style>
+/* Layout: corporate, typographic, no imagery — charcoal masthead band, white working surfaces, brand red used only for actions and key marks */
+:root{
+  --red:#C8102E; --red-deep:#9E0C24; --ink:#15171C; --ink2:#23262E;
+  --bg:#F5F6F8; --surface:#FFFFFF; --line:#E1E4EA; --fg:#14161B; --muted:#5B6170; --soft:#EEF0F4; --ok:#1E7A46; --warn:#9A6200;
+  --head:'Manrope', 'Segoe UI', Arial, sans-serif;
+  --body:'Inter', 'Segoe UI', Arial, sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F1115;--surface:#171A20;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#20242C;--red:#E0233F;--ok:#3FB872;--warn:#E0A33A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1115;--surface:#171A20;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#20242C;--red:#E0233F;--ok:#3FB872;--warn:#E0A33A;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body)}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 20px;font-weight:600;background:var(--red);color:#fff;text-decoration:none;font-size:15px}
+.btn:hover{background:var(--red-deep)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn.sec{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.sec:hover{box-shadow:inset 0 0 0 1.5px var(--fg)}
+.btn.sm{padding:8px 14px;font-size:14px}
+.btn.light{background:#fff;color:#14161B}
+.btn.light:hover{background:#e9ebef}
+.btn.outline-light{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #ffffff66}
+.soc{display:flex;gap:8px;align-items:center}
+.soc a{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#fff;text-decoration:none}
+.soc a svg{width:17px;height:17px}
+.soc .li{background:#0A66C2}.soc .yt{background:#FF0000}.soc .ig{background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)}.soc .fb{background:#1877F2}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 12px var(--body);padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.pill.ok{background:color-mix(in srgb,var(--ok) 14%,transparent);color:var(--ok)}
+.pill.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.pill.red{background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--red)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;min-height:70px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center}
+.brand span{background:#fff;border-radius:6px;padding:4px 6px;display:block}
+.brand img{height:38px;display:block}
+.nav nav{display:flex;gap:2px;flex-wrap:wrap;flex:1}
+.nav nav a{text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:6px;color:var(--muted)}
+.nav nav a.on,.nav nav a:hover{color:var(--fg);background:var(--soft)}
+.acct{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.who{font-weight:600;font-size:14px;color:var(--muted)}
+
+/* masthead */
+.mast{background:var(--ink);color:#fff}
+.mast .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+.mast h1{font-size:clamp(34px,5vw,58px);font-weight:800;max-width:16ch}
+.mast h1 span{color:#ff4d64}
+.mast p{color:#C9CDD6;font-size:18px;max-width:58ch;margin:18px 0 26px}
+.mast .row{display:flex;gap:10px;flex-wrap:wrap}
+.mast .facts{display:grid;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;border-radius:12px;overflow:hidden}
+.mast .facts div{background:var(--ink2);padding:16px 18px}
+.mast .facts b{display:block;font:800 26px var(--head);color:#fff}
+.mast .facts span{color:#AEB3BE;font-size:14px}
+section.blk{padding-block:64px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:800;margin-top:6px}
+.sec-head p{margin:8px 0 0;color:var(--muted);max-width:62ch}
+
+/* hero v2 */
+.hero2{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
+.hero2::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(600px 380px at 82% 30%,#C8102E55,transparent 70%),
+  radial-gradient(500px 300px at 10% 110%,#C8102E22,transparent 70%),
+  linear-gradient(#ffffff08 1px,transparent 1px) 0 0/44px 44px,
+  linear-gradient(90deg,#ffffff08 1px,transparent 1px) 0 0/44px 44px}
+.hero2 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:76px 70px}
+.hero2 .tag{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff2e;border-radius:999px;padding:6px 14px;font:600 12.5px var(--mono);letter-spacing:.08em;color:#ffd6dc;background:#ffffff0a}
+.hero2 .tag i{width:8px;height:8px;border-radius:50%;background:#ff3b55;box-shadow:0 0 0 4px #ff3b5533;animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px #ff3b5500}}
+.hero2 h1{font-size:clamp(38px,5.6vw,70px);font-weight:800;margin:20px 0 0;letter-spacing:-.025em;line-height:1.02}
+.hero2 h1 .grad{background:linear-gradient(90deg,#ff4d64,#ff8a5c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero2 p.sub{color:#C9CDD6;font-size:18.5px;max-width:54ch;margin:20px 0 28px}
+.hero2 .row{display:flex;gap:12px;flex-wrap:wrap}
+.hero2 .btn{padding:14px 24px;font-size:16px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid #ffffff1f;padding-top:22px}
+.kpis div{padding-right:12px}
+.kpis b{display:block;font:800 30px var(--head);font-variant-numeric:tabular-nums}
+.kpis span{color:#9EA4B0;font-size:13.5px}
+.viz{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.viz svg{width:100%;height:100%;overflow:visible}
+.viz .ring{transform-origin:260px 260px;animation:spin 40s linear infinite}
+.viz .ring2{transform-origin:260px 260px;animation:spin 60s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.viz .float{position:absolute;background:#1C1F27ee;border:1px solid #ffffff22;border-radius:12px;padding:10px 14px;font-size:13px;color:#d6d9e0;backdrop-filter:blur(6px);box-shadow:0 12px 30px #0006}
+.viz .float b{display:block;font:800 18px var(--head);color:#fff}
+.viz .f1{left:-4%;top:12%;animation:bob 6s ease-in-out infinite}
+.viz .f2{right:-2%;top:44%;animation:bob 7s ease-in-out infinite .8s}
+.viz .f3{left:6%;bottom:6%;animation:bob 6.5s ease-in-out infinite 1.6s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.marquee{background:var(--ink2);color:#AEB3BE;border-top:1px solid #ffffff14;overflow:hidden}
+.marquee .track{display:flex;gap:48px;white-space:nowrap;padding-block:16px;animation:mq 38s linear infinite;width:max-content}
+.marquee span{font:600 14px var(--head);letter-spacing:.06em;text-transform:uppercase}
+.marquee span::before{content:"◆";color:var(--red);margin-right:14px;font-size:10px;vertical-align:2px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* paths */
+.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:p}
+.paths::before{content:"";position:absolute;left:6%;right:6%;top:34px;height:3px;background:linear-gradient(90deg,var(--line),var(--red));border-radius:3px}
+.path{position:relative;padding:0 14px;text-align:center}
+.path .dot{width:70px;height:70px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:var(--surface);border:3px solid var(--line);font:800 15px var(--head);color:var(--fg);position:relative;z-index:1}
+.path:last-child .dot{background:var(--red);border-color:var(--red);color:#fff}
+.path h4{font-size:18px;margin-bottom:6px}
+.path p{margin:0 0 8px;color:var(--muted);font-size:14.5px}
+.path small{font:600 12px var(--mono);color:var(--red);letter-spacing:.06em}
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.wcard .wi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--red);margin-bottom:14px}
+.wcard .wi svg{width:24px;height:24px}
+.wcard h4{font-size:18px;margin-bottom:6px}
+.wcard p{margin:0;color:var(--muted);font-size:15px}
+/* cert showcase */
+.certshow{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.certshow canvas{width:100%;height:auto;border-radius:10px;box-shadow:0 30px 60px -20px #0005,0 0 0 1px var(--line);transform:perspective(1200px) rotateY(-8deg) rotateX(3deg);transition:transform .6s}
+.certshow canvas:hover{transform:none}
+.checks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
+/* faq */
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.faq summary{cursor:pointer;font:700 17px var(--head);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-size:22px;color:var(--red);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--muted)}
+/* cta */
+.cta{background:linear-gradient(120deg,#C8102E,#8E0A20);color:#fff;border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;border:40px solid #ffffff14}
+.cta h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;max-width:22ch}
+.cta p{margin:8px 0 0;color:#ffe1e5}
+.cta .row{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+/* course cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.course{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;text-align:left;color:var(--fg);min-width:0;transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden}
+.course::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--lv,var(--red))}
+.course:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px #0004;border-color:var(--line)}
+.course .ch{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.course .ci{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--lv,var(--red)) 13%,transparent);color:var(--lv,var(--red))}
+.course .ci svg{width:23px;height:23px}
+@media (prefers-reduced-motion:reduce){.viz .ring,.viz .ring2,.viz .float,.marquee .track,.hero2 .tag i{animation:none}.course,.certshow canvas{transition:none}}
+@media (max-width:860px){.hero2 .wrap,.certshow{grid-template-columns:1fr}.viz{max-width:380px}.why{grid-template-columns:1fr}.paths{grid-template-columns:1fr 1fr;row-gap:28px}.paths::before{display:none}.kpis{grid-template-columns:1fr 1fr;row-gap:16px}.cta{padding:28px}}
+.course .code{font:600 12px var(--mono);letter-spacing:.08em;color:var(--muted)}
+.course h3{font-size:20px;font-weight:800}
+.course p{margin:0;color:var(--muted);font-size:15px}
+.course ul{margin:0;padding-left:18px;color:var(--fg);font-size:14.5px}
+.course .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.course .foot b{color:var(--fg)}
+
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.steps div{padding:4px 0}
+.steps .n{font:600 13px var(--mono);color:var(--red);margin-bottom:6px}
+.steps h4{font-size:17px;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+
+.director{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
+.mono-mark{width:88px;height:88px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 32px var(--head);letter-spacing:.02em}
+.director h3{font-size:28px;font-weight:800}
+.director .role{color:var(--red);font-weight:600;margin:4px 0 14px}
+.director p{margin:0 0 10px;color:var(--muted);max-width:70ch}
+
+/* course detail */
+.crumb{background:none;border:0;color:var(--muted);padding:0;font-weight:600;margin-bottom:14px}
+.cd{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+.cd h1{font-size:clamp(28px,4vw,42px);font-weight:800;margin:6px 0 10px}
+.cd .lead{color:var(--muted);font-size:17px;margin:0 0 18px;max-width:64ch}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.box h3{font-size:18px;margin-bottom:10px}
+.mods{display:flex;flex-direction:column;gap:10px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+.mod .num{font:600 13px var(--mono);color:var(--muted);min-width:28px}
+.mod b{display:block}
+.mod small{color:var(--muted)}
+.lock{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap}
+.side{position:sticky;top:90px;display:flex;flex-direction:column;gap:14px}
+.price{font:800 30px var(--head)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;margin:12px 0}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:600}
+.outc{margin:0;padding-left:18px}
+.outc li{margin-bottom:6px}
+
+/* forms */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:600}
+.form label.full,.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{font:inherit;font-size:15px;padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);width:100%}
+.form textarea{min-height:120px;resize:vertical}
+.err{color:var(--red);font-size:14px;min-height:20px;margin:0}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.contact .box p{color:var(--muted);margin:0 0 12px}
+
+/* dashboard */
+.dash{display:grid;gap:16px}
+.enr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.enr h3{font-size:18px}
+.enr .acts{display:flex;gap:8px;flex-wrap:wrap}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
+td .btn{white-space:nowrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:8px 14px;font-weight:600}
+.tabs button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.note{font-size:14px;color:var(--muted);background:var(--soft);border-radius:10px;padding:12px 14px;margin:0 0 16px}
+
+footer{background:var(--ink);color:#fff;margin-top:40px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;padding-block:40px}
+footer h4{font-size:14px;color:#AEB3BE;margin-bottom:10px;font-family:var(--mono);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+footer a{color:#fff;text-decoration:none;display:block;margin-bottom:6px;font-size:15px}
+footer a:hover{text-decoration:underline}
+footer small{color:#8E94A1}
+.fbrand span{background:#fff;border-radius:6px;padding:4px 6px;display:inline-block}
+.fbrand img{height:34px;display:block}
+
+.modal{position:fixed;inset:0;z-index:60;background:#0009;display:grid;place-items:center;padding:16px}
+.modal .card{background:var(--surface);color:var(--fg);border-radius:14px;width:min(460px,100%);padding:26px;max-height:calc(100% - 32px);overflow:auto}
+.modal .card.wide{width:min(720px,100%)}
+.modal h2{font-size:24px;margin-bottom:6px}
+.modal .lead{margin:0 0 16px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--red);font-weight:600;padding:0}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:70;background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;box-shadow:0 8px 30px #0005;max-width:calc(100% - 32px)}
+canvas.cert{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+@media (max-width:860px){
+  .mast .wrap,.cd,.contact,.director{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .side{position:static}
+  footer .wrap{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="LeanPro Academy home"><span><img src="logo.png" alt="LeanPro Academy"></span></a>
+    <nav aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#courses" data-nav="courses">Courses</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <a href="#dashboard" data-nav="dashboard" id="navDash" hidden>My learning</a>
+      <a href="#admin" data-nav="admin" id="navAdmin" hidden>Admin</a>
+    </nav>
+    <div class="acct" id="acct"></div>
+    <div class="soc" data-soc></div>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fbrand"><span><img src="logo.png" alt="LeanPro Academy"></span></div>
+      <p style="color:#C9CDD6;max-width:40ch;margin:14px 0">Professional training in Lean, Six Sigma and Operational Excellence for manufacturing teams and leaders.</p>
+      <div class="soc" data-soc></div>
+    </div>
+    <div><h4>Academy</h4><a href="#courses">Courses</a><a href="#about">About the Director</a><a href="#contact">Contact us</a></div>
+    <div><h4>Students</h4><a href="#dashboard" data-need-login>My learning</a><a href="#certificate-check">Verify a certificate</a><small>© 2026 LeanPro Academy</small></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden><div class="card" id="mcard" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+(function(){
+/* ---------------- data ---------------- */
+const SOCIAL=[
+ ['li','LinkedIn','https://www.linkedin.com/company/leanpro-academy','<path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/>'],
+ ['yt','YouTube','https://www.youtube.com/@LeanPro_Academy','<path fill="currentColor" d="M9 7.5v9l8-4.5z"/>'],
+ ['ig','Instagram','https://www.instagram.com/leanpro_academy','<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>'],
+ ['fb','Facebook','https://www.facebook.com/LeanProAcademy/','<path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.25-1.46 1.5-1.46H16.6V4.46A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.96v2.24H8v3h2.5V21z"/>']];
+const socHTML=SOCIAL.map(s=>`<a class="${s[0]}" href="${s[2]}" target="_blank" rel="noopener" aria-label="${s[1]}" title="${s[1]}"><svg viewBox="0 0 24 24">${s[3]}</svg></a>`).join('');
+document.querySelectorAll('[data-soc]').forEach(e=>e.innerHTML=socHTML);
+
+const C=(id,code,name,level,hours,aud,d,mods,out)=>({id,code,name,level,hours,aud,d,mods,out});
+const COURSES=[
+ C('lean','LP-101','Lean Manufacturing Fundamentals','Foundation',12,'Operators, supervisors, engineers','The thinking behind every improvement: customer value, waste, flow and pull, explained with shop-floor examples.',
+  ['Lean thinking and the five principles','Customer value and value-added work','The 8 wastes and how to see them','Flow, pull and just-in-time','Lean metrics: lead time, WIP, throughput','Building a Lean improvement plan'],
+  ['Identify value-added and non-value-added work in any process','Spot and quantify the 8 wastes on the shop floor','Measure lead time and work-in-progress','Prepare a first improvement plan for your area']),
+ C('5s','LP-102','5S & Visual Workplace','Foundation',8,'All shop-floor and office teams','A clean, organised, visual workplace where problems are obvious and standards hold.',
+  ['Why 5S comes first','Sort and Set in order','Shine and inspection','Standardise with visual controls','Sustain with audits and ownership','Visual management boards'],
+  ['Run a 5S event in a work area','Design visual controls and shadow boards','Set up a 5S audit with scoring','Keep standards alive after the event']),
+ C('kaizen','LP-103','Kaizen & Structured Problem Solving','Practitioner',14,'Supervisors, engineers, team leaders','Fact-based problem solving with PDCA, 5 Why, fishbone and the A3 report.',
+  ['PDCA and the improvement cycle','Problem definition and gap analysis','Root cause: 5 Why and fishbone','Verifying causes with data','Countermeasures and trials','A3 thinking and reporting'],
+  ['Write a clear problem statement','Find and verify root causes','Run a kaizen event end to end','Present results on one A3 sheet']),
+ C('yb','LP-201','Lean Six Sigma Yellow Belt','Foundation',16,'Professionals new to Six Sigma','Variation, defects and the DMAIC method, at the level needed to support improvement projects.',
+  ['Six Sigma concepts and sigma level','Defects, DPMO and yield','The DMAIC roadmap','Basic data collection and charts','Process mapping and SIPOC','Supporting a Green Belt project'],
+  ['Explain variation and its cost','Calculate DPMO, yield and sigma level','Use SIPOC and process maps','Contribute to a DMAIC project team']),
+ C('gb','LP-202','Lean Six Sigma Green Belt','Advanced',40,'Engineers, managers, project leaders','Lead DMAIC projects with statistics, capability analysis and controls that last.',
+  ['Define: charter, voice of customer, CTQ','Measure: MSA and baseline data','Process capability (Cp, Cpk)','Analyse: hypothesis tests and regression','Improve: DOE basics and piloting','Control: SPC and control plans'],
+  ['Lead a DMAIC project from charter to control','Check a measurement system before trusting data','Calculate and interpret Cp and Cpk','Hold gains with control charts and plans']),
+ C('qt','LP-203','Quality Tools & SPC','Practitioner',12,'Quality, production and lab teams','The seven quality tools and statistical process control for daily quality decisions.',
+  ['The seven basic quality tools','Check sheets and Pareto analysis','Histograms and stratification','Scatter diagrams','Control charts: X-bar R, p, c','Reacting to out-of-control signals'],
+  ['Choose the right tool for a quality problem','Build and read a Pareto chart','Set up and run control charts','Separate common-cause from special-cause variation']),
+ C('tpm','LP-301','TPM & Maintenance Excellence','Practitioner',16,'Maintenance and production teams','Reliable equipment through OEE, autonomous maintenance and planned maintenance.',
+  ['TPM pillars and OEE','Six big losses','Autonomous maintenance steps','Planned and preventive maintenance','Breakdown analysis and MTBF / MTTR','Spare parts and maintenance KPIs'],
+  ['Calculate OEE and find the biggest loss','Start autonomous maintenance with operators','Build a preventive maintenance schedule','Track MTBF and MTTR']),
+ C('vsm','LP-302','Value Stream Mapping & Flow','Practitioner',12,'Managers, planners, engineers','See the whole value stream, find delays and design a faster flow.',
+  ['Value stream thinking','Current-state map','Takt time and cycle time','Finding delays and inventory','Future-state design','Implementation plan'],
+  ['Draw a current-state value stream map','Calculate takt time and lead time','Design a future-state map','Turn the map into an action plan']),
+ C('sw','LP-303','Standard Work & Productivity','Practitioner',10,'Supervisors, IE and production engineers','Stable, repeatable output through standard work, line balancing and work measurement.',
+  ['Elements of standard work','Time study and work measurement','Line balancing','Standard work combination sheet','Leader standard work','Productivity metrics'],
+  ['Conduct a time study','Balance a line to takt','Write standard work documents','Raise productivity without extra cost']),
+ C('scm','LP-304','Supply Chain & Inventory Excellence','Practitioner',12,'Stores, planning and purchase teams','Keep material moving with Kanban, sound inventory policies and disciplined planning.',
+  ['Inventory types and costs','ABC and XYZ analysis','Safety stock and reorder point','Kanban and pull replenishment','FIFO and stores discipline','Supplier performance'],
+  ['Classify inventory with ABC / XYZ','Set safety stock and reorder levels','Design a Kanban loop','Reduce excess stock and shortages together']),
+ C('ehs','LP-305','Safety & EHS Excellence','Foundation',10,'All employees and supervisors','Building a safety-first culture with hazard identification, permits and incident learning.',
+  ['Safety culture and leadership','Hazard identification and risk assessment','Work permits and LOTO','Near-miss and incident reporting','Root cause of incidents','Environment and housekeeping'],
+  ['Carry out a risk assessment','Apply permit-to-work and LOTO correctly','Investigate an incident to root cause','Lead a safety walk']),
+ C('opex','LP-401','Operational Excellence & Daily Management','Leadership',20,'Plant leaders, managers, department heads','Bring Lean, Six Sigma, TPM and people practices together into one operating system.',
+  ['What Operational Excellence means','Policy deployment (Hoshin Kanri)','KPI trees and scorecards','Tiered daily meetings','Gemba walks and coaching','Sustaining a continuous-improvement culture'],
+  ['Cascade plant goals to team KPIs','Run tiered daily management meetings','Coach teams at the gemba','Assess and raise OpEx maturity']),
+ C('ind2','LP-402','Industry 2.0: Manufacturing Basics','Foundation',10,'Growing plants and new supervisors','Getting mass-production basics right before automation: stable machines, standard methods, disciplined flow.',
+  ['From craft work to the production line','Assembly line and takt basics','Interchangeable parts and specifications','Method study and work measurement','Shift handover and production discipline','Readiness for Industry 3.0 and 4.0'],
+  ['Stabilise a production line before automating','Apply method study to a job','Run disciplined shift handovers','Assess readiness for digital manufacturing'])];
+const byId=Object.fromEntries(COURSES.map(c=>[c.id,c]));
+
+/* ---------------- helpers ---------------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const fmtDate=iso=>{try{return new Date(iso).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}catch(e){return iso}};
+const inr=n=>'₹'+Number(n).toLocaleString('en-IN');
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,3600)}
+const modal=$('#modal'),mcard=$('#mcard');
+function openModal(html,wide){mcard.className='card'+(wide?' wide':'');mcard.innerHTML=html;modal.hidden=false;const f=mcard.querySelector('input,button');f&&f.focus()}
+function closeModal(){modal.hidden=true}
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+
+/* ---------------- Firebase ---------------- */
+const FB_CONFIG=window.LP_FIREBASE_CONFIG;
+const ADMIN_EMAILS=['ankit599patel@gmail.com'];
+firebase.initializeApp(FB_CONFIG);
+const fauth=firebase.auth(),fs=firebase.firestore();
+let uid=null,isAdmin=false,fbUser=null;
+const doc=p=>({set:d=>fs.doc(p).set(d),get:()=>fs.doc(p).get()});
+async function getDoc(p){try{const s=await fs.doc(p).get();return s.exists?s.data():null}catch(e){return null}}
+async function listCol(p){try{const s=await fs.collection(p).get();return s.docs.map(d=>({id:d.id,...d.data()}))}catch(e){return []}}
+
+/* state */
+let profile=null,access={},requests={},config={prices:{},videos:{}},session=null;
+async function loadState(){
+  const c=await getDoc('config/courses');if(c)config={prices:c.prices||{},videos:c.videos||{}};
+  if(fbUser){uid=fbUser.uid;isAdmin=ADMIN_EMAILS.includes((fbUser.email||'').toLowerCase())&&fbUser.emailVerified;
+    const [p,a,r]=await Promise.all([getDoc('profiles/'+uid),getDoc('access/'+uid),getDoc('requests/'+uid)]);
+    profile=p||{name:fbUser.displayName||fbUser.email.split('@')[0],email:fbUser.email,mobile:''};access=(a&&a.courses)||{};requests=(r&&r.courses)||{};session={email:fbUser.email};}
+  else{uid=null;isAdmin=false;profile=null;access={};requests={};session=null;}
+}
+const loggedIn=()=>!!session;
+const status=cid=>access[cid]?.status||(requests[cid]?'pending':null);
+
+/* ---------------- header ---------------- */
+function renderHeader(){
+  const a=$('#acct');
+  if(loggedIn()){a.innerHTML=`<span class="who">${esc(profile.name)}</span><button class="btn sec sm" id="lo" type="button">Log out</button>`;
+    $('#lo').onclick=async()=>{await fauth.signOut();location.hash='home';toast('You are logged out')}}
+  else{a.innerHTML=`<button class="btn sec sm" id="li" type="button">Log in</button><button class="btn sm" id="su" type="button">Create account</button>`;
+    $('#li').onclick=()=>auth('login');$('#su').onclick=()=>auth('signup')}
+  $('#navDash').hidden=!loggedIn();$('#navAdmin').hidden=!isAdmin;
+}
+const AUTH_ERR={'auth/invalid-credential':'Email or password is incorrect.','auth/wrong-password':'Email or password is incorrect.','auth/user-not-found':'No account with this email. Create an account first.','auth/email-already-in-use':'An account with this email already exists. Log in instead.','auth/weak-password':'Choose a stronger password (at least 6 characters).','auth/too-many-requests':'Too many attempts. Wait a few minutes and try again.','auth/network-request-failed':'No internet connection. Check and try again.'};
+let pendingAfter=null;
+function auth(mode,after){
+  const login=mode==='login';
+  openModal(`<h2>${login?'Log in':'Create your account'}</h2><p class="lead">${login?'Use the email and password you registered with.':'Register once to enrol in courses, watch lectures and receive certificates.'}</p>
+  <form class="form" id="af" novalidate>
+   ${login?'':`<label class="full">Full name<input id="a_n" autocomplete="name" required></label><label>Mobile<input id="a_m" inputmode="tel" autocomplete="tel" required></label><label>Company / College<input id="a_o" autocomplete="organization"></label>`}
+   <label class="full">Email<input id="a_e" type="email" autocomplete="email" required></label>
+   <label class="full">Password<input id="a_p" type="password" autocomplete="${login?'current-password':'new-password'}" required></label>
+   <p class="err full" id="a_err" role="alert"></p>
+   <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><button class="btn" type="submit">${login?'Log in':'Create account'}</button><button class="linkbtn" type="button" id="sw">${login?'New here? Create an account':'Already registered? Log in'}</button></div>
+   ${login?'<div class="full"><button class="linkbtn" type="button" id="fp" style="color:var(--muted)">Forgot password?</button></div>':''}
+  </form>`);
+  $('#sw').onclick=()=>auth(login?'signup':'login',after);
+  if(login)$('#fp').onclick=async()=>{const email=($('#a_e').value||'').trim();if(!/^\S+@\S+\.\S+$/.test(email)){$('#a_err').textContent='Enter your email above, then click Forgot password.';return}
+    try{await fauth.sendPasswordResetEmail(email);$('#a_err').style.color='var(--ok)';$('#a_err').textContent='Password reset link sent to '+email+'.'}catch(x){$('#a_err').textContent=AUTH_ERR[x.code]||'Could not send the reset email.'}};
+  $('#af').onsubmit=async e=>{e.preventDefault();const v=id=>($('#'+id)?.value||'').trim();const err=$('#a_err');err.style.color='';
+    const email=v('a_e').toLowerCase(),pass=$('#a_p').value;
+    if(!/^\S+@\S+\.\S+$/.test(email)){err.textContent='Enter a valid email address.';return}
+    if(pass.length<6){err.textContent='Password must be at least 6 characters.';return}
+    const btn=e.submitter;btn.disabled=true;pendingAfter=after||null;
+    try{
+      if(login){await fauth.signInWithEmailAndPassword(email,pass);}
+      else{const name=v('a_n'),mobile=v('a_m');
+        if(!name){err.textContent='Enter your full name.';btn.disabled=false;return}
+        if(!/^[0-9+ ]{10,14}$/.test(mobile)){err.textContent='Enter a valid 10-digit mobile number.';btn.disabled=false;return}
+        const cred=await fauth.createUserWithEmailAndPassword(email,pass);
+        await cred.user.updateProfile({displayName:name});
+        try{await cred.user.sendEmailVerification()}catch(_){}
+        await fs.doc('profiles/'+cred.user.uid).set({name,email,mobile,org:v('a_o'),createdAt:new Date().toISOString()});
+        fbUser=cred.user;}
+      closeModal();
+    }catch(x){btn.disabled=false;err.textContent=AUTH_ERR[x.code]||('Could not continue: '+(x.message||x.code));}
+  };
+}
+fauth.onAuthStateChanged(async u=>{fbUser=u;await loadState();renderHeader();
+  if(u&&pendingAfter){const f=pendingAfter;pendingAfter=null;toast('Welcome, '+profile.name.split(' ')[0]);f();}else route();});
+
+/* ---------------- views ---------------- */
+const view=$('#view');
+function nav(k){document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===k))}
+function priceText(cid){const p=config.prices[cid];return p?inr(p):'Fee on request'}
+const LVC={Foundation:'#2F6FDB',Practitioner:'#0E9F6E',Advanced:'#C8102E',Leadership:'#7C4DDB'};
+const CI={lean:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+ '5s':'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+ kaizen:'<circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/>',
+ yb:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>',
+ gb:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+ qt:'<path d="M3 12h4l3-7 4 14 3-7h4"/>',
+ tpm:'<path d="M14.5 5.5a4 4 0 0 0 4.9 4.9L11 18.8a2.1 2.1 0 1 1-3-3l8.4-8.4"/>',
+ vsm:'<path d="M4 7l5-2 6 2 5-2v12l-5 2-6-2-5 2z"/><path d="M9 5v12M15 7v12"/>',
+ sw:'<circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/>',
+ scm:'<rect x="4" y="11" width="7" height="7" rx="1"/><rect x="13" y="11" width="7" height="7" rx="1"/><rect x="8.5" y="4" width="7" height="7" rx="1"/>',
+ ehs:'<path d="M12 3l7 3v5.5c0 4.4-3 7.8-7 9.5-4-1.7-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/>',
+ opex:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7"/>',
+ ind2:'<path d="M3 20V10l5 3V10l5 3V7l8 4v9z"/>'};
+const ci=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${CI[k]||CI.lean}</svg>`;
+function card(c){const st=status(c.id);
+  return `<button class="course" type="button" data-c="${c.id}" style="--lv:${LVC[c.level]}"><span class="ch"><span class="ci">${ci(c.id)}</span><span class="code">${c.code} · ${c.level}</span></span><h3>${esc(c.name)}</h3><p>${esc(c.d)}</p>
+  <ul>${c.out.slice(0,3).map(o=>`<li>${esc(o)}</li>`).join('')}</ul>
+  <span class="foot"><span>${c.mods.length} modules · ${c.hours} hrs</span>${st==='active'?'<span class="pill ok">Enrolled</span>':st==='completed'?'<span class="pill ok">Completed</span>':st==='pending'?'<span class="pill warn">Payment pending</span>':`<b>${priceText(c.id)}</b>`}</span></button>`}
+function bindCards(){view.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>location.hash='course-'+b.dataset.c)}
+function directorHTML(){return `<div class="director"><div class="mono-mark" aria-hidden="true">AP</div><div>
+  <span class="eyebrow">Director</span><h3 style="margin-top:6px">Ankitkumar Patel</h3><div class="role">Director, LeanPro Academy</div>
+  <p>Ankitkumar Patel brings extensive experience in leading large-scale manufacturing operations and driving Lean, Six Sigma and Operational Excellence transformations across plants.</p>
+  <p>He founded LeanPro Academy to make proven improvement methods practical and accessible for every professional, from the operator on the line to the leadership team.</p>
+  <div class="soc" style="margin-top:14px">${socHTML}</div></div></div>`}
+const VIZ=`<div class="viz" aria-hidden="true"><svg viewBox="0 0 520 520">
+  <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#ff4d64"/><stop offset="1" stop-color="#ff8a5c"/></linearGradient></defs>
+  <g class="ring2"><circle cx="260" cy="260" r="236" fill="none" stroke="#ffffff1a" stroke-width="1.5" stroke-dasharray="3 9"/></g>
+  <g class="ring"><circle cx="260" cy="260" r="196" fill="none" stroke="#ffffff22" stroke-width="1"/>
+   ${['DEFINE','MEASURE','ANALYSE','IMPROVE','CONTROL'].map((t,i)=>{const a=(i*72-90)*Math.PI/180,x=260+196*Math.cos(a),y=260+196*Math.sin(a);return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><circle r="34" fill="#1C1F27" stroke="${i===3?'url(#gr)':'#ffffff33'}" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600">${t[0]}</text><text text-anchor="middle" dy="52" fill="#9EA4B0" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">${t}</text></g>`}).join('')}</g>
+  <circle cx="260" cy="260" r="128" fill="#16181F" stroke="#ffffff1f"/>
+  <path d="M170 300 L215 270 L250 285 L300 230 L350 210" fill="none" stroke="url(#gr)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="350" cy="210" r="8" fill="#ff8a5c"/>
+  <text x="260" y="196" text-anchor="middle" fill="#9EA4B0" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2">PROCESS SIGMA</text>
+  <text x="260" y="340" text-anchor="middle" fill="#fff" font-family="Manrope, Arial" font-size="40" font-weight="800">3σ → 6σ</text>
+ </svg>
+ <div class="float f1"><b>Less waste</b>shorter lead time</div><div class="float f2"><b>OEE 85%</b>world-class target</div><div class="float f3"><b>Right first time</b>fewer defects</div></div>`;
+function home(){nav('home');
+  view.innerHTML=`<section class="hero2"><div class="wrap"><div>
+   <span class="tag"><i></i>Enrolments open · Certified programmes</span>
+   <h1>Turn your plant into a <span class="grad">benchmark of excellence.</span></h1>
+   <p class="sub">Industry-grade training in Lean Manufacturing, Six Sigma and Operational Excellence. Practical methods, video lectures and a verifiable certificate for every professional who wants to lead improvement.</p>
+   <div class="row"><a class="btn" href="#courses">Explore courses →</a><a class="btn outline-light" href="#contact">Corporate training</a></div>
+   <div class="kpis"><div><b>${COURSES.length}</b><span>Professional courses</span></div><div><b>${COURSES.reduce((s,c)=>s+c.mods.length,0)}</b><span>Video modules</span></div><div><b>4</b><span>Learning levels</span></div><div><b>100%</b><span>Verifiable certificates</span></div></div>
+  </div>${VIZ}</div>
+  <div class="marquee"><div class="track">${[...Array(2)].map(()=>['Lean Manufacturing','Six Sigma Green Belt','Total Productive Maintenance','Value Stream Mapping','5S & Visual Workplace','Kaizen','Statistical Process Control','Operational Excellence','Safety & EHS','Industry 2.0'].map(t=>`<span>${t}</span>`).join('')).join('')}</div></div></section>
+
+  <section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Programmes</span><h2>Courses built for the shop floor</h2><p>Every course shows exactly what you will learn and the results you can deliver at work.</p></div><a class="btn sec" href="#courses">View all ${COURSES.length} courses</a></div>
+   <div class="grid">${['lean','gb','tpm','vsm','opex','5s'].map(i=>card(byId[i])).join('')}</div></div></section>
+
+  <section class="band"><div class="wrap blk"><div class="sec-head"><div><span class="eyebrow">Learning path</span><h2>Grow from operator to excellence leader</h2><p>Start where you are and move up level by level.</p></div></div>
+   <div class="paths">
+    <div class="path"><div class="dot">L1</div><h4>Foundation</h4><p>Lean basics, 5S, safety and Yellow Belt.</p><small>${COURSES.filter(c=>c.level==='Foundation').length} COURSES</small></div>
+    <div class="path"><div class="dot">L2</div><h4>Practitioner</h4><p>Kaizen, SPC, TPM, VSM and standard work.</p><small>${COURSES.filter(c=>c.level==='Practitioner').length} COURSES</small></div>
+    <div class="path"><div class="dot">L3</div><h4>Advanced</h4><p>Lead DMAIC projects as a Green Belt.</p><small>${COURSES.filter(c=>c.level==='Advanced').length} COURSE</small></div>
+    <div class="path"><div class="dot">L4</div><h4>Leadership</h4><p>Run an Operational Excellence system.</p><small>${COURSES.filter(c=>c.level==='Leadership').length} COURSE</small></div>
+   </div></div></section>
+
+  <section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Why LeanPro</span><h2>Training that shows up in your results</h2></div></div>
+   <div class="why">
+    <div class="wcard"><div class="wi">${ci('lean')}</div><h4>Shop-floor first</h4><p>Every concept is explained through real manufacturing situations, not theory slides.</p></div>
+    <div class="wcard"><div class="wi">${ci('qt')}</div><h4>Video lectures, any time</h4><p>Learn module by module at your own pace from mobile or laptop.</p></div>
+    <div class="wcard"><div class="wi">${ci('gb')}</div><h4>Tools you can use tomorrow</h4><p>Templates, checklists and worked examples for immediate application.</p></div>
+    <div class="wcard"><div class="wi">${ci('ehs')}</div><h4>Verifiable certificate</h4><p>A unique certificate number that employers can verify on this website.</p></div>
+    <div class="wcard"><div class="wi">${ci('opex')}</div><h4>Led by experience</h4><p>Designed by a practitioner with extensive experience running manufacturing operations.</p></div>
+    <div class="wcard"><div class="wi">${ci('scm')}</div><h4>Corporate programmes</h4><p>Customised batches for company teams, from operators to leadership.</p></div>
+   </div></div></section>
+
+  <section class="band"><div class="wrap blk certshow"><div><canvas id="certPrev" width="1600" height="1130" aria-label="Sample LeanPro Academy certificate"></canvas></div>
+   <div><span class="eyebrow">Certification</span><h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;margin-top:6px">A certificate that carries weight</h2>
+    <ul class="checks"><li>Issued on successful course completion</li><li>Unique certificate number on every certificate</li><li>Online verification for employers</li><li>Download anytime from “My learning”</li></ul>
+    <a class="btn" href="#courses">Start a course</a> <a class="btn sec" href="#certificate-check" style="margin-left:6px">Verify a certificate</a></div></div></section>
+
+  <section class="blk"><div class="wrap">${directorHTML()}</div></section>
+
+  <section class="blk" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">FAQ</span><h2>Common questions</h2></div></div>
+   <div class="faq">
+    <details><summary>Who can join these courses?</summary><p>Operators, supervisors, engineers, managers and students who want to build practical improvement skills. Each course page lists who it is designed for.</p></details>
+    <details><summary>How do I get access after paying?</summary><p>Create an account, enrol in a course and complete the payment. Once payment is confirmed, the course unlocks in “My learning” with all its video lectures.</p></details>
+    <details><summary>Will I get a certificate?</summary><p>Yes. On completing the course you receive a certificate with a unique number, downloadable from your account and verifiable on this website.</p></details>
+    <details><summary>Do you train company teams?</summary><p>Yes. We run customised programmes for plants and departments. Send us your requirement from the Contact page.</p></details>
+   </div></div></section>
+
+  <section class="blk" style="padding-top:0"><div class="wrap"><div class="cta"><div><h2>Ready to lead the next improvement in your plant?</h2><p>Create your free account and choose your first course today.</p></div>
+   <div class="row"><button class="btn light" type="button" id="ctaJoin">${loggedIn()?'Go to My learning':'Create free account'}</button><a class="btn outline-light" href="#contact">Talk to our team</a></div></div></div></section>`;
+  bindCards();
+  $('#ctaJoin').onclick=()=>loggedIn()?location.hash='dashboard':auth('signup');
+  const cp=$('#certPrev');const d=()=>drawCert(cp,'Your Name','Lean Six Sigma Green Belt',fmtDate(new Date().toISOString()),'LPA-2026-SAMPLE');
+  d();document.fonts&&document.fonts.ready.then(d);logoImg.addEventListener('load',d,{once:true});
+}
+function courses(){nav('courses');
+  const lv=['All','Foundation','Practitioner','Advanced','Leadership'];
+  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Programmes</span><h2>All courses</h2><p>Open a course to see its modules, outcomes and fee.</p></div></div>
+   <div class="tabs" id="lv">${lv.map((l,i)=>`<button type="button" class="${i?'':'on'}" data-l="${l}">${l}</button>`).join('')}</div><div class="grid" id="cg"></div></div></section>`;
+  const draw=l=>{$('#cg').innerHTML=COURSES.filter(c=>l==='All'||c.level===l).map(card).join('');bindCards()};
+  view.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{view.querySelectorAll('[data-l]').forEach(x=>x.classList.toggle('on',x===b));draw(b.dataset.l)});draw('All');
+}
+function course(id){const c=byId[id];if(!c){courses();return}nav('courses');const st=status(id);const vids=config.videos[id]||[];
+  const unlocked=st==='active'||st==='completed';
+  const mods=c.mods.map((m,i)=>{const v=vids[i];
+    let r;if(!unlocked)r='<span class="lock">Locked · enrol to unlock</span>';else if(v&&v.url)r=`<a class="btn sm" href="${esc(v.url)}" target="_blank" rel="noopener">Watch lecture</a>`;else r='<span class="pill">Lecture coming soon</span>';
+    return `<div class="mod"><span class="num">${String(i+1).padStart(2,'0')}</span><div><b>${esc(m)}</b><small>Video lecture · Module ${i+1}</small></div>${r}</div>`}).join('');
+  let action;
+  if(st==='completed')action=`<span class="pill ok">Completed</span><button class="btn" type="button" id="certBtn">View certificate</button>`;
+  else if(st==='active')action=`<span class="pill ok">You are enrolled</span><a class="btn sec" href="#dashboard">Go to My learning</a>`;
+  else if(st==='pending')action=`<span class="pill warn">Payment pending confirmation</span><p style="margin:0;color:var(--muted);font-size:14px">Your course unlocks as soon as payment is confirmed.</p>`;
+  else action=`<button class="btn" type="button" id="enrolBtn">Enrol now</button>`;
+  view.innerHTML=`<section class="blk"><div class="wrap"><button class="crumb" type="button" onclick="location.hash='courses'">← All courses</button>
+   <div class="cd"><div><span class="eyebrow">${c.code} · ${c.level}</span><h1>${esc(c.name)}</h1><p class="lead">${esc(c.d)}</p>
+    <div class="box" style="margin-bottom:18px"><h3>What you will learn</h3><ul class="outc">${c.out.map(o=>`<li>${esc(o)}</li>`).join('')}</ul></div>
+    <h3 style="font-size:20px;margin:6px 0 12px">Course modules</h3><div class="mods">${mods}</div></div>
+   <aside class="side"><div class="box"><div class="price">${priceText(id)}</div>
+    <dl class="kv"><dt>Level</dt><dd>${c.level}</dd><dt>Duration</dt><dd>${c.hours} hours</dd><dt>Modules</dt><dd>${c.mods.length} video modules</dd><dt>For</dt><dd>${esc(c.aud)}</dd><dt>Certificate</dt><dd>Yes, on completion</dd></dl>
+    <div style="display:flex;flex-direction:column;gap:10px">${action}</div></div>
+    <div class="box"><h3>Questions about this course?</h3><p style="margin:0 0 12px;color:var(--muted);font-size:14.5px">Ask about batches, company training or fees.</p><a class="btn sec sm" href="#contact">Contact us</a></div></aside></div></div></section>`;
+  $('#enrolBtn')&&($('#enrolBtn').onclick=()=>enrol(id));
+  $('#certBtn')&&($('#certBtn').onclick=()=>showCert(id));
+}
+function enrol(id){
+  if(!loggedIn()){auth('signup',()=>enrol(id));return}
+  const c=byId[id];const p=config.prices[id];
+  openModal(`<h2>Enrol: ${esc(c.name)}</h2><p class="lead">Course fee: <b>${p?inr(p):'shared by our team after you submit'}</b></p>
+   <p class="note">Online card / UPI payment is being set up. For now, submit your enrolment and our team will contact you on <b>${esc(profile.mobile)}</b> with payment details. The course unlocks in “My learning” as soon as payment is confirmed.</p>
+   <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="cf" type="button">Submit enrolment</button><button class="btn sec" type="button" id="cx">Cancel</button></div>`);
+  $('#cx').onclick=closeModal;
+  $('#cf').onclick=async()=>{const b=$('#cf');b.disabled=true;
+    requests={...requests,[id]:{requestedAt:new Date().toISOString(),price:p||null}};
+    const rec={name:profile.name,email:profile.email,mobile:profile.mobile,org:profile.org||'',courses:requests,updatedAt:new Date().toISOString()};
+    try{ await fs.doc('requests/'+uid).set(rec); }catch(e){b.disabled=false;toast('Could not submit. Please try again.');return}
+    closeModal();toast('Enrolment submitted. We will contact you with payment details.');route();};
+}
+function about(){nav('about');
+  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">About</span><h2>About LeanPro Academy</h2><p>LeanPro Academy offers practical, certified training in Lean Manufacturing, Six Sigma and Operational Excellence. Every course is built around real manufacturing situations so that learning turns into measurable results at work.</p></div></div>
+   ${directorHTML()}
+   <div class="grid" style="margin-top:22px">
+    <div class="box"><h3>Our approach</h3><p style="margin:0;color:var(--muted)">Concepts are taught through shop-floor cases, simple tools and clear templates that teams can use the next day.</p></div>
+    <div class="box"><h3>Who we train</h3><p style="margin:0;color:var(--muted)">Operators, supervisors, engineers, managers and plant leadership teams across manufacturing industries.</p></div>
+    <div class="box"><h3>Certification</h3><p style="margin:0;color:var(--muted)">Each course ends with a certificate carrying a unique number that employers can verify on this website.</p></div></div></div></section>`;
+}
+function contact(){nav('contact');
+  const p=profile&&loggedIn()?profile:{};
+  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Contact</span><h2>Contact us</h2><p>Questions about a course, company training or certification? Send us a message and our team will get back to you.</p></div></div>
+   <div class="contact"><div class="box"><h3>Reach LeanPro Academy</h3><p>Follow us for updates and new course announcements.</p><div class="soc">${socHTML}</div>
+    <p style="margin-top:16px">For company programmes, mention your plant size and the topics you need in the message.</p></div>
+   <form class="box form" id="cform" novalidate>
+    <label>Full name<input id="c_n" autocomplete="name" value="${esc(p.name||'')}" required></label>
+    <label>Email<input id="c_e" type="email" autocomplete="email" value="${esc(p.email||'')}" required></label>
+    <label>Mobile<input id="c_m" inputmode="tel" autocomplete="tel" value="${esc(p.mobile||'')}" required></label>
+    <label>Company / College<input id="c_o" autocomplete="organization" value="${esc(p.org||'')}"></label>
+    <label class="full">Subject<select id="c_s"><option>Course enquiry</option><option>Company / team training</option><option>Fees and payment</option><option>Certificate</option><option>Other</option></select></label>
+    <label class="full">Message<textarea id="c_t" required placeholder="How can we help?"></textarea></label>
+    <p class="err full" id="c_err" role="alert"></p>
+    <div class="full"><button class="btn" type="submit">Send message</button></div></form></div></div></section>`;
+  $('#cform').onsubmit=async e=>{e.preventDefault();const v=id=>$('#'+id).value.trim();const err=$('#c_err');
+    if(!v('c_n')){err.textContent='Enter your name.';return}
+    if(!/^\S+@\S+\.\S+$/.test(v('c_e'))){err.textContent='Enter a valid email address.';return}
+    if(!/^[0-9+ ]{10,14}$/.test(v('c_m'))){err.textContent='Enter a valid 10-digit mobile number.';return}
+    if(!v('c_t')){err.textContent='Write your message.';return}
+    err.textContent='';const b=e.submitter;b.disabled=true;
+    const msg={subject:v('c_s'),message:v('c_t'),at:new Date().toISOString()};
+    try{
+      await fs.collection('inquiries').add({name:v('c_n'),email:v('c_e').toLowerCase(),mobile:v('c_m'),org:v('c_o'),subject:msg.subject,message:msg.message,at:msg.at,uid:uid||null});
+      $('#c_t').value='';toast('Message sent. Our team will contact you soon.');
+    }catch(x){err.textContent='Could not send your message. Please try again.'}
+    b.disabled=false;};
+}
+function dashboard(){nav('dashboard');
+  if(!loggedIn()){view.innerHTML=`<section class="blk"><div class="wrap"><div class="empty"><h3>Log in to see your courses</h3><p>Your enrolled courses, lectures and certificates appear here.</p><button class="btn" type="button" id="dl">Log in</button></div></div></section>`;$('#dl').onclick=()=>auth('login');return}
+  const ids=[...new Set([...Object.keys(access),...Object.keys(requests)])].filter(i=>byId[i]);
+  const rows=ids.map(i=>{const c=byId[i],st=status(i);
+    const pill=st==='completed'?'<span class="pill ok">Completed</span>':st==='active'?'<span class="pill ok">Active</span>':'<span class="pill warn">Payment pending</span>';
+    const acts=st==='completed'?`<a class="btn sec sm" href="#course-${i}">Lectures</a><button class="btn sm" type="button" data-cert="${i}">Certificate</button>`:st==='active'?`<a class="btn sm" href="#course-${i}">Open lectures</a>`:`<a class="btn sec sm" href="#contact">Ask about payment</a>`;
+    return `<div class="enr"><div><span class="eyebrow" style="color:var(--muted)">${c.code}</span><h3>${esc(c.name)}</h3><div style="margin-top:6px">${pill}</div></div><div class="acts">${acts}</div></div>`}).join('');
+  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">My learning</span><h2>Welcome, ${esc(profile.name.split(' ')[0])}</h2><p>Your courses, lectures and certificates.</p></div><a class="btn sec" href="#courses">Browse courses</a></div>
+   <div class="dash">${rows||'<div class="empty"><h3>No courses yet</h3><p>Choose a course and enrol to start learning.</p><a class="btn" href="#courses">View courses</a></div>'}</div></div></section>`;
+  view.querySelectorAll('[data-cert]').forEach(b=>b.onclick=()=>showCert(b.dataset.cert));
+}
+
+/* ---------------- certificate ---------------- */
+const logoImg=new Image();logoImg.src='logo.png';
+function drawCert(cv,name,cname,date,no){
+  const W=1600,H=1130;cv.width=W;cv.height=H;const x=cv.getContext('2d');
+  x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
+  x.strokeStyle='#15171C';x.lineWidth=14;x.strokeRect(30,30,W-60,H-60);
+  x.strokeStyle='#C8102E';x.lineWidth=3;x.strokeRect(58,58,W-116,H-116);
+  if(logoImg.complete&&logoImg.naturalWidth){const lw=520,lh=lw*logoImg.naturalHeight/logoImg.naturalWidth;x.drawImage(logoImg,(W-lw)/2,110,lw,lh)}
+  x.textAlign='center';x.fillStyle='#15171C';
+  x.font='600 26px "IBM Plex Mono", monospace';x.fillText('CERTIFICATE OF COMPLETION',W/2,350);
+  x.font='500 28px Inter, Arial';x.fillStyle='#5B6170';x.fillText('This is to certify that',W/2,430);
+  x.fillStyle='#15171C';x.font='700 84px "Cormorant Garamond", Georgia, serif';x.fillText(name,W/2,530);
+  x.fillStyle='#C8102E';x.fillRect(W/2-260,560,520,3);
+  x.fillStyle='#5B6170';x.font='500 28px Inter, Arial';x.fillText('has successfully completed the course',W/2,630);
+  x.fillStyle='#15171C';x.font='800 46px Manrope, Arial';x.fillText(cname,W/2,705);
+  x.fillStyle='#5B6170';x.font='500 26px Inter, Arial';x.fillText('Awarded on '+date,W/2,770);
+  x.textAlign='left';x.fillStyle='#15171C';x.font='italic 600 44px "Cormorant Garamond", Georgia, serif';x.fillText('Ankitkumar Patel',180,930);
+  x.fillRect(180,950,380,2);x.font='600 22px Inter, Arial';x.fillText('Ankitkumar Patel',180,985);x.fillStyle='#5B6170';x.font='500 20px Inter, Arial';x.fillText('Director, LeanPro Academy',180,1015);
+  x.textAlign='right';x.fillStyle='#5B6170';x.font='500 20px "IBM Plex Mono", monospace';x.fillText('Certificate No.',W-180,955);
+  x.fillStyle='#15171C';x.font='600 28px "IBM Plex Mono", monospace';x.fillText(no,W-180,995);
+  x.fillStyle='#5B6170';x.font='500 18px Inter, Arial';x.fillText('Verify on the LeanPro Academy website',W-180,1025);
+}
+function showCert(cid){const a=access[cid];if(!a||a.status!=='completed'){toast('Certificate is issued after course completion.');return}
+  const c=byId[cid];
+  openModal(`<h2>Your certificate</h2><p class="lead">${esc(c.name)} · No. ${esc(a.certNo)}</p><canvas class="cert" id="cv"></canvas>
+   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="dlc" type="button">Download certificate (PNG)</button><button class="btn sec" type="button" id="cc">Close</button></div><p class="err" id="dlerr"></p>`,true);
+  const cv=$('#cv');const draw=()=>drawCert(cv,a.name||profile.name,c.name,fmtDate(a.completedAt),a.certNo);
+  document.fonts&&document.fonts.ready.then(draw);draw();logoImg.onload=draw;
+  $('#cc').onclick=closeModal;
+  $('#dlc').onclick=()=>cv.toBlob(blob=>{const u=URL.createObjectURL(blob);const l=document.createElement('a');l.href=u;l.download='LeanPro_Certificate_'+a.certNo+'.png';document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)},'image/png');
+}
+async function verify(){nav('');
+  view.innerHTML=`<section class="blk"><div class="wrap" style="max-width:640px"><span class="eyebrow">Verification</span><h2 style="font-size:32px;margin:6px 0 10px">Verify a certificate</h2>
+   <p style="color:var(--muted)">Enter the certificate number printed on the certificate.</p>
+   <form class="form" id="vf"><label class="full">Certificate number<input id="v_no" placeholder="LPA-2026-XXXXX" required></label><div class="full"><button class="btn" type="submit">Verify</button></div></form><div id="vres" style="margin-top:16px"></div></div></section>`;
+  $('#vf').onsubmit=async e=>{e.preventDefault();const no=$('#v_no').value.trim().toUpperCase();const r=await getDoc('certs/'+no.replace(/[^A-Z0-9-]/g,''));
+    $('#vres').innerHTML=r?`<div class="box"><span class="pill ok">Valid certificate</span><h3 style="margin-top:10px">${esc(r.name)}</h3><p style="margin:4px 0 0;color:var(--muted)">${esc(r.course)} · Awarded ${fmtDate(r.completedAt)}</p></div>`:`<div class="box"><span class="pill red">Not found</span><p style="margin:8px 0 0;color:var(--muted)">No certificate matches this number. Check the number and try again.</p></div>`;};
+}
+
+/* ---------------- admin (owner only) ---------------- */
+let adminTab='enrol';
+async function admin(){nav('admin');
+  if(!isAdmin){view.innerHTML='<section class="blk"><div class="wrap"><div class="empty">This page is for the academy administrator.</div></div></section>';return}
+  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Admin</span><h2>Academy administration</h2><p>Visible only to you as the owner.</p></div></div>
+   <div class="tabs" id="at">${[['enrol','Enrolments'],['students','Students'],['inq','Messages'],['fees','Fees & lectures']].map(([k,l])=>`<button type="button" data-t="${k}" class="${k===adminTab?'on':''}">${l}</button>`).join('')}</div><div id="ab"><p style="color:var(--muted)">Loading…</p></div></div></section>`;
+  view.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{adminTab=b.dataset.t;admin()});
+  const ab=$('#ab');
+  if(adminTab==='enrol'){
+    const [reqs,acc]=await Promise.all([listCol('requests'),listCol('access')]);const accBy=Object.fromEntries(acc.map(a=>[a.id,a]));
+    const rows=[];reqs.forEach(r=>Object.entries(r.courses||{}).forEach(([cid,q])=>{if(byId[cid])rows.push({u:r.id,r,cid,q,st:accBy[r.id]?.courses?.[cid]?.status||'pending'})}));
+    rows.sort((a,b)=>(b.q.requestedAt||'').localeCompare(a.q.requestedAt||''));
+    ab.innerHTML=`<p class="note">When a student pays, click <b>Confirm payment</b> to unlock the course. After they finish, click <b>Issue certificate</b>; the certificate appears in their account and can be verified by number.</p>
+     <div class="tbl-wrap"><table><thead><tr><th>Student</th><th>Contact</th><th>Course</th><th>Requested</th><th>Status</th><th>Action</th></tr></thead><tbody>
+     ${rows.map((x,i)=>`<tr><td><b>${esc(x.r.name)}</b><br><small>${esc(x.r.org||'')}</small></td><td>${esc(x.r.email)}<br>${esc(x.r.mobile)}</td><td>${esc(byId[x.cid].name)}</td><td>${x.q.requestedAt?fmtDate(x.q.requestedAt):''}</td>
+      <td>${x.st==='completed'?'<span class="pill ok">Completed</span>':x.st==='active'?'<span class="pill ok">Active</span>':'<span class="pill warn">Payment pending</span>'}</td>
+      <td>${x.st==='pending'?`<button class="btn sm" data-pay="${i}">Confirm payment</button>`:x.st==='active'?`<button class="btn sm" data-done="${i}">Issue certificate</button>`:`<button class="btn sec sm" data-mail="${i}">Email text</button>`}</td></tr>`).join('')||'<tr><td colspan="6" style="color:var(--muted)">No enrolments yet. They appear here when students enrol.</td></tr>'}
+     </tbody></table></div>`;
+    const upd=async(x,patch)=>{const cur=accBy[x.u]||{courses:{}};const courses={...(cur.courses||{}),[x.cid]:{...(cur.courses||{})[x.cid],...patch}};
+      await doc('access/'+x.u).set({name:x.r.name,email:x.r.email,courses,updatedAt:new Date().toISOString()});};
+    ab.querySelectorAll('[data-pay]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{await upd(rows[b.dataset.pay],{status:'active',activatedAt:new Date().toISOString()});toast('Payment confirmed. Course unlocked.');admin()}catch(e){b.disabled=false;toast('Could not update. Try again.')}});
+    ab.querySelectorAll('[data-done]').forEach(b=>b.onclick=async()=>{b.disabled=true;const x=rows[b.dataset.done];const no='LPA-'+new Date().getFullYear()+'-'+Math.random().toString(36).slice(2,7).toUpperCase();const at=new Date().toISOString();
+      try{await upd(x,{status:'completed',completedAt:at,certNo:no,name:x.r.name});await doc('certs/'+no).set({name:x.r.name,course:byId[x.cid].name,completedAt:at});toast('Certificate '+no+' issued.');admin()}catch(e){b.disabled=false;toast('Could not issue. Try again.')}});
+    ab.querySelectorAll('[data-mail]').forEach(b=>b.onclick=()=>{const x=rows[b.dataset.mail];const a=accBy[x.u]?.courses?.[x.cid]||{};
+      const txt=`Dear ${x.r.name},\n\nCongratulations on completing "${byId[x.cid].name}" at LeanPro Academy.\n\nYour certificate number is ${a.certNo}. You can download your certificate from "My learning" on the LeanPro Academy website and verify it using this number.\n\nBest regards,\nAnkitkumar Patel\nDirector, LeanPro Academy`;
+      openModal(`<h2>Certificate email</h2><p class="lead">To: <b>${esc(x.r.email)}</b></p><textarea id="mt" style="width:100%;min-height:220px;font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)">${esc(txt)}</textarea><div style="display:flex;gap:10px;margin-top:12px"><button class="btn" id="cp" type="button">Copy text</button><button class="btn sec" id="cx" type="button">Close</button></div>`);
+      $('#cx').onclick=closeModal;$('#cp').onclick=()=>navigator.clipboard.writeText($('#mt').value).then(()=>toast('Copied'),()=>{$('#mt').select()});});
+  }
+  if(adminTab==='students'){const ps=await listCol('profiles');
+    ab.innerHTML=`<div class="tbl-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Mobile</th><th>Company / College</th><th>Registered</th></tr></thead><tbody>${ps.map(p=>`<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.email)}</td><td>${esc(p.mobile)}</td><td>${esc(p.org||'')}</td><td>${p.createdAt?fmtDate(p.createdAt):''}</td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">No students registered yet.</td></tr>'}</tbody></table></div>`}
+  if(adminTab==='inq'){const qs=await listCol('inquiries');const rows=qs.map(q=>({q,m:q}));rows.sort((a,b)=>(b.m.at||'').localeCompare(a.m.at||''));
+    ab.innerHTML=`<div class="tbl-wrap"><table><thead><tr><th>Date</th><th>From</th><th>Subject</th><th>Message</th></tr></thead><tbody>${rows.map(({q,m})=>`<tr><td>${fmtDate(m.at)}</td><td><b>${esc(q.name)}</b><br>${esc(q.email)}<br>${esc(q.mobile)}${q.org?'<br><small>'+esc(q.org)+'</small>':''}</td><td>${esc(m.subject)}</td><td style="max-width:420px">${esc(m.message)}</td></tr>`).join('')||'<tr><td colspan="4" style="color:var(--muted)">No messages yet.</td></tr>'}</tbody></table></div>`}
+  if(adminTab==='fees'){
+    ab.innerHTML=`<p class="note">Set the fee for each course (in ₹). Add video lecture links later, one per module; students see a “Watch lecture” button once their course is unlocked.</p>
+     <div class="dash">${COURSES.map(c=>`<div class="box"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><h3 style="margin:0">${c.code} · ${esc(c.name)}</h3>
+      <label style="display:flex;gap:8px;align-items:center;font-weight:600;font-size:14px">Fee ₹<input type="number" min="0" step="1" id="fee_${c.id}" value="${config.prices[c.id]||''}" style="width:120px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)"></label></div>
+      <details style="margin-top:10px"><summary style="cursor:pointer;font-weight:600">Lecture links (${(config.videos[c.id]||[]).filter(v=>v&&v.url).length}/${c.mods.length})</summary>
+      <div style="display:grid;gap:8px;margin-top:10px">${c.mods.map((m,i)=>`<label style="display:grid;gap:4px;font-size:13px;font-weight:600">${i+1}. ${esc(m)}<input id="vid_${c.id}_${i}" type="url" placeholder="https://…" value="${esc((config.videos[c.id]||[])[i]?.url||'')}" style="padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)"></label>`).join('')}</div></details></div>`).join('')}</div>
+     <div style="margin-top:16px"><button class="btn" id="savecfg" type="button">Save fees and lectures</button></div>`;
+    $('#savecfg').onclick=async()=>{const b=$('#savecfg');b.disabled=true;const prices={},videos={};
+      COURSES.forEach(c=>{const f=Number($('#fee_'+c.id).value);if(f>0)prices[c.id]=f;videos[c.id]=c.mods.map((m,i)=>({url:$('#vid_'+c.id+'_'+i).value.trim()}))});
+      try{await doc('config/courses').set({prices,videos,updatedAt:new Date().toISOString()});config={prices,videos};toast('Saved')}catch(e){toast('Could not save. Try again.')}b.disabled=false;};
+  }
+}
+
+/* ---------------- router ---------------- */
+function route(){const h=location.hash.slice(1)||'home';
+  if(h==='courses')courses();else if(h.startsWith('course-'))course(h.slice(7));else if(h==='about')about();else if(h==='contact')contact();
+  else if(h==='dashboard')dashboard();else if(h==='admin')admin();else if(h==='certificate-check')verify();else home();
+  window.scrollTo(0,0);}
+window.addEventListener('hashchange',route);
+renderHeader();route();
+})();
+</script>
+
+</body>
+</html>
