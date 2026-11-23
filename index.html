@@ -3,372 +3,677 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="LeanPro Academy — professional, certified training in Lean Manufacturing, Six Sigma and Operational Excellence.">
+<title>LeanPro Academy | Lean Six Sigma, 5S, TPM &amp; Operational Excellence Training</title>
+<meta name="description" content="LeanPro Academy: certified online training in Lean Manufacturing, 5S, Kaizen, Six Sigma Yellow and Green Belt, TPM, quality tools and plant leadership. Free 365-day Lean lessons and plant calculators.">
+<meta name="keywords" content="LeanPro Academy, lean manufacturing course, lean six sigma training India, 5S training, TPM course, OEE calculator, kaizen, operational excellence">
+<link rel="canonical" href="https://leanproacademy.in/">
 <link rel="icon" href="logo.png">
-<title>LeanPro Academy</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="LeanPro Academy"><meta property="og:title" content="LeanPro Academy | Learn. Improve. Lead.">
+<meta property="og:description" content="Certified courses in Lean, Six Sigma, TPM and plant leadership, plus free daily Lean lessons and plant calculators.">
+<meta property="og:url" content="https://leanproacademy.in/"><meta property="og:image" content="https://leanproacademy.in/logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"LeanPro Academy","url":"https://leanproacademy.in/","logo":"https://leanproacademy.in/logo.png","founder":{"@type":"Person","name":"Ankitkumar Patel"},"sameAs":["https://www.linkedin.com/company/leanpro-academy","https://www.youtube.com/@LeanPro_Academy","https://www.instagram.com/leanpro_academy","https://www.facebook.com/LeanProAcademy/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Cormorant+Garamond:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* Layout: corporate, typographic, no imagery — charcoal masthead band, white working surfaces, brand red used only for actions and key marks */
+/* Layout: "control room" — charcoal blueprint bands carrying shop-floor illustrations, white working surfaces, brand red for actions and andon signals */
 :root{
-  --red:#C8102E; --red-deep:#9E0C24; --ink:#15171C; --ink2:#23262E;
-  --bg:#F5F6F8; --surface:#FFFFFF; --line:#E1E4EA; --fg:#14161B; --muted:#5B6170; --soft:#EEF0F4; --ok:#1E7A46; --warn:#9A6200;
-  --head:'Manrope', 'Segoe UI', Arial, sans-serif;
-  --body:'Inter', 'Segoe UI', Arial, sans-serif;
-  --mono:'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --red:#C8102E;--red-deep:#9E0C24;--hot:#FF5A72;--ink:#13151A;--ink2:#1C1F26;--ink3:#262A33;
+  --bg:#F3F4F6;--surface:#FFFFFF;--line:#DFE2E8;--fg:#13151A;--muted:#5A6070;--soft:#ECEEF2;
+  --ok:#1E7A46;--amber:#E0A100;--steel:#2E5E8C;--onink:#FFFFFF;--onink2:#B6BBC6;--grid:#ffffff10;
+  --head:'Manrope','Segoe UI',Arial,sans-serif;--body:'Inter','Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F1115;--surface:#171A20;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#20242C;--red:#E0233F;--ok:#3FB872;--warn:#E0A33A;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0F1115;--surface:#171A20;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#20242C;--red:#E0233F;--ok:#3FB872;--warn:#E0A33A;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E1014;--surface:#161920;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#1F232B;--red:#E0233F;--ok:#3FB872;--steel:#6FA3D8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1014;--surface:#161920;--line:#2A2E37;--fg:#ECEEF2;--muted:#9AA1AE;--soft:#1F232B;--red:#E0233F;--ok:#3FB872;--steel:#6FA3D8;color-scheme:dark}
 *{box-sizing:border-box}
-[hidden]{display:none!important}
-body{margin:0;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body)}
-h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
-a{color:inherit}
-button{font:inherit;cursor:pointer}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}a{color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer}
 :focus-visible{outline:3px solid var(--red);outline-offset:2px}
-.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.eyebrow{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 20px;font-weight:600;background:var(--red);color:#fff;text-decoration:none;font-size:15px}
-.btn:hover{background:var(--red-deep)}
-.btn:disabled{opacity:.6;cursor:default}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.eyebrow svg{width:16px;height:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 20px;font-weight:600;background:var(--red);color:#fff;text-decoration:none;font-size:15px;transition:background .15s,transform .15s}
+.btn:hover{background:var(--red-deep);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px}
 .btn.sec{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
 .btn.sec:hover{box-shadow:inset 0 0 0 1.5px var(--fg)}
+.btn.ghost{background:transparent;color:var(--onink);box-shadow:inset 0 0 0 1.5px #ffffff55}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #fff;background:#ffffff0d}
 .btn.sm{padding:8px 14px;font-size:14px}
-.btn.light{background:#fff;color:#14161B}
-.btn.light:hover{background:#e9ebef}
-.btn.outline-light{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #ffffff66}
-.soc{display:flex;gap:8px;align-items:center}
-.soc a{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#fff;text-decoration:none}
-.soc a svg{width:17px;height:17px}
-.soc .li{background:#0A66C2}.soc .yt{background:#FF0000}.soc .ig{background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)}.soc .fb{background:#1877F2}
 .pill{display:inline-flex;align-items:center;gap:6px;font:600 12px var(--body);padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted)}
-.pill.ok{background:color-mix(in srgb,var(--ok) 14%,transparent);color:var(--ok)}
-.pill.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
 .pill.red{background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--red)}
-
+.pill.ok{background:color-mix(in srgb,var(--ok) 14%,transparent);color:var(--ok)}
+.preview-bar{background:var(--amber);color:#13151A;text-align:center;font:600 13px var(--body);padding:6px 16px}
 /* header */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:18px;min-height:70px;flex-wrap:wrap;padding-block:8px}
-.brand{display:flex;align-items:center}
-.brand span{background:#fff;border-radius:6px;padding:4px 6px;display:block}
-.brand img{height:38px;display:block}
-.nav nav{display:flex;gap:2px;flex-wrap:wrap;flex:1}
-.nav nav a{text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:6px;color:var(--muted)}
-.nav nav a.on,.nav nav a:hover{color:var(--fg);background:var(--soft)}
-.acct{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.who{font-weight:600;font-size:14px;color:var(--muted)}
-
-/* masthead */
-.mast{background:var(--ink);color:#fff}
-.mast .wrap{padding-block:72px 64px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
-.mast h1{font-size:clamp(34px,5vw,58px);font-weight:800;max-width:16ch}
-.mast h1 span{color:#ff4d64}
-.mast p{color:#C9CDD6;font-size:18px;max-width:58ch;margin:18px 0 26px}
-.mast .row{display:flex;gap:10px;flex-wrap:wrap}
-.mast .facts{display:grid;gap:1px;background:#ffffff1f;border:1px solid #ffffff1f;border-radius:12px;overflow:hidden}
-.mast .facts div{background:var(--ink2);padding:16px 18px}
-.mast .facts b{display:block;font:800 26px var(--head);color:#fff}
-.mast .facts span{color:#AEB3BE;font-size:14px}
-section.blk{padding-block:64px}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
-.sec-head h2{font-size:clamp(26px,3.2vw,36px);font-weight:800;margin-top:6px}
-.sec-head p{margin:8px 0 0;color:var(--muted);max-width:62ch}
-
-/* hero v2 */
-.hero2{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate}
-.hero2::before{content:"";position:absolute;inset:0;z-index:-1;background:
-  radial-gradient(600px 380px at 82% 30%,#C8102E55,transparent 70%),
-  radial-gradient(500px 300px at 10% 110%,#C8102E22,transparent 70%),
-  linear-gradient(#ffffff08 1px,transparent 1px) 0 0/44px 44px,
-  linear-gradient(90deg,#ffffff08 1px,transparent 1px) 0 0/44px 44px}
-.hero2 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:76px 70px}
-.hero2 .tag{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff2e;border-radius:999px;padding:6px 14px;font:600 12.5px var(--mono);letter-spacing:.08em;color:#ffd6dc;background:#ffffff0a}
-.hero2 .tag i{width:8px;height:8px;border-radius:50%;background:#ff3b55;box-shadow:0 0 0 4px #ff3b5533;animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 8px #ff3b5500}}
-.hero2 h1{font-size:clamp(38px,5.6vw,70px);font-weight:800;margin:20px 0 0;letter-spacing:-.025em;line-height:1.02}
-.hero2 h1 .grad{background:linear-gradient(90deg,#ff4d64,#ff8a5c);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero2 p.sub{color:#C9CDD6;font-size:18.5px;max-width:54ch;margin:20px 0 28px}
-.hero2 .row{display:flex;gap:12px;flex-wrap:wrap}
-.hero2 .btn{padding:14px 24px;font-size:16px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid #ffffff1f;padding-top:22px}
-.kpis div{padding-right:12px}
-.kpis b{display:block;font:800 30px var(--head);font-variant-numeric:tabular-nums}
-.kpis span{color:#9EA4B0;font-size:13.5px}
-.viz{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
-.viz svg{width:100%;height:100%;overflow:visible}
-.viz .ring{transform-origin:260px 260px;animation:spin 40s linear infinite}
-.viz .ring2{transform-origin:260px 260px;animation:spin 60s linear infinite reverse}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--ink);color:var(--onink);border-bottom:1px solid #ffffff14}
+.nav{display:flex;align-items:center;gap:18px;min-height:68px}
+.brand img{height:40px;background:#fff;border-radius:8px;padding:4px 8px;display:block}
+.menu{display:flex;gap:2px;flex:1;flex-wrap:wrap}
+.menu a{color:var(--onink2);text-decoration:none;font-weight:600;font-size:14.5px;padding:8px 10px;border-radius:7px}
+.menu a:hover,.menu a.on{color:#fff;background:#ffffff12}
+.menu a.on{box-shadow:inset 0 -2px 0 var(--hot)}
+.acct{display:flex;gap:8px}
+.burger{display:none;margin-left:auto;background:transparent;border:1.5px solid #ffffff44;color:#fff;border-radius:8px;padding:6px 10px;font-weight:600}
+@media (max-width:1060px){.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ink);flex-direction:column;padding:10px max(16px,env(safe-area-inset-left,0px)) 16px}.menu.open{display:flex}.burger{display:block}.acct{display:none}}
+/* bands */
+section.blk{padding-block:72px}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.dark{background:var(--ink);color:var(--onink);position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/44px 44px;pointer-events:none}
+.dark>*{position:relative}
+.dark .sec-head p{color:var(--onink2)}
+.dark .eyebrow{color:#FF8A9A}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.sec-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;margin-top:8px}
+.sec-head p{margin-top:10px;color:var(--muted);max-width:62ch;font-size:16.5px}
+/* hero */
+.hero .wrap.top{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center;padding-block:64px 36px}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--hot)}
+.hero .lead{color:var(--onink2);font-size:18px;max-width:50ch;margin:20px 0 28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.chipsrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tchip{display:inline-flex;align-items:center;gap:7px;border:1px solid #ffffff26;background:#ffffff0a;border-radius:999px;padding:5px 12px 5px 8px;font:600 12.5px var(--mono);color:#E6E8ED;letter-spacing:.04em}
+.tchip svg{width:16px;height:16px;color:var(--hot)}
+.scene{min-width:0}.scene svg{width:100%;height:auto;display:block}
+@keyframes belt{to{transform:translateX(-60px)}}
+@keyframes move{from{transform:translateX(0)}to{transform:translateX(520px)}}
+@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.25}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.viz .float{position:absolute;background:#1C1F27ee;border:1px solid #ffffff22;border-radius:12px;padding:10px 14px;font-size:13px;color:#d6d9e0;backdrop-filter:blur(6px);box-shadow:0 12px 30px #0006}
-.viz .float b{display:block;font:800 18px var(--head);color:#fff}
-.viz .f1{left:-4%;top:12%;animation:bob 6s ease-in-out infinite}
-.viz .f2{right:-2%;top:44%;animation:bob 7s ease-in-out infinite .8s}
-.viz .f3{left:6%;bottom:6%;animation:bob 6.5s ease-in-out infinite 1.6s}
-@keyframes bob{50%{transform:translateY(-10px)}}
-.marquee{background:var(--ink2);color:#AEB3BE;border-top:1px solid #ffffff14;overflow:hidden}
-.marquee .track{display:flex;gap:48px;white-space:nowrap;padding-block:16px;animation:mq 38s linear infinite;width:max-content}
-.marquee span{font:600 14px var(--head);letter-spacing:.06em;text-transform:uppercase}
-.marquee span::before{content:"◆";color:var(--red);margin-right:14px;font-size:10px;vertical-align:2px}
-@keyframes mq{to{transform:translateX(-50%)}}
-/* paths */
-.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:p}
-.paths::before{content:"";position:absolute;left:6%;right:6%;top:34px;height:3px;background:linear-gradient(90deg,var(--line),var(--red));border-radius:3px}
-.path{position:relative;padding:0 14px;text-align:center}
-.path .dot{width:70px;height:70px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:var(--surface);border:3px solid var(--line);font:800 15px var(--head);color:var(--fg);position:relative;z-index:1}
-.path:last-child .dot{background:var(--red);border-color:var(--red);color:#fff}
-.path h4{font-size:18px;margin-bottom:6px}
-.path p{margin:0 0 8px;color:var(--muted);font-size:14.5px}
-.path small{font:600 12px var(--mono);color:var(--red);letter-spacing:.06em}
-/* why */
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.wcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden}
-.wcard .wi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--red);margin-bottom:14px}
-.wcard .wi svg{width:24px;height:24px}
-.wcard h4{font-size:18px;margin-bottom:6px}
-.wcard p{margin:0;color:var(--muted);font-size:15px}
-/* cert showcase */
-.certshow{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.certshow canvas{width:100%;height:auto;border-radius:10px;box-shadow:0 30px 60px -20px #0005,0 0 0 1px var(--line);transform:perspective(1200px) rotateY(-8deg) rotateX(3deg);transition:transform .6s}
-.certshow canvas:hover{transform:none}
-.checks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:10px}
-.checks li{display:flex;gap:10px;align-items:flex-start}
-.checks li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
-/* faq */
-.faq{display:grid;gap:10px;max-width:860px}
-.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
-.faq summary{cursor:pointer;font:700 17px var(--head);list-style:none;display:flex;justify-content:space-between;gap:12px}
-.faq summary::after{content:"+";font-size:22px;color:var(--red);line-height:1}
-.faq details[open] summary::after{content:"–"}
-.faq p{margin:10px 0 0;color:var(--muted)}
-/* cta */
-.cta{background:linear-gradient(120deg,#C8102E,#8E0A20);color:#fff;border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}
-.cta::after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;border:40px solid #ffffff14}
-.cta h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;max-width:22ch}
-.cta p{margin:8px 0 0;color:#ffe1e5}
-.cta .row{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
-/* course cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.course{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;text-align:left;color:var(--fg);min-width:0;transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden}
-.course::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--lv,var(--red))}
-.course:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px #0004;border-color:var(--line)}
-.course .ch{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.course .ci{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--lv,var(--red)) 13%,transparent);color:var(--lv,var(--red))}
-.course .ci svg{width:23px;height:23px}
-@media (prefers-reduced-motion:reduce){.viz .ring,.viz .ring2,.viz .float,.marquee .track,.hero2 .tag i{animation:none}.course,.certshow canvas{transition:none}}
-@media (max-width:860px){.hero2 .wrap,.certshow{grid-template-columns:1fr}.viz{max-width:380px}.why{grid-template-columns:1fr}.paths{grid-template-columns:1fr 1fr;row-gap:28px}.paths::before{display:none}.kpis{grid-template-columns:1fr 1fr;row-gap:16px}.cta{padding:28px}}
-.course .code{font:600 12px var(--mono);letter-spacing:.08em;color:var(--muted)}
-.course h3{font-size:20px;font-weight:800}
-.course p{margin:0;color:var(--muted);font-size:15px}
-.course ul{margin:0;padding-left:18px;color:var(--fg);font-size:14.5px}
-.course .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.course .foot b{color:var(--fg)}
-
-.band{background:var(--surface);border-block:1px solid var(--line)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.steps div{padding:4px 0}
-.steps .n{font:600 13px var(--mono);color:var(--red);margin-bottom:6px}
-.steps h4{font-size:17px;margin-bottom:6px}
-.steps p{margin:0;color:var(--muted);font-size:15px}
-
-.director{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
-.mono-mark{width:88px;height:88px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 32px var(--head);letter-spacing:.02em}
-.director h3{font-size:28px;font-weight:800}
-.director .role{color:var(--red);font-weight:600;margin:4px 0 14px}
-.director p{margin:0 0 10px;color:var(--muted);max-width:70ch}
-
-/* course detail */
-.crumb{background:none;border:0;color:var(--muted);padding:0;font-weight:600;margin-bottom:14px}
+@keyframes sweep{0%{transform:rotate(-70deg)}50%{transform:rotate(38deg)}100%{transform:rotate(-70deg)}}
+.belt{animation:belt 1.6s linear infinite}
+.prod{animation:move 9s linear infinite}
+.andon{animation:blink 1.4s infinite}
+.gear{transform-box:view-box;animation:spin 8s linear infinite}
+svg[aria-hidden]{width:20px;height:20px;flex:none}
+.gear.r{animation-direction:reverse;animation-duration:5.3s}
+.needle{transform-box:view-box;animation:sweep 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.belt,.prod,.andon,.gear,.needle,.ticker div{animation:none!important}*{transition:none!important}}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #ffffff1c}
+.kpis div{padding:22px 0 26px;display:flex;gap:14px;align-items:center}
+.kpis svg{width:34px;height:34px;color:var(--hot);flex:none}
+.kpis b{display:block;font:800 30px/1 var(--head);color:#fff}
+.kpis span{color:var(--onink2);font-size:13.5px}
+@media (max-width:900px){.hero .wrap.top{grid-template-columns:1fr;padding-block:44px 24px}.kpis{grid-template-columns:repeat(2,1fr)}}
+.ticker{overflow:hidden;border-top:1px solid #ffffff14;background:#0B0C10}
+.ticker div{display:flex;gap:34px;width:max-content;padding:12px 0;animation:belt2 40s linear infinite}
+@keyframes belt2{to{transform:translateX(-50%)}}
+.ticker span{display:inline-flex;align-items:center;gap:8px;font:600 12.5px var(--mono);letter-spacing:.08em;color:#9EA4B0;white-space:nowrap}
+.ticker svg{width:16px;height:16px;color:var(--hot)}
+/* cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.g4{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+.g3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.g2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+@media (max-width:1000px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+@media (max-width:560px){.g4{grid-template-columns:1fr}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
+.cat{display:flex;flex-direction:column;text-decoration:none;cursor:pointer;overflow:hidden;padding:0;transition:transform .18s,box-shadow .18s,border-color .18s}
+.cat:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px #13151A66;border-color:var(--fg)}
+.cat .art{background:var(--ink);height:132px;position:relative;overflow:hidden}
+.cat .art::before{content:"";position:absolute;inset:0;background:linear-gradient(#ffffff0c 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,#ffffff0c 1px,transparent 1px) 0 0/22px 22px}
+.cat .art svg{position:relative;width:100%;height:100%;display:block}
+.cat .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat h3{font-size:19px}
+.cat p{color:var(--muted);font-size:14.5px}
+.cat small{font:600 12px var(--mono);color:var(--red);letter-spacing:.06em;margin-top:auto;padding-top:6px}
+.course{display:flex;flex-direction:column;text-align:left;color:var(--fg);padding:0;overflow:hidden;cursor:pointer;transition:transform .18s,border-color .18s}
+.course:hover{transform:translateY(-3px);border-color:var(--fg)}
+.course .band{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;color:#fff;position:relative;overflow:hidden}
+.course .band svg.big{position:absolute;right:-8px;bottom:-14px;width:96px;height:96px;opacity:.22}
+.course .band .code{font:600 12px var(--mono);letter-spacing:.1em}
+.course .band .lv{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:#ffffff26;border-radius:5px;padding:3px 7px;position:relative}
+.course .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.course h3{font-size:19px}
+.course p{color:var(--muted);font-size:14.5px}
+.course .foot{display:flex;gap:14px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.course .foot span{display:inline-flex;gap:5px;align-items:center}
+.course .foot svg{width:15px;height:15px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:8px 13px;font-weight:600;font-size:14px}
+.tabs button svg{width:16px;height:16px}
+.tabs button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+/* journey */
+.road{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ph{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13.5px;font-weight:600;min-width:0;display:flex;flex-direction:column;gap:6px}
+.ph svg{width:24px;height:24px;color:var(--red)}
+.ph b{font:600 11px var(--mono);color:var(--muted);letter-spacing:.06em}
+.ph.done{opacity:.6}
+.ph.now{border-color:var(--red);background:color-mix(in srgb,var(--red) 6%,var(--surface));box-shadow:0 12px 28px -20px var(--red)}
+.ph.now b{color:var(--red)}
+@media (max-width:900px){.road{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:480px){.road{grid-template-columns:repeat(2,1fr)}}
+.today{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media (max-width:900px){.today{grid-template-columns:1fr}}
+.cal{display:flex;gap:18px;align-items:center;margin:14px 0}
+.calpage{width:92px;flex:none;border-radius:12px;overflow:hidden;border:1px solid var(--line);text-align:center;background:var(--surface)}
+.calpage span{display:block;background:var(--red);color:#fff;font:600 11px var(--mono);letter-spacing:.1em;padding:4px}
+.calpage b{display:block;font:800 40px/1.25 var(--head)}
+.calpage i{display:block;font:500 11px var(--mono);font-style:normal;color:var(--muted);padding-bottom:6px}
+/* tools */
+.tcard{display:flex;gap:14px;align-items:flex-start;text-decoration:none;transition:transform .18s,border-color .18s}
+.tcard:hover{transform:translateY(-2px);border-color:var(--fg)}
+.tico{width:54px;height:54px;flex:none;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center}
+.tico svg{width:30px;height:30px}
+.tcard h3{font-size:17px}.tcard p{color:var(--muted);font-size:14px;margin-top:3px}
+.tool-ui{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+@media (max-width:860px){.tool-ui{grid-template-columns:1fr}}
+.tlist{display:flex;flex-direction:column;gap:6px}
+.tlist button{display:flex;gap:10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;padding:9px 12px;font-weight:600;font-size:14.5px}
+.tlist button .tico{width:34px;height:34px;border-radius:8px}.tlist button .tico svg{width:20px;height:20px}
+.tlist button.on{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+.tlist button[disabled]{opacity:.5;cursor:default}
+.tlist button .pill{margin-left:auto}
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.form .full{grid-column:1/-1}
+input,select,textarea{border:1.5px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;padding:10px 12px;font-size:15px;width:100%}
+textarea{min-height:120px;resize:vertical}
+@media (max-width:560px){.form{grid-template-columns:1fr}}
+.toolhead{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.toolhead .tico{width:58px;height:58px}
+.result{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.result div{background:var(--soft);border-radius:10px;padding:14px}
+.result span{display:block;font:600 11.5px var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.result b{font:800 26px var(--head);font-variant-numeric:tabular-nums}
+.result div.key{background:var(--ink);color:#fff}.result div.key span{color:#FF8A9A}
+.hint{font-size:13.5px;color:var(--muted);margin-top:12px}
+.gauge{display:flex;justify-content:center;margin-top:10px}.gauge svg{width:min(320px,100%);height:auto}
+.bars{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.bar{display:grid;grid-template-columns:150px 1fr 74px;gap:10px;align-items:center;font-size:14px}
+.bar i{display:block;height:18px;border-radius:5px;background:var(--red)}
+.bar i.b{background:var(--muted);opacity:.4}
+.bar span:last-child{font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
+/* cases */
+.case{display:flex;flex-direction:column;gap:12px;text-decoration:none}
+.case .ba{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.case .ba div{border-radius:10px;padding:10px 12px;font-size:13px}
+.case .ba .b{background:color-mix(in srgb,var(--red) 9%,var(--surface))}
+.case .ba .a{background:color-mix(in srgb,var(--ok) 11%,var(--surface))}
+.case .ba b{display:block;font:600 11px var(--mono);letter-spacing:.08em}
+.case .ba .b b{color:var(--red)}.case .ba .a b{color:var(--ok)}
+.flow6{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:18px;counter-reset:s}
+.flow6 div{position:relative;padding:14px 14px 14px 16px;background:var(--soft);font-size:14px;min-width:0;border-right:2px solid var(--surface)}
+.flow6 div:first-child{border-radius:10px 0 0 10px}.flow6 div:last-child{border-radius:0 10px 10px 0;border-right:0}
+.flow6 b{display:flex;align-items:center;gap:6px;font:600 11px var(--mono);color:var(--red);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.flow6 b svg{width:16px;height:16px}
+@media (max-width:900px){.flow6{grid-template-columns:1fr 1fr}.flow6 div{border-radius:0!important;border:0;border-bottom:2px solid var(--surface)}}
+details.box summary{cursor:pointer;list-style:none}
+details.box summary::-webkit-details-marker{display:none}
+/* career */
+.stairs svg{width:100%;height:auto;display:block}
+.rung{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+.rung .who{display:flex;gap:12px;align-items:center}
+.rung .who .tico{background:var(--red)}
+@media (max-width:760px){.rung{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chips span,.chips a{font-size:13px;background:var(--soft);border-radius:6px;padding:3px 8px;text-decoration:none}
+.chips a{background:color-mix(in srgb,var(--red) 10%,transparent);color:var(--red);font-weight:600}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:1060px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.plans{grid-template-columns:1fr}}
+.plan{display:flex;flex-direction:column;gap:10px}
+.plan .tico{width:46px;height:46px}
+.plan.feat{background:var(--ink);color:#fff;border-color:var(--ink)}
+.plan.feat ul{color:var(--onink2)}.plan.feat .tico{background:var(--red)}
+.plan ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:4px}
+.plan .pr{font:800 22px var(--head)}
+.plan.feat .btn{background:var(--red)}
+/* ai */
+.ai{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.ai .out{background:#ffffff0a;border:1px solid #ffffff1f;border-radius:14px;padding:20px;font-size:14.5px;color:var(--onink2)}
+.ai .out b{color:#fff}
+.ai .q{display:flex;gap:10px;align-items:center;background:#ffffff12;border-radius:10px;padding:12px 14px;color:#fff;font-size:14.5px;margin:18px 0 10px}
+.ai .q svg{width:20px;height:20px;color:var(--hot);flex:none}
+.whyrow{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;padding:6px 0;border-bottom:1px dashed #ffffff1f}
+.whyrow i{font:600 11px var(--mono);font-style:normal;color:var(--hot);padding-top:3px}
+@media (max-width:860px){.ai{grid-template-columns:1fr}}
+/* articles */
+.artc{display:flex;flex-direction:column;padding:0;overflow:hidden;text-decoration:none}
+.artc .th{height:150px;background:var(--ink);position:relative}
+.artc .th svg{width:100%;height:100%;display:block}
+.artc .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px}
+.artc h3{font-size:17px}
+.artc .meta{display:flex;gap:12px;font-size:13px;color:var(--muted)}
+.artc .meta span{display:inline-flex;gap:5px;align-items:center}.artc .meta svg{width:14px;height:14px}
+/* detail */
 .cd{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
-.cd h1{font-size:clamp(28px,4vw,42px);font-weight:800;margin:6px 0 10px}
-.cd .lead{color:var(--muted);font-size:17px;margin:0 0 18px;max-width:64ch}
-.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
-.box h3{font-size:18px;margin-bottom:10px}
+@media (max-width:860px){.cd{grid-template-columns:1fr}}
 .mods{display:flex;flex-direction:column;gap:10px}
 .mod{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
-.mod .num{font:600 13px var(--mono);color:var(--muted);min-width:28px}
-.mod b{display:block}
-.mod small{color:var(--muted)}
-.lock{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap}
-.side{position:sticky;top:90px;display:flex;flex-direction:column;gap:14px}
-.price{font:800 30px var(--head)}
+.mod .n{width:34px;height:34px;border-radius:9px;background:var(--soft);display:grid;place-items:center;font:600 13px var(--mono);color:var(--muted)}
+.mod small{display:block;color:var(--muted);font-size:13px}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;margin:12px 0}
 .kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:600}
-.outc{margin:0;padding-left:18px}
-.outc li{margin-bottom:6px}
+.crumb{background:none;border:0;color:var(--onink2);padding:0;font-weight:600;margin-bottom:14px}
+.pagehead{padding-block:52px 40px}
+.pagehead h1{font-size:clamp(32px,4.4vw,50px);font-weight:800;margin-top:10px}
+.pagehead p{color:var(--onink2);font-size:17px;max-width:62ch;margin-top:12px}
+.pagehead .wrap{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:center}
+.pagehead .wrap>svg{width:100%;height:auto}
+@media (max-width:860px){.pagehead .wrap{grid-template-columns:1fr}.pagehead .wrap>svg{display:none}}
+.director{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.mono-mark{width:88px;height:88px;border-radius:18px;background:var(--ink);color:#fff;display:grid;place-items:center;font:800 32px var(--head);box-shadow:inset 0 -4px 0 var(--red)}
+.cta-band{background:var(--red);color:#fff;border-radius:18px;padding:34px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;overflow:hidden;position:relative}
+.cta-band svg.ic{width:64px;height:64px}
+.cta-band h2{font-size:28px}
+.cta-band .btn{background:#fff;color:#13151A}
+@media (max-width:760px){.cta-band{grid-template-columns:1fr}}
+footer{background:var(--ink);color:var(--onink2);padding-block:52px 28px}
+footer .cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:24px}
+footer h4{color:#fff;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+footer a{display:block;text-decoration:none;font-size:14.5px;padding:3px 0;color:var(--onink2)}
+footer a:hover{color:#fff}
+footer img{height:44px;background:#fff;border-radius:8px;padding:5px 9px}
+.soc{display:flex;gap:8px;margin-top:14px}
+.soc a{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#fff;padding:0}
+.soc svg{width:17px;height:17px}
+.soc .li{background:#0A66C2}.soc .yt{background:#FF0000}.soc .ig{background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF)}.soc .fb{background:#1877F2}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:9px;font-weight:600;font-size:14px;z-index:80}
 
-/* forms */
-.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:600}
-.form label.full,.form .full{grid-column:1/-1}
-.form input,.form select,.form textarea{font:inherit;font-size:15px;padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);width:100%}
-.form textarea{min-height:120px;resize:vertical}
-.err{color:var(--red);font-size:14px;min-height:20px;margin:0}
-.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
-.contact .box p{color:var(--muted);margin:0 0 12px}
-
-/* dashboard */
-.dash{display:grid;gap:16px}
-.enr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.enr h3{font-size:18px}
-.enr .acts{display:flex;gap:8px;flex-wrap:wrap}
-.empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted)}
-.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--soft)}
-td .btn{white-space:nowrap}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.tabs button{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:8px 14px;font-weight:600}
-.tabs button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+[hidden]{display:none!important}
+.modal{position:fixed;inset:0;z-index:90;background:#0009;display:grid;place-items:center;padding:16px}
+.mcard{background:var(--surface);color:var(--fg);border-radius:16px;width:min(520px,100%);padding:26px;max-height:calc(100% - 32px);overflow:auto;box-shadow:0 30px 80px -30px #000}
+.mcard.wide{width:min(900px,100%)}
+.mcard h2{font-size:24px}.mcard .lead{color:var(--muted);margin-top:4px;font-size:15px}
+.mhead{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.err{color:var(--red);font-size:14px;margin:0;min-height:0}
+.linkbtn{background:none;border:0;color:var(--red);font-weight:600;padding:0;font-size:14px}
 .note{font-size:14px;color:var(--muted);background:var(--soft);border-radius:10px;padding:12px 14px;margin:0 0 16px}
-
-footer{background:var(--ink);color:#fff;margin-top:40px}
-footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;padding-block:40px}
-footer h4{font-size:14px;color:#AEB3BE;margin-bottom:10px;font-family:var(--mono);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-footer a{color:#fff;text-decoration:none;display:block;margin-bottom:6px;font-size:15px}
-footer a:hover{text-decoration:underline}
-footer small{color:#8E94A1}
-.fbrand span{background:#fff;border-radius:6px;padding:4px 6px;display:inline-block}
-.fbrand img{height:34px;display:block}
-
-.modal{position:fixed;inset:0;z-index:60;background:#0009;display:grid;place-items:center;padding:16px}
-.modal .card{background:var(--surface);color:var(--fg);border-radius:14px;width:min(460px,100%);padding:26px;max-height:calc(100% - 32px);overflow:auto}
-.modal .card.wide{width:min(720px,100%)}
-.modal h2{font-size:24px;margin-bottom:6px}
-.modal .lead{margin:0 0 16px;color:var(--muted)}
-.linkbtn{background:none;border:0;color:var(--red);font-weight:600;padding:0}
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:70;background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;box-shadow:0 8px 30px #0005;max-width:calc(100% - 32px)}
 canvas.cert{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
-@media (max-width:860px){
-  .mast .wrap,.cd,.contact,.director{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .side{position:static}
-  footer .wrap{grid-template-columns:1fr}
-  .form{grid-template-columns:1fr}
-}
-@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.tblw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.tblw table{width:100%;border-collapse:collapse;font-size:14px}.tblw th{text-align:left;font:600 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tblw td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.mobacct{display:none}
+.menu a{padding:8px 8px;font-size:14px}.nav{gap:14px}
+@media (min-width:1061px){#navDash,#navAdmin{display:none!important}}
+@media (max-width:1060px){.mobacct{display:contents}.mobacct a{color:#fff!important}}
 </style>
-
 </head>
 <body>
-<header class="top">
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="LeanPro Academy home"><span><img src="logo.png" alt="LeanPro Academy"></span></a>
-    <nav aria-label="Main">
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#courses" data-nav="courses">Courses</a>
-      <a href="#about" data-nav="about">About</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-      <a href="#dashboard" data-nav="dashboard" id="navDash" hidden>My learning</a>
-      <a href="#admin" data-nav="admin" id="navAdmin" hidden>Admin</a>
-    </nav>
-    <div class="acct" id="acct"></div>
-    <div class="soc" data-soc></div>
-  </div>
-</header>
-
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#home" aria-label="LeanPro Academy home"><img src="logo.png" alt="LeanPro Academy"></a>
+  <nav class="menu" id="menu" aria-label="Main">
+    <a href="#home" data-n="home">Home</a><a href="#learning" data-n="learning">Learning</a><a href="#journey" data-n="journey">365 Days</a><a href="#resources" data-n="resources">Resources</a><a href="#tools" data-n="tools">Tools</a><a href="#cases" data-n="cases">Case Studies</a><a href="#career" data-n="career">Career</a><a href="#membership" data-n="membership">Membership</a><a href="#about" data-n="about">About</a><a href="#contact" data-n="contact">Contact</a><a href="#dashboard" data-n="dashboard" id="navDash" hidden>My learning</a><a href="#admin" data-n="admin" id="navAdmin" hidden>Admin</a><span id="mobAcct" class="mobacct"></span>
+  </nav>
+  <div class="acct"></div>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+</div></header>
 <main id="view"></main>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <div class="fbrand"><span><img src="logo.png" alt="LeanPro Academy"></span></div>
-      <p style="color:#C9CDD6;max-width:40ch;margin:14px 0">Professional training in Lean, Six Sigma and Operational Excellence for manufacturing teams and leaders.</p>
-      <div class="soc" data-soc></div>
-    </div>
-    <div><h4>Academy</h4><a href="#courses">Courses</a><a href="#about">About the Director</a><a href="#contact">Contact us</a></div>
-    <div><h4>Students</h4><a href="#dashboard" data-need-login>My learning</a><a href="#certificate-check">Verify a certificate</a><small>© 2026 LeanPro Academy</small></div>
+<footer><div class="wrap">
+  <div class="cols">
+    <div><img src="logo.png" alt="LeanPro Academy"><p style="margin:14px 0 0;max-width:36ch;font-size:14.5px">The practical excellence ecosystem for Lean, Six Sigma, maintenance, quality and plant leadership.</p><div class="soc" id="soc1"></div></div>
+    <div><h4>Learn</h4><a href="#learning">All courses</a><a href="#journey">365 Days of Lean</a><a href="#career">Career roadmaps</a><a href="#membership">Membership</a></div>
+    <div><h4>Resources</h4><a href="#resources">Articles</a><a href="#resources-templates">Templates</a><a href="#cases">Case studies</a></div>
+    <div><h4>Tools</h4><a href="#tools">OEE calculator</a><a href="#tools">Takt time</a><a href="#tools">Cp / Cpk</a><a href="#tools">5 Why builder</a></div>
+    <div><h4>Academy</h4><a href="#about">About</a><a href="#contact">Contact</a><a href="#certificate-check">Verify a certificate</a><a href="#dashboard">My learning</a></div>
   </div>
-</footer>
-
-<div class="modal" id="modal" hidden><div class="card" id="mcard" role="dialog" aria-modal="true"></div></div>
+  <p style="margin-top:32px;font-size:13px;border-top:1px solid #ffffff1c;padding-top:18px">© 2026 LeanPro Academy · www.leanproacademy.in</p>
+</div></footer>
+<div class="modal" id="modal" hidden><div class="mcard" id="mcard" role="dialog" aria-modal="true"></div></div>
 <div class="toast" id="toast" hidden></div>
-
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="firebase-config.js"></script>
-<script>
-(function(){
-/* ---------------- data ---------------- */
-const SOCIAL=[
- ['li','LinkedIn','https://www.linkedin.com/company/leanpro-academy','<path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/>'],
- ['yt','YouTube','https://www.youtube.com/@LeanPro_Academy','<path fill="currentColor" d="M9 7.5v9l8-4.5z"/>'],
- ['ig','Instagram','https://www.instagram.com/leanpro_academy','<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>'],
- ['fb','Facebook','https://www.facebook.com/LeanProAcademy/','<path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.25-1.46 1.5-1.46H16.6V4.46A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.96v2.24H8v3h2.5V21z"/>']];
-const socHTML=SOCIAL.map(s=>`<a class="${s[0]}" href="${s[2]}" target="_blank" rel="noopener" aria-label="${s[1]}" title="${s[1]}"><svg viewBox="0 0 24 24">${s[3]}</svg></a>`).join('');
-document.querySelectorAll('[data-soc]').forEach(e=>e.innerHTML=socHTML);
 
+<script>
 const C=(id,code,name,level,hours,aud,d,mods,out)=>({id,code,name,level,hours,aud,d,mods,out});
 const COURSES=[
- C('lean','LP-101','Lean Manufacturing Fundamentals','Foundation',12,'Operators, supervisors, engineers','The thinking behind every improvement: customer value, waste, flow and pull, explained with shop-floor examples.',
-  ['Lean thinking and the five principles','Customer value and value-added work','The 8 wastes and how to see them','Flow, pull and just-in-time','Lean metrics: lead time, WIP, throughput','Building a Lean improvement plan'],
-  ['Identify value-added and non-value-added work in any process','Spot and quantify the 8 wastes on the shop floor','Measure lead time and work-in-progress','Prepare a first improvement plan for your area']),
- C('5s','LP-102','5S & Visual Workplace','Foundation',8,'All shop-floor and office teams','A clean, organised, visual workplace where problems are obvious and standards hold.',
-  ['Why 5S comes first','Sort and Set in order','Shine and inspection','Standardise with visual controls','Sustain with audits and ownership','Visual management boards'],
-  ['Run a 5S event in a work area','Design visual controls and shadow boards','Set up a 5S audit with scoring','Keep standards alive after the event']),
- C('kaizen','LP-103','Kaizen & Structured Problem Solving','Practitioner',14,'Supervisors, engineers, team leaders','Fact-based problem solving with PDCA, 5 Why, fishbone and the A3 report.',
-  ['PDCA and the improvement cycle','Problem definition and gap analysis','Root cause: 5 Why and fishbone','Verifying causes with data','Countermeasures and trials','A3 thinking and reporting'],
-  ['Write a clear problem statement','Find and verify root causes','Run a kaizen event end to end','Present results on one A3 sheet']),
- C('yb','LP-201','Lean Six Sigma Yellow Belt','Foundation',16,'Professionals new to Six Sigma','Variation, defects and the DMAIC method, at the level needed to support improvement projects.',
-  ['Six Sigma concepts and sigma level','Defects, DPMO and yield','The DMAIC roadmap','Basic data collection and charts','Process mapping and SIPOC','Supporting a Green Belt project'],
-  ['Explain variation and its cost','Calculate DPMO, yield and sigma level','Use SIPOC and process maps','Contribute to a DMAIC project team']),
- C('gb','LP-202','Lean Six Sigma Green Belt','Advanced',40,'Engineers, managers, project leaders','Lead DMAIC projects with statistics, capability analysis and controls that last.',
-  ['Define: charter, voice of customer, CTQ','Measure: MSA and baseline data','Process capability (Cp, Cpk)','Analyse: hypothesis tests and regression','Improve: DOE basics and piloting','Control: SPC and control plans'],
-  ['Lead a DMAIC project from charter to control','Check a measurement system before trusting data','Calculate and interpret Cp and Cpk','Hold gains with control charts and plans']),
- C('qt','LP-203','Quality Tools & SPC','Practitioner',12,'Quality, production and lab teams','The seven quality tools and statistical process control for daily quality decisions.',
-  ['The seven basic quality tools','Check sheets and Pareto analysis','Histograms and stratification','Scatter diagrams','Control charts: X-bar R, p, c','Reacting to out-of-control signals'],
-  ['Choose the right tool for a quality problem','Build and read a Pareto chart','Set up and run control charts','Separate common-cause from special-cause variation']),
- C('tpm','LP-301','TPM & Maintenance Excellence','Practitioner',16,'Maintenance and production teams','Reliable equipment through OEE, autonomous maintenance and planned maintenance.',
-  ['TPM pillars and OEE','Six big losses','Autonomous maintenance steps','Planned and preventive maintenance','Breakdown analysis and MTBF / MTTR','Spare parts and maintenance KPIs'],
-  ['Calculate OEE and find the biggest loss','Start autonomous maintenance with operators','Build a preventive maintenance schedule','Track MTBF and MTTR']),
- C('vsm','LP-302','Value Stream Mapping & Flow','Practitioner',12,'Managers, planners, engineers','See the whole value stream, find delays and design a faster flow.',
-  ['Value stream thinking','Current-state map','Takt time and cycle time','Finding delays and inventory','Future-state design','Implementation plan'],
-  ['Draw a current-state value stream map','Calculate takt time and lead time','Design a future-state map','Turn the map into an action plan']),
- C('sw','LP-303','Standard Work & Productivity','Practitioner',10,'Supervisors, IE and production engineers','Stable, repeatable output through standard work, line balancing and work measurement.',
-  ['Elements of standard work','Time study and work measurement','Line balancing','Standard work combination sheet','Leader standard work','Productivity metrics'],
-  ['Conduct a time study','Balance a line to takt','Write standard work documents','Raise productivity without extra cost']),
- C('scm','LP-304','Supply Chain & Inventory Excellence','Practitioner',12,'Stores, planning and purchase teams','Keep material moving with Kanban, sound inventory policies and disciplined planning.',
-  ['Inventory types and costs','ABC and XYZ analysis','Safety stock and reorder point','Kanban and pull replenishment','FIFO and stores discipline','Supplier performance'],
-  ['Classify inventory with ABC / XYZ','Set safety stock and reorder levels','Design a Kanban loop','Reduce excess stock and shortages together']),
- C('ehs','LP-305','Safety & EHS Excellence','Foundation',10,'All employees and supervisors','Building a safety-first culture with hazard identification, permits and incident learning.',
-  ['Safety culture and leadership','Hazard identification and risk assessment','Work permits and LOTO','Near-miss and incident reporting','Root cause of incidents','Environment and housekeeping'],
-  ['Carry out a risk assessment','Apply permit-to-work and LOTO correctly','Investigate an incident to root cause','Lead a safety walk']),
- C('opex','LP-401','Operational Excellence & Daily Management','Leadership',20,'Plant leaders, managers, department heads','Bring Lean, Six Sigma, TPM and people practices together into one operating system.',
-  ['What Operational Excellence means','Policy deployment (Hoshin Kanri)','KPI trees and scorecards','Tiered daily meetings','Gemba walks and coaching','Sustaining a continuous-improvement culture'],
-  ['Cascade plant goals to team KPIs','Run tiered daily management meetings','Coach teams at the gemba','Assess and raise OpEx maturity']),
- C('ind2','LP-402','Industry 2.0: Manufacturing Basics','Foundation',10,'Growing plants and new supervisors','Getting mass-production basics right before automation: stable machines, standard methods, disciplined flow.',
-  ['From craft work to the production line','Assembly line and takt basics','Interchangeable parts and specifications','Method study and work measurement','Shift handover and production discipline','Readiness for Industry 3.0 and 4.0'],
-  ['Stabilise a production line before automating','Apply method study to a job','Run disciplined shift handovers','Assess readiness for digital manufacturing'])];
-const byId=Object.fromEntries(COURSES.map(c=>[c.id,c]));
+ C('lean','LP-101','Lean Manufacturing Fundamentals','Foundation',12,'Operators, supervisors, engineers','The thinking behind every improvement: customer value, waste, flow and pull, explained with shop-floor examples.',['Lean thinking and the five principles','Customer value and value-added work','The 8 wastes and how to see them','Flow, pull and just-in-time','Lean metrics: lead time, WIP, throughput','Building a Lean improvement plan'],['Identify value-added and non-value-added work in any process','Spot and quantify the 8 wastes on the shop floor','Measure lead time and work-in-progress','Prepare a first improvement plan for your area']),
+ C('5s','LP-102','5S & Visual Workplace','Foundation',8,'All shop-floor and office teams','A clean, organised, visual workplace where problems are obvious and standards hold.',['Why 5S comes first','Sort and Set in order','Shine and inspection','Standardise with visual controls','Sustain with audits and ownership','Visual management boards'],['Run a 5S event in a work area','Design visual controls and shadow boards','Set up a 5S audit with scoring','Keep standards alive after the event']),
+ C('kaizen','LP-103','Kaizen & Structured Problem Solving','Practitioner',14,'Supervisors, engineers, team leaders','Fact-based problem solving with PDCA, 5 Why, fishbone and the A3 report.',['PDCA and the improvement cycle','Problem definition and gap analysis','Root cause: 5 Why and fishbone','Verifying causes with data','Countermeasures and trials','A3 thinking and reporting'],['Write a clear problem statement','Find and verify root causes','Run a kaizen event end to end','Present results on one A3 sheet']),
+ C('yb','LP-201','Lean Six Sigma Yellow Belt','Foundation',16,'Professionals new to Six Sigma','Variation, defects and the DMAIC method, at the level needed to support improvement projects.',['Six Sigma concepts and sigma level','Defects, DPMO and yield','The DMAIC roadmap','Basic data collection and charts','Process mapping and SIPOC','Supporting a Green Belt project'],['Explain variation and its cost','Calculate DPMO, yield and sigma level','Use SIPOC and process maps','Contribute to a DMAIC project team']),
+ C('gb','LP-202','Lean Six Sigma Green Belt','Advanced',40,'Engineers, managers, project leaders','Lead DMAIC projects with statistics, capability analysis and controls that last.',['Define: charter, voice of customer, CTQ','Measure: MSA and baseline data','Process capability (Cp, Cpk)','Analyse: hypothesis tests and regression','Improve: DOE basics and piloting','Control: SPC and control plans'],['Lead a DMAIC project from charter to control','Check a measurement system before trusting data','Calculate and interpret Cp and Cpk','Hold gains with control charts and plans']),
+ C('qt','LP-203','Quality Tools & SPC','Practitioner',12,'Quality, production and lab teams','The seven quality tools and statistical process control for daily quality decisions.',['The seven basic quality tools','Check sheets and Pareto analysis','Histograms and stratification','Scatter diagrams','Control charts: X-bar R, p, c','Reacting to out-of-control signals'],['Choose the right tool for a quality problem','Build and read a Pareto chart','Set up and run control charts','Separate common-cause from special-cause variation']),
+ C('tpm','LP-301','TPM & Maintenance Excellence','Practitioner',16,'Maintenance and production teams','Reliable equipment through OEE, autonomous maintenance and planned maintenance.',['TPM pillars and OEE','Six big losses','Autonomous maintenance steps','Planned and preventive maintenance','Breakdown analysis and MTBF / MTTR','Spare parts and maintenance KPIs'],['Calculate OEE and find the biggest loss','Start autonomous maintenance with operators','Build a preventive maintenance schedule','Track MTBF and MTTR']),
+ C('vsm','LP-302','Value Stream Mapping & Flow','Practitioner',12,'Managers, planners, engineers','See the whole value stream, find delays and design a faster flow.',['Value stream thinking','Current-state map','Takt time and cycle time','Finding delays and inventory','Future-state design','Implementation plan'],['Draw a current-state value stream map','Calculate takt time and lead time','Design a future-state map','Turn the map into an action plan']),
+ C('sw','LP-303','Standard Work & Productivity','Practitioner',10,'Supervisors, IE and production engineers','Stable, repeatable output through standard work, line balancing and work measurement.',['Elements of standard work','Time study and work measurement','Line balancing','Standard work combination sheet','Leader standard work','Productivity metrics'],['Conduct a time study','Balance a line to takt','Write standard work documents','Raise productivity without extra cost']),
+ C('scm','LP-304','Supply Chain & Inventory Excellence','Practitioner',12,'Stores, planning and purchase teams','Keep material moving with Kanban, sound inventory policies and disciplined planning.',['Inventory types and costs','ABC and XYZ analysis','Safety stock and reorder point','Kanban and pull replenishment','FIFO and stores discipline','Supplier performance'],['Classify inventory with ABC / XYZ','Set safety stock and reorder levels','Design a Kanban loop','Reduce excess stock and shortages together']),
+ C('ehs','LP-305','Safety & EHS Excellence','Foundation',10,'All employees and supervisors','Building a safety-first culture with hazard identification, permits and incident learning.',['Safety culture and leadership','Hazard identification and risk assessment','Work permits and LOTO','Near-miss and incident reporting','Root cause of incidents','Environment and housekeeping'],['Carry out a risk assessment','Apply permit-to-work and LOTO correctly','Investigate an incident to root cause','Lead a safety walk']),
+ C('opex','LP-401','Operational Excellence & Daily Management','Leadership',20,'Plant leaders, managers, department heads','Bring Lean, Six Sigma, TPM and people practices together into one operating system.',['What Operational Excellence means','Policy deployment (Hoshin Kanri)','KPI trees and scorecards','Tiered daily meetings','Gemba walks and coaching','Sustaining a continuous-improvement culture'],['Cascade plant goals to team KPIs','Run tiered daily management meetings','Coach teams at the gemba','Assess and raise OpEx maturity']),
+ C('ind2','LP-402','Industry 2.0: Manufacturing Basics','Foundation',10,'Growing plants and new supervisors','Getting mass-production basics right before automation: stable machines, standard methods, disciplined flow.',['From craft work to the production line','Assembly line and takt basics','Interchangeable parts and specifications','Method study and work measurement','Shift handover and production discipline','Readiness for Industry 3.0 and 4.0'],['Stabilise a production line before automating','Apply method study to a job','Run disciplined shift handovers','Assess readiness for digital manufacturing'])];
 
-/* ---------------- helpers ---------------- */
-const $=s=>document.querySelector(s);
+const byId=Object.fromEntries(COURSES.map(c=>[c.id,c]));
+/* ---------- symbol library (24x24 line icons for shop-floor concepts) ---------- */
+const I={
+ flow:'<path d="M2 12h4l2-4 2 8 2-4h3"/><path d="M17 8l4 4-4 4"/>',
+ broom:'<path d="M14 3l-4 9"/><path d="M6 12h8l2 9H4z"/><path d="M8 16v5M12 16v5"/>',
+ shadow:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7v6M7 15v2" stroke-dasharray="2 2"/><path d="M12 7l2 2-2 2-2-2z"/><path d="M17 7v10"/>',
+ pdca:'<path d="M12 3a9 9 0 1 1-8.5 6"/><path d="M3 4v5h5"/><path d="M12 3v18M3 12h18" opacity=".55"/>',
+ sigma:'<path d="M18 4H6l6 8-6 8h12"/>',
+ bell:'<path d="M2 20c4 0 5-14 10-14s6 14 10 14"/><path d="M12 6v14M6 20h12" opacity=".5"/>',
+ chart:'<path d="M3 3v18h18"/><path d="M3 8h18M3 16h18" stroke-dasharray="2 3" opacity=".6"/><path d="M5 12l3-2 3 3 3-5 3 4 3-1"/>',
+ gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+ wrench:'<path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5L17 4l3 3-2.5 2.5"/>',
+ gauge:'<path d="M3.5 17a9 9 0 1 1 17 0"/><path d="M12 13l4-5"/><circle cx="12" cy="13" r="1.4"/><path d="M6 13h1.5M16.5 13H18M12 6.5V8"/>',
+ stopwatch:'<circle cx="12" cy="14" r="7"/><path d="M12 14V10M10 3h4M12 3v4M18.5 7.5l1.5-1.5"/>',
+ boxes:'<path d="M3 13h8v8H3zM13 13h8v8h-8zM8 4h8v8H8z"/>',
+ conveyor:'<rect x="2" y="15" width="20" height="5" rx="2.5"/><circle cx="6" cy="17.5" r="1"/><circle cx="12" cy="17.5" r="1"/><circle cx="18" cy="17.5" r="1"/><path d="M5 9h5v6H5zM14 7h5v8h-5z"/>',
+ kanban:'<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/><circle cx="12" cy="4.6" r=".8"/>',
+ truck:'<path d="M2 6h11v10H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+ hardhat:'<path d="M3 17h18M5 17v-3a7 7 0 0 1 14 0v3"/><path d="M10 7.5V5h4v2.5"/><path d="M12 7v6"/>',
+ shield:'<path d="M12 3l8 3.5V12c0 4.6-3.3 7.9-8 9-4.7-1.1-8-4.4-8-9V6.5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+ target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+ leader:'<circle cx="12" cy="6" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/><path d="M2 21h20"/>',
+ fishbone:'<path d="M2 12h17"/><path d="M19 12l3-3v6z"/><path d="M6 12L4 7M10 12L8 7M14 12l-2-5M6 12l-2 5M10 12l-2 5M14 12l-2 5"/>',
+ pareto:'<path d="M4 20V8M9 20v-8M14 20v-5M19 20v-3"/><path d="M4 8l5-3 5-1.5 5-.5" stroke-dasharray="2 2"/>',
+ why:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4V14"/><circle cx="12" cy="17" r=".6"/>',
+ bulb:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.3 1 2.1h5c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+ eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ book:'<path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/>',
+ cert:'<rect x="3" y="4" width="18" height="12" rx="1.5"/><circle cx="16" cy="16" r="3"/><path d="M14.5 18.5L14 22l2-1 2 1-.5-3.5M7 8h10M7 11h5"/>',
+ play:'<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/>',
+ cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+ clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+ factory:'<path d="M2 21V10l6 3.5V10l6 3.5V6l8 4v11z"/><path d="M6 17h2M11 17h2M16 17h2"/>',
+ search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>',
+ andon:'<rect x="9" y="2" width="6" height="5" rx="1"/><rect x="9" y="7" width="6" height="5" rx="1"/><rect x="9" y="12" width="6" height="5" rx="1"/><path d="M12 17v4M8 21h8"/>',
+ doc:'<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/>',
+ star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+ users:'<circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14a5 5 0 0 1 5 5v1"/>',
+ mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+ arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+ spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/>'};
+const ic=(k,cls='')=>`<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]||I.spark}</svg>`;
+const COURSE_IC={lean:'flow','5s':'broom',kaizen:'pdca',yb:'sigma',gb:'bell',qt:'chart',tpm:'gear',vsm:'layers',sw:'stopwatch',scm:'kanban',ehs:'hardhat',opex:'target',ind2:'conveyor'};
+const LV={Foundation:'#2E5E8C',Practitioner:'#1E7A46',Advanced:'#C8102E',Leadership:'#7A4BC2'};
+/* ---------- topic scenes for category cards (320x132, drawn on charcoal) ---------- */
+const W='#FFFFFF',R='#FF5A72',G='#ffffff55',D='#ffffff22';
+const SC={
+ lean:`<g fill="none" stroke-width="2.5">${[20,95,170,245].map((x,i)=>`<rect x="${x}" y="46" width="56" height="38" rx="6" stroke="${i==2?R:G}" fill="#ffffff08"/>`).join('')}${[76,151,226].map(x=>`<path d="M${x+2} 65h15" stroke="${W}"/><path d="M${x+13} 60l5 5-5 5" stroke="${W}"/>`).join('')}<path d="M20 108h280" stroke="${D}" stroke-dasharray="4 6"/><text x="198" y="70" fill="${R}" stroke="none" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">WASTE</text></g>`,
+ sigma:`<g fill="none"><path d="M30 112 C110 112 120 24 160 24 C200 24 210 112 290 112" stroke="${R}" stroke-width="3"/><path d="M160 24v88" stroke="${G}" stroke-dasharray="4 4"/>${[-3,-2,-1,1,2,3].map(k=>`<path d="M${160+k*36} 104v10" stroke="${G}" stroke-width="2"/><text x="${160+k*36}" y="128" fill="${G}" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">${k>0?'+':''}${k}σ</text>`).join('')}<path d="M52 36h236" stroke="${D}"/><text x="52" y="30" fill="${W}" font-family="IBM Plex Mono" font-size="11" font-weight="600">DMAIC</text></g>`,
+ tpm:`<g fill="none" stroke-width="2.5"><g class="gear" style="transform-origin:120px 66px"><circle cx="120" cy="66" r="30" stroke="${W}"/>${[...Array(10)].map((_,i)=>{const a=i*36*Math.PI/180;return `<path d="M${120+30*Math.cos(a)} ${66+30*Math.sin(a)}L${120+40*Math.cos(a)} ${66+40*Math.sin(a)}" stroke="${W}" stroke-width="6"/>`}).join('')}<circle cx="120" cy="66" r="9" stroke="${R}"/></g><g class="gear r" style="transform-origin:190px 82px"><circle cx="190" cy="82" r="18" stroke="${G}"/>${[...Array(8)].map((_,i)=>{const a=i*45*Math.PI/180;return `<path d="M${190+18*Math.cos(a)} ${82+18*Math.sin(a)}L${190+25*Math.cos(a)} ${82+25*Math.sin(a)}" stroke="${G}" stroke-width="5"/>`}).join('')}</g><text x="236" y="46" fill="${R}" font-family="IBM Plex Mono" font-size="11" font-weight="600">OEE 82%</text><path d="M236 58h56" stroke="${D}" stroke-width="6"/><path d="M236 58h46" stroke="${R}" stroke-width="6"/></g>`,
+ quality:`<g fill="none"><path d="M24 34h272M24 98h272" stroke="${R}" stroke-dasharray="6 5" stroke-width="1.5"/><path d="M24 66h272" stroke="${G}" stroke-width="1.5"/><polyline points="30,70 60,58 90,74 120,62 150,80 180,56 210,68 240,60 270,44 290,72" stroke="${W}" stroke-width="2.5"/>${[[30,70],[60,58],[90,74],[120,62],[150,80],[180,56],[210,68],[240,60],[290,72]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.5" fill="${W}"/>`).join('')}<circle cx="270" cy="44" r="6" fill="${R}"/><text x="28" y="28" fill="${G}" font-family="IBM Plex Mono" font-size="10">UCL</text><text x="28" y="114" fill="${G}" font-family="IBM Plex Mono" font-size="10">LCL</text></g>`,
+ prod:`<g fill="none"><rect x="14" y="88" width="292" height="16" rx="8" stroke="${G}" stroke-width="2.5"/><g class="belt">${[...Array(14)].map((_,i)=>`<path d="M${20+i*30} 96h12" stroke="${D}" stroke-width="3"/>`).join('')}</g><g class="prod" style="animation-duration:7s">${[-120,-40,40].map(x=>`<rect x="${x}" y="64" width="26" height="24" rx="3" fill="${R}"/>`).join('')}</g><rect x="140" y="20" width="56" height="44" rx="6" stroke="${W}" stroke-width="2.5" fill="#13151A"/><circle cx="185" cy="31" r="4" class="andon" fill="#3FB872"/><text x="168" y="50" fill="${W}" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">TAKT</text></g>`,
+ scm:`<g fill="none" stroke-width="2.5">${[0,1,2].map(i=>`<rect x="${40+i*58}" y="${30}" width="44" height="58" rx="5" stroke="${i==1?R:W}" fill="#ffffff08"/><path d="M${48+i*58} 46h28M${48+i*58} 56h28M${48+i*58} 66h18" stroke="${i==1?R:G}" stroke-width="2"/>`).join('')}<path d="M220 52h44v34h-44zM264 64h18l12 12v10h-30" stroke="${W}"/><circle cx="234" cy="92" r="6" stroke="${W}"/><circle cx="278" cy="92" r="6" stroke="${W}"/><path d="M40 108h170" stroke="${D}" stroke-dasharray="4 5"/><text x="40" y="122" fill="${G}" font-family="IBM Plex Mono" font-size="10">PULL · KANBAN</text></g>`,
+ ehs:`<g fill="none" stroke-width="2.5"><path d="M100 96h120M112 96v-16a48 48 0 0 1 96 0v16" stroke="${W}"/><path d="M146 42v-12h28v12" stroke="${W}"/><path d="M160 40v40" stroke="${R}"/><path d="M40 112l24-40 24 40z" stroke="${R}"/><path d="M64 88v10M64 104v1" stroke="${R}" stroke-width="3"/><path d="M240 40l40 0 0 30c0 18-12 30-20 34-8-4-20-16-20-34z" stroke="${G}"/><path d="M250 70l8 8 14-16" stroke="${W}"/></g>`,
+ lead:`<g fill="none" stroke-width="2.5"><path d="M60 110h200" stroke="${G}"/><rect x="80" y="84" width="160" height="26" rx="3" stroke="${G}" fill="#ffffff06"/><rect x="110" y="58" width="100" height="26" rx="3" stroke="${W}" fill="#ffffff0a"/><rect x="140" y="32" width="40" height="26" rx="3" stroke="${R}" fill="#FF5A7222"/><text x="160" y="50" fill="${R}" font-family="IBM Plex Mono" font-size="10" text-anchor="middle" font-weight="600">T3</text><text x="160" y="76" fill="${W}" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">TIER 2</text><text x="160" y="102" fill="${G}" font-family="IBM Plex Mono" font-size="10" text-anchor="middle">TIER 1 · SHOP FLOOR</text><circle cx="272" cy="40" r="16" stroke="${W}"/><circle cx="272" cy="40" r="8" stroke="${R}"/><circle cx="272" cy="40" r="2" fill="${R}"/></g>`};
+const CATS=[
+ {id:'lean',name:'Lean Manufacturing',ic:'flow',d:'Waste elimination, 5S, Kaizen, value stream mapping and Lean principles.',c:['lean','5s','kaizen','vsm']},
+ {id:'sigma',name:'Six Sigma',ic:'sigma',d:'DMAIC, root cause analysis, statistics and process capability.',c:['yb','gb']},
+ {id:'tpm',name:'TPM & Maintenance',ic:'gear',d:'OEE, autonomous and preventive maintenance, MTBF and MTTR.',c:['tpm']},
+ {id:'quality',name:'Quality Excellence',ic:'chart',d:'7 QC tools, SPC, audits and defect reduction.',c:['qt']},
+ {id:'prod',name:'Production Excellence',ic:'conveyor',d:'Standard work, line balancing, capacity and flow.',c:['sw','ind2','vsm']},
+ {id:'scm',name:'Supply Chain & Inventory',ic:'kanban',d:'Kanban, ABC analysis, safety stock and stores discipline.',c:['scm']},
+ {id:'ehs',name:'Safety & EHS',ic:'hardhat',d:'Risk assessment, permits, LOTO and incident learning.',c:['ehs']},
+ {id:'lead',name:'Plant Leadership',ic:'leader',d:'Daily management, KPI trees, Hoshin Kanri and coaching.',c:['opex']}];
+const PHASES=[['1–30','Lean Fundamentals','flow'],['31–60','5S & Workplace','broom'],['61–90','Kaizen & Waste','bulb'],['91–120','Problem Solving','fishbone'],['121–150','Six Sigma Basics','sigma'],['151–180','DMAIC','bell'],['181–210','TPM','gear'],['211–240','Quality Excellence','chart'],['241–270','Production Excellence','conveyor'],['271–300','Supply Chain & Inventory','kanban'],['301–330','Leadership','leader'],['331–365','Advanced OpEx','target']];
+const START=new Date('2026-11-11T00:00:00+05:30');
+const todayN=()=>Math.min(365,Math.max(1,Math.floor((Date.now()-START.getTime())/864e5)+1));
+let DAYS=null;
+fetch('days.json').then(r=>r.json()).then(d=>{DAYS=d;if(['home','journey'].includes(cur))route(true)}).catch(()=>{});
+const ARTICLES=[
+ {t:'How to run your first 5S red-tag event',c:'Lean Manufacturing',r:7,v:'s5'},
+ {t:'OEE explained: availability, performance and quality',c:'TPM',r:9,v:'oee'},
+ {t:'Writing a problem statement that leads somewhere',c:'Problem Solving',r:6,v:'a3'},
+ {t:'Cp vs Cpk: what your capability numbers really say',c:'Six Sigma',r:8,v:'cpk'},
+ {t:'Tiered daily meetings that take 15 minutes, not 60',c:'Leadership',r:6,v:'tier'},
+ {t:'Setting reorder points without guesswork',c:'Supply Chain',r:7,v:'inv'},
+ {t:'Near-miss reporting: getting people to speak up',c:'EHS',r:5,v:'safe'},
+ {t:'Line balancing to takt, step by step',c:'Production',r:8,v:'takt'},
+ {t:'Pareto analysis on rejection data',c:'Quality',r:6,v:'par'}];
+const TEMPLATES=['5 Why analysis sheet','Fishbone diagram','Kaizen sheet','A3 problem-solving report','Pareto analysis','CAPA form','8D report','SOP template','Risk assessment (HIRA)','FMEA worksheet','SMED analysis sheet','VSM icon set','5S audit checklist','Preventive maintenance planner','Production KPI dashboard','Inventory ABC analysis'];
+const CASES=[
+ {t:'Reducing changeover time on a press line',a:'Sheet-metal pressing',p:'Die change took about 50 minutes and varied widely from one change to the next.',rc:'Filming showed close to 20 minutes spent searching for clamps, bolts, tools and the next die.',im:'Die carts per die, shadow boards for clamps, marked die locations, then external preparation before stopping the press.',b:['50 min average','Varies widely'],af:['about 30 min','Predictable'],l:'Sort and Set in order delivered the first big gain before any engineering change.'},
+ {t:'Reducing packaging rejection',a:'Liquid filling and packing',p:'Bottle and carton rejections were the largest quality loss on the packing line.',rc:'Pareto showed most rejects came from cap torque and label misalignment; root causes were worn chuck inserts and no setting standard.',im:'Torque check every hour, insert replacement schedule, label guide setting marks and a one-page setting standard.',b:['High reject rate','Two main defects'],af:['Rejects roughly halved','Standard setting'],l:'Stratify reject data before acting; one or two causes usually dominate.'},
+ {t:'Improving OEE on a bottleneck machine',a:'Machining cell',p:'The bottleneck machine limited plant output but nobody knew where its time went.',rc:'Six-big-loss tracking showed minor stops and slow running hurt more than breakdowns.',im:'Daily OEE board, minor-stop log, cleaning and inspection standard, speed losses reviewed in the shift meeting.',b:['OEE unknown','Losses guessed'],af:['OEE tracked daily','Top loss visible'],l:'Measure losses before buying capacity.'},
+ {t:'Increasing production capacity without capex',a:'Assembly line',p:'Demand grew beyond line output and a second line was being proposed.',rc:'Line balance showed two stations far above takt while others waited.',im:'Time study, work redistribution to takt, fixture changes and standard work.',b:['Unbalanced stations','Waiting at others'],af:['Balanced to takt','More output per shift'],l:'Balance and stabilise before you invest.'},
+ {t:'Inventory reduction in a central store',a:'Raw material and spares store',p:'High stock value, yet frequent shortages stopped the line.',rc:'No ABC classification, the same reorder rule for every item, and duplicate locations.',im:'ABC/XYZ analysis, reorder points by class, Kanban for fast movers, single addressed locations.',b:['High stock value','Frequent shortages'],af:['Lower stock','Fewer shortages'],l:'Different items need different rules.'},
+ {t:'Preventive maintenance improvement',a:'Utility and process equipment',p:'Breakdowns kept repeating on the same equipment.',rc:'PM schedule existed only on paper; no checklists, no history.',im:'Criticality ranking, PM checklists, breakdown log with MTBF/MTTR, monthly review.',b:['Repeat breakdowns','No history'],af:['MTBF rising','Planned work up'],l:'A PM plan is only real when it is scheduled, checked and reviewed.'},
+ {t:'Manpower productivity',a:'Packing section',p:'Output per person varied a lot between shifts.',rc:'No standard work; each shift arranged material and tasks differently.',im:'Standard work combination sheets, material presentation at point of use, shift handover standard.',b:['Varies by shift','No standard'],af:['Stable output','Shared standard'],l:'Variation between shifts points to missing standards, not weak people.'},
+ {t:'Reducing plant downtime',a:'Continuous process plant',p:'Unplanned stoppages were eating into monthly output.',rc:'Downtime analysis showed a few recurring causes; most were not root-caused.',im:'Downtime categories, weekly Pareto, 5 Why on top three causes, CAPA tracking.',b:['Recurring stops','Causes unclear'],af:['Top causes closed','Fewer stops'],l:'A short weekly Pareto review beats a long monthly report.'},
+ {t:'Improving warehouse efficiency',a:'Finished goods warehouse',p:'Picking was slow and dispatch often ran late.',rc:'Fast movers stored far from dispatch; no location discipline.',im:'Slotting by velocity, location addresses, pick lists in route order, visual dispatch board.',b:['Long pick routes','Late dispatch'],af:['Shorter routes','On-time dispatch'],l:'Put the most-picked items closest to the door.'},
+ {t:'Process safety improvement',a:'Chemical batch process',p:'Several near misses during charging and transfer operations.',rc:'Permits not always followed; hazards of the task not clearly displayed.',im:'Task-based risk assessment, visual permit board, LOTO points marked, toolbox talks.',b:['Near misses','Permit gaps'],af:['Permit compliance','Hazards visible'],l:'Make the safe way the easy and visible way.'}];
+const CAREER=[
+ {t:'Engineer',s:['Process basics','Data collection','5S','Shop-floor problem solving'],l:['Communication','Teamwork'],tools:['5S','5 Why','Check sheets'],c:['lean','5s','qt']},
+ {t:'Senior Engineer',s:['Root cause analysis','SPC','OEE','Standard work'],l:['Leading small teams','Presenting data'],tools:['Fishbone','Pareto','Control charts'],c:['kaizen','tpm','yb']},
+ {t:'Assistant Manager',s:['Project management','Line balancing','Capacity planning'],l:['Coaching','Running daily meetings'],tools:['A3','VSM','Takt time'],c:['vsm','sw','yb']},
+ {t:'Manager',s:['DMAIC projects','KPI design','Budget and cost'],l:['Leading departments','Change management'],tools:['DMAIC','KPI tree','FMEA'],c:['gb','scm','ehs']},
+ {t:'Senior Manager',s:['Policy deployment','Multi-department improvement','Risk management'],l:['Building leaders','Cross-functional influence'],tools:['Hoshin Kanri','Tiered meetings','Gemba walks'],c:['opex','gb']},
+ {t:'Plant Head / Operations Leader',s:['Operating system design','Strategy to execution','P&L ownership'],l:['Culture building','Stakeholder management'],tools:['OpEx maturity model','Balanced scorecard'],c:['opex','ind2']}];
+const PLANS=[
+ {t:'Free',f:['Daily learning (365 Days)','Articles','Basic calculators']},
+ {t:'Learner',f:['Everything in Free','Video courses you enrol in','Quizzes and certificates','Templates']},
+ {t:'Professional',f:['Everything in Learner','Advanced tools','Practical projects','Learning paths'],feat:true},
+ {t:'Premium',f:['Everything in Professional','Full course library','Advanced courses','LeanPro AI assistant']},
+ {t:'Corporate',f:['Team enrolment','Team progress dashboard','Customised training','Plant-specific programmes']}];
+
+const SOC=[['li','LinkedIn','https://www.linkedin.com/company/leanpro-academy','<path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.9c0-1.17-.02-2.68-1.63-2.68-1.64 0-1.89 1.28-1.89 2.6V21h-4z"/>'],['yt','YouTube','https://www.youtube.com/@LeanPro_Academy','<path fill="currentColor" d="M9 7.5v9l8-4.5z"/>'],['ig','Instagram','https://www.instagram.com/leanpro_academy','<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>'],['fb','Facebook','https://www.facebook.com/LeanProAcademy/','<path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.25-1.46 1.5-1.46H16.6V4.46A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.96v2.24H8v3h2.5V21z"/>']];
+const socHTML=SOC.map(s=>`<a class="${s[0]}" href="${s[2]}" target="_blank" rel="noopener" aria-label="${s[1]}"><svg viewBox="0 0 24 24">${s[3]}</svg></a>`).join('');
+document.getElementById('soc1').innerHTML=socHTML;
+const CASE_IC=['stopwatch','boxes','gauge','conveyor','kanban','wrench','users','andon','truck','shield'];
+const ART_IC={s5:'broom',oee:'gauge',a3:'doc',cpk:'bell',tier:'leader',inv:'kanban',safe:'hardhat',takt:'stopwatch',par:'pareto'};
+const TPL_IC=['why','fishbone','bulb','doc','pareto','shield','doc','doc','hardhat','andon','stopwatch','layers','broom','wrench','chart','boxes'];
+const CAREER_IC=['wrench','chart','users','target','layers','factory'];
+const PLAN_IC=['book','play','star','cert','factory'];
+
+const $=s=>document.querySelector(s),view=$('#view');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const LS={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,2800)}
+document.addEventListener('click',e=>{if(e.target.closest('[data-soon]')){e.preventDefault();toast('Coming soon')}});
+$('#burger').onclick=()=>{const m=$('#menu');m.classList.toggle('open');$('#burger').setAttribute('aria-expanded',m.classList.contains('open'))};
+
+function courseCard(c){const k=COURSE_IC[c.id];return `<button class="box course" type="button" data-c="${c.id}"><span class="band" style="background:${LV[c.level]}">${ic(k,'big')}<span class="code">${c.code}</span><span class="lv">${c.level}</span></span><span class="bd"><h3>${esc(c.name)}</h3><p>${esc(c.d)}</p><span class="foot"><span>${ic('play')}${c.mods.length} lectures</span><span>${ic('clock')}${c.hours} hrs</span><span>${ic('cert')}Certificate</span></span></span></button>`}
+function bindCourses(){view.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>location.hash='course-'+b.dataset.c)}
+function catCard(c){return `<a class="box cat" href="#cat-${c.id}"><div class="art"><svg viewBox="0 0 320 132" preserveAspectRatio="xMidYMid slice">${SC[c.id]}</svg></div><div class="bd"><h3>${c.name}</h3><p>${c.d}</p><small>${c.c.length} COURSE${c.c.length>1?'S':''} →</small></div></a>`}
+function artThumb(a){const k=ART_IC[a.v];return `<svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice"><g stroke="#ffffff10">${[...Array(16)].map((_,i)=>`<path d="M${i*22} 0v150"/>`).join('')}${[...Array(8)].map((_,i)=>`<path d="M0 ${i*22}h320"/>`).join('')}</g><g transform="translate(118 33) scale(3.5)" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${I[k]}</g><circle cx="276" cy="30" r="6" fill="#FF5A72"/></svg>`}
+function artCard(a){return `<a class="box artc" href="#resources" data-soon><div class="th">${artThumb(a)}</div><div class="bd"><span class="pill red" style="align-self:flex-start">${esc(a.c)}</span><h3>${esc(a.t)}</h3><span class="meta"><span>${ic('clock')}${a.r} min read</span><span>${ic('book')}LeanPro Academy</span></span></div></a>`}
+function plansHTML(){return `<div class="plans">${PLANS.map((p,i)=>`<div class="box plan ${p.feat?'feat':''}"><span class="tico">${ic(PLAN_IC[i])}</span>${p.feat?'<span class="pill red" style="align-self:flex-start;background:#FF5A7233;color:#FF8A9A">Most popular</span>':''}<h3>${p.t}</h3><span class="pr">${p.t==='Free'?'₹0':'Coming soon'}</span><ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><button class="btn ${p.feat?'':'sec'} sm" style="margin-top:auto" type="button" data-soon>${p.t==='Corporate'?'Contact us':p.t==='Free'?'Join free':'Notify me'}</button></div>`).join('')}</div>`}
+function pageHead(eb,ick,h,p,art){return `<section class="dark pagehead"><div class="wrap"><div><span class="eyebrow">${ic(ick)}${eb}</span><h1>${h}</h1><p>${p}</p></div>${art||''}</div></section>`}
+const bigIcon=k=>`<svg viewBox="0 0 360 200"><g fill="none" stroke="#ffffff14">${[...Array(10)].map((_,i)=>`<circle cx="180" cy="100" r="${18+i*18}"/>`).join('')}</g><g transform="translate(120 40) scale(5)" fill="none" stroke="#FF5A72" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">${I[k]}</g></svg>`;
+
+/* ---------- hero: an animated production line with andon, gauges and an OEE trend ---------- */
+const HERO=`<svg viewBox="0 0 560 470" role="img" aria-label="Animated production line: material flows past machines, an andon light and an OEE gauge">
+<defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#FF8A9A"/><stop offset="1" stop-color="#C8102E"/></linearGradient><clipPath id="beltclip"><rect x="20" y="236" width="520" height="24" rx="12"/></clipPath><clipPath id="lineclip"><rect x="20" y="150" width="520" height="90"/></clipPath></defs>
+<g font-family="IBM Plex Mono,monospace" font-weight="600">
+<rect x="20" y="20" width="250" height="110" rx="14" fill="#ffffff08" stroke="#ffffff22"/>
+<text x="38" y="44" font-size="11" fill="#B6BBC6">OEE · LINE 2</text>
+<path d="M78 112 A68 68 0 0 1 214 112" fill="none" stroke="#ffffff1c" stroke-width="12" stroke-linecap="round"/>
+<path d="M78 112 A68 68 0 0 1 200 72" fill="none" stroke="url(#hg)" stroke-width="12" stroke-linecap="round"/>
+<g class="needle" style="transform-origin:146px 112px"><path d="M146 112 L146 58" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g><circle cx="146" cy="112" r="6" fill="#fff"/>
+<text x="146" y="100" font-size="20" fill="#fff" text-anchor="middle">82%</text>
+<rect x="290" y="20" width="250" height="110" rx="14" fill="#ffffff08" stroke="#ffffff22"/>
+<text x="308" y="44" font-size="11" fill="#B6BBC6">OUTPUT VS PLAN</text>
+${[0,1,2,3,4,5,6].map(i=>`<rect x="${312+i*31}" y="${112-[38,44,40,52,56,60,64][i]}" width="18" height="${[38,44,40,52,56,60,64][i]}" rx="3" fill="${i==6?'#FF5A72':'#ffffff3a'}"/>`).join('')}
+<path d="M306 62h220" stroke="#fff" stroke-dasharray="5 5" stroke-width="1.5" opacity=".6"/><text x="526" y="56" font-size="10" fill="#B6BBC6" text-anchor="end">PLAN</text>
+${[['PRESS',40],['WELD',170],['PAINT',300],['ASSEMBLY',430]].map(([t,x],i)=>`<rect x="${x}" y="160" width="96" height="60" rx="9" fill="#1C1F26" stroke="${i==1?'url(#hg)':'#ffffff33'}" stroke-width="2"/><text x="${x+48}" y="196" font-size="11" fill="#fff" text-anchor="middle">${t}</text><rect x="${x+76}" y="168" width="12" height="12" rx="3" fill="${i==1?'#FF5A72':'#3FB872'}" ${i==1?'class="andon"':''}/>`).join('')}
+<text x="218" y="150" font-size="10" fill="#FF8A9A" text-anchor="middle">ANDON · BOTTLENECK</text>
+<rect x="20" y="236" width="520" height="24" rx="12" fill="#0B0C10" stroke="#ffffff33"/>
+<g clip-path="url(#beltclip)"><g class="belt">${[...Array(20)].map((_,i)=>`<path d="M${20+i*30} 248h14" stroke="#ffffff30" stroke-width="3"/>`).join('')}</g></g>
+<g clip-path="url(#lineclip)"><g class="prod">${[-520,-400,-280,-160,-40].map(x=>`<rect x="${x}" y="218" width="26" height="18" rx="3" fill="#FF5A72"/>`).join('')}</g></g>
+<rect x="20" y="290" width="520" height="160" rx="14" fill="#ffffff08" stroke="#ffffff22"/>
+<text x="38" y="316" font-size="11" fill="#B6BBC6">KAIZEN BOARD · THIS WEEK</text>
+${[['PLAN','Reduce changeover'],['DO','Shadow board · press'],['CHECK','Setup 50 → 30 min'],['ACT','Standardise all dies']].map(([s,t],i)=>`<rect x="${38+i*126}" y="332" width="114" height="100" rx="8" fill="${i==2?'#FF5A7226':'#ffffff0c'}" stroke="${i==2?'#FF5A72':'#ffffff22'}"/><text x="${48+i*126}" y="354" font-size="11" fill="${i==2?'#FF8A9A':'#fff'}">${s}</text><foreignObject x="${46+i*126}" y="362" width="98" height="64"><div xmlns="http://www.w3.org/1999/xhtml" style="font:500 12px/1.35 Inter,Arial,sans-serif;color:#D5D8DF">${t}</div></foreignObject>`).join('')}
+</g></svg>`;
+const TERMS=[['5S','broom'],['KAIZEN','bulb'],['PDCA','pdca'],['DMAIC','sigma'],['OEE','gauge'],['KANBAN','kanban'],['TAKT','stopwatch'],['GEMBA','eye'],['SMED','wrench'],['VSM','layers'],['POKA-YOKE','shield'],['ANDON','andon'],['JIDOKA','target'],['SPC','chart'],['TPM','gear'],['HOSHIN','leader']];
+
+const routes={home,learning,journey,resources,'resources-templates':()=>resources('templates'),tools,cases,career,membership,about,contact};
+let cur='home';
+function nav(k){document.querySelectorAll('.menu a').forEach(a=>a.classList.toggle('on',a.dataset.n===k))}
+function route(keep){const h=(location.hash||'#home').slice(1);$('#menu').classList.remove('open');
+  if(h.startsWith('course-')){cur='learning';nav('learning');course(h.slice(7))}
+  else if(h.startsWith('cat-')){cur='learning';nav('learning');learning(h.slice(4))}
+  else{cur=routes[h]?h:'home';nav(cur.split('-')[0]);(routes[h]||home)()}
+  if(keep!==true)window.scrollTo(0,0)}
+addEventListener('hashchange',route);
+
+function roadHTML(){const n=todayN();return `<div class="road">${PHASES.map(([r,t,k],i)=>{const a=i*30+1,b=i==11?365:(i+1)*30;return `<div class="ph ${n>=a&&n<=b?'now':n>b?'done':''}">${ic(k)}<b>DAY ${r}</b>${t}</div>`}).join('')}</div>`}
+function todayCard(){const n=todayN();const d=DAYS&&DAYS[n-1];const dt=new Date(START.getTime()+(n-1)*864e5);
+  return `<div class="box"><span class="eyebrow">${ic('cal')}Today’s lesson</span><div class="cal"><div class="calpage"><span>DAY</span><b>${n}</b><i>${dt.toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</i></div><div><span class="pill red">${esc(d?d[0]:'Lean Fundamentals')}</span><h3 style="font-size:23px;margin-top:8px">${esc(d?d[1]:'Loading today’s lesson…')}</h3><p style="color:var(--muted);margin-top:4px">${esc(d?d[2]:'')}</p></div></div><p style="color:var(--muted);font-size:15px">${esc(d?d[3]:'')}</p>${d?`<div style="margin-top:14px;display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:10px;padding:12px 14px">${ic('target')}<span><b>Key takeaway:</b> ${esc(d[4])}</span></div>`:''}<a class="btn sm" style="margin-top:16px" href="#journey">${ic('cal')}Open the 365-day journey</a></div>`}
+
+function home(){view.innerHTML=`
+<section class="dark hero"><div class="wrap top"><div><span class="eyebrow">${ic('factory')}LeanPro Academy · Learn · Improve · Lead</span>
+<h1 style="margin-top:16px">Transform the way you <em>improve.</em></h1>
+<p class="lead">A practical learning ecosystem for Lean Manufacturing, Six Sigma, TPM, quality and plant leadership. Built from real shop-floor work, taught the way plants actually run.</p>
+<div class="cta"><a class="btn" href="#learning">${ic('play')}Explore learning</a><a class="btn ghost" href="#tools">${ic('gauge')}Explore free tools</a></div>
+<div class="chipsrow">${TERMS.slice(0,6).map(([t,k])=>`<span class="tchip">${ic(k)}${t}</span>`).join('')}</div></div>
+<div class="scene">${HERO}</div></div>
+<div class="wrap"><div class="kpis"><div>${ic('cert')}<span><b>13</b>Certified courses</span></div><div>${ic('cal')}<span><b>365</b>Days of Lean lessons</span></div><div>${ic('gauge')}<span><b>15</b>Plant tools and calculators</span></div><div>${ic('factory')}<span><b>10</b>Industry case studies</span></div></div></div>
+<div class="ticker" aria-hidden="true"><div>${[...TERMS,...TERMS].map(([t,k])=>`<span>${ic(k)}${t}</span>`).join('')}</div></div></section>
+
+<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('layers')}Learning categories</span><h2>Everything a plant team needs to improve</h2><p>Pick a discipline to see its courses. Every course has video lectures, PDF notes, a final exam and a verifiable certificate.</p></div><a class="btn sec" href="#learning">All courses ${ic('arrow')}</a></div>
+<div class="g4">${CATS.map(catCard).join('')}</div></div></section>
+
+<section class="blk alt"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('cal')}365 Days of Lean Excellence</span><h2>One day. One concept. One improvement.</h2><p>A free daily lesson for the whole year, in twelve 30-day phases.</p></div></div>
+<div class="today">${todayCard()}<div style="display:flex;flex-direction:column;gap:12px"><h3 style="font-size:18px">Daily learning roadmap</h3>${roadHTML()}</div></div></div></section>
+
+<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('star')}Featured courses</span><h2>Start with the foundations</h2></div><a class="btn sec" href="#learning">View all 13 courses ${ic('arrow')}</a></div>
+<div class="g3">${['lean','5s','gb'].map(i=>courseCard(byId[i])).join('')}</div></div></section>
+
+<section class="dark blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('gauge')}Free Lean toolkit</span><h2>Calculators and tools for the shop floor</h2><p>Free, in the browser, no login needed. Enter your own numbers and get the answer instantly.</p></div><a class="btn ghost" href="#tools">Open all tools ${ic('arrow')}</a></div>
+<div class="g4">${TOOLS.filter(t=>t.f).map(t=>`<a class="box tcard" href="#tools" data-tool="${t.id}" style="background:#ffffff08;border-color:#ffffff1f;color:#fff"><span class="tico" style="background:var(--red)">${ic(t.ic)}</span><span><h3>${t.n}</h3><p style="color:var(--onink2)">${t.d}</p></span></a>`).join('')}</div></div></section>
+
+<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('factory')}Practical industry case studies</span><h2>Real problems, real results</h2><p>Each case follows the same path: problem, current situation, root cause, improvement, results and lessons.</p></div><a class="btn sec" href="#cases">All case studies ${ic('arrow')}</a></div>
+<div class="g3">${CASES.slice(0,3).map((c,i)=>caseCard(c,i)).join('')}</div></div></section>
+
+<section class="blk alt"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('book')}Knowledge library</span><h2>Articles for people who run processes</h2></div><a class="btn sec" href="#resources">Library ${ic('arrow')}</a></div>
+<div class="g3">${ARTICLES.slice(0,3).map(artCard).join('')}</div></div></section>
+
+<section class="dark blk"><div class="wrap ai"><div><span class="eyebrow">${ic('spark')}Coming soon · LeanPro AI</span><h2 style="font-size:clamp(28px,3.4vw,38px);margin-top:10px">Describe a problem. Get a structured draft.</h2><p style="color:var(--onink2);margin-top:12px;max-width:52ch">5 Why analysis, fishbone causes, kaizen ideas, CAPA and 8D drafts, OEE improvement ideas and SOP drafts. Every draft is a starting point for your team to review, especially for safety, compliance and engineering decisions.</p>
+<div class="chipsrow">${[['5 WHY','why'],['FISHBONE','fishbone'],['CAPA','shield'],['8D','doc'],['SOP','doc'],['KAIZEN','bulb']].map(([t,k])=>`<span class="tchip">${ic(k)}${t}</span>`).join('')}</div></div>
+<div class="out"><div class="q">${ic('search')}“Cap torque rejections went up on Line 2 this week.”</div><span class="pill" style="background:#ffffff14;color:#fff;margin-bottom:8px">Sample output · 5 Why draft</span>${['Torque below specification','Capping chuck slipping on caps','Chuck inserts worn','No replacement interval for inserts','Inserts not in the PM plan'].map((x,i)=>`<div class="whyrow"><i>W${i+1}</i><span>${x}</span></div>`).join('')}<p style="margin-top:12px"><b>Countermeasures:</b> replace inserts · add to PM plan · hourly torque check on the line board.</p></div></div></section>
+
+<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('users')}Career roadmap</span><h2>From engineer to plant head</h2><p>The skills, tools and courses for each step of a manufacturing career.</p></div><a class="btn sec" href="#career">See the roadmap ${ic('arrow')}</a></div><div class="stairs">${STAIRS()}</div></div></section>
+
+<section class="blk alt"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">${ic('star')}Membership</span><h2>Learn free, go further when you are ready</h2></div><a class="btn sec" href="#membership">Compare plans ${ic('arrow')}</a></div>${plansHTML()}</div></section>
+
+<section class="blk"><div class="wrap"><div class="cta-band">${ic('factory','ic')}<div><h2>Bring LeanPro training to your plant</h2><p style="opacity:.92;margin-top:6px">Company programmes for operators, supervisors and leadership teams.</p></div><a class="btn" href="#contact">${ic('mail')}Talk to us</a></div></div></section>`;
+  bindCourses();view.querySelectorAll('[data-tool]').forEach(a=>a.onclick=()=>{pendingTool=a.dataset.tool});}
+
+function STAIRS(){const w=1200,h=300,step=w/6;return `<svg viewBox="0 0 ${w} ${h+40}" role="img" aria-label="Career staircase from Engineer to Plant Head">
+${CAREER.map((c,i)=>{const x=i*step,y=h-92-i*38;return `<rect x="${x+4}" y="${y}" width="${step-8}" height="${h-y}" rx="10" fill="${i==5?'var(--red)':'var(--surface)'}" stroke="${i==5?'var(--red)':'var(--line)'}"/>
+<g transform="translate(${x+18} ${y+14}) scale(1.2)" fill="none" stroke="${i==5?'#fff':'var(--red)'}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${I[CAREER_IC[i]]}</g>
+<text x="${x+18}" y="${y+60}" font-family="IBM Plex Mono,monospace" font-size="12" font-weight="600" fill="${i==5?'#FFD1D8':'var(--muted)'}">STEP ${i+1}</text>
+<text x="${x+18}" y="${y+82}" font-family="Manrope,Arial" font-size="${c.t.length>18?15:18}" font-weight="800" fill="${i==5?'#fff':'var(--fg)'}">${c.t.split(' / ')[0]}</text>${c.t.includes(' / ')?`<text x="${x+18}" y="${y+100}" font-family="Manrope,Arial" font-size="13" font-weight="700" fill="#fff">${c.t.split(' / ')[1]}</text>`:''}`}).join('')}
+<path d="M30 ${h+24} H${w-30}" stroke="var(--line)" stroke-width="2"/><path d="M${w-44} ${h+16} l14 8 -14 8" fill="none" stroke="var(--line)" stroke-width="2"/></svg>`}
+
+function caseCard(c,i){return `<a class="box case" href="#cases"><div style="display:flex;gap:12px;align-items:center"><span class="tico">${ic(CASE_IC[i])}</span><span class="pill">${esc(c.a)}</span></div><h3 style="font-size:19px">${esc(c.t)}</h3><p style="color:var(--muted);font-size:14.5px">${esc(c.p)}</p><div class="ba"><div class="b"><b>BEFORE</b>${esc(c.b.join(' · '))}</div><div class="a"><b>AFTER</b>${esc(c.af.join(' · '))}</div></div></a>`}
+
+function learning(cat){const sel=cat||'all';
+  view.innerHTML=pageHead('Learning','play','Courses and certifications','Video lectures, PDF notes, a final exam and a verifiable certificate for every course.',bigIcon('cert'))+`<section class="blk"><div class="wrap">
+  <div class="tabs" id="ct"><button data-k="all">${ic('layers')}All courses</button>${CATS.map(c=>`<button data-k="${c.id}">${ic(c.ic)}${c.name}</button>`).join('')}</div><div class="g3" id="cg"></div></div></section>`;
+  const draw=k=>{view.querySelectorAll('#ct button').forEach(b=>b.classList.toggle('on',b.dataset.k===k));const ids=k==='all'?COURSES.map(c=>c.id):CATS.find(c=>c.id===k).c;$('#cg').innerHTML=ids.map(i=>courseCard(byId[i])).join('');bindCourses()};
+  view.querySelectorAll('#ct button').forEach(b=>b.onclick=()=>draw(b.dataset.k));draw(sel);}
+
+function course(id){const c=byId[id];if(!c){learning();return}const k=COURSE_IC[id];
+  view.innerHTML=`<section class="dark pagehead"><div class="wrap"><div><button class="crumb" type="button" onclick="location.hash='learning'">← All courses</button><br><span class="eyebrow">${ic(k)}${c.code} · ${c.level}</span><h1>${esc(c.name)}</h1><p>${esc(c.d)}</p></div>${bigIcon(k)}</div></section>
+  <section class="blk"><div class="wrap cd"><div>
+  <div class="box" style="margin-bottom:20px"><h3 style="display:flex;gap:8px;align-items:center">${ic('target')}What you will learn</h3><ul style="margin:12px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">${c.out.map(o=>`<li>${esc(o)}</li>`).join('')}</ul></div>
+  <h3 style="font-size:20px;margin:6px 0 12px">Course lectures</h3><div class="mods">${c.mods.map((m,i)=>`<div class="mod"><span class="n">${String(i+1).padStart(2,'0')}</span><div><b>${esc(m)}</b><small>Video lecture · PDF notes</small></div><span class="pill">🔒 Enrol to unlock</span></div>`).join('')}<div class="mod"><span class="n">${ic('cert')}</span><div><b>Final exam</b><small>20 multiple-choice questions · certificate on passing</small></div><span class="pill">🔒</span></div></div></div>
+  <aside style="display:flex;flex-direction:column;gap:14px"><div class="box"><span style="font:800 26px var(--head)">Fee set by admin</span><dl class="kv"><dt>Level</dt><dd>${c.level}</dd><dt>Duration</dt><dd>${c.hours} hours</dd><dt>Lectures</dt><dd>${c.mods.length} + final exam</dd><dt>For</dt><dd>${esc(c.aud)}</dd><dt>Certificate</dt><dd>Yes, after passing the exam</dd></dl><button class="btn" style="width:100%" type="button" data-soon>${ic('play')}Enrol &amp; pay</button></div>
+  <div class="box"><h3 style="font-size:17px">Questions about this course?</h3><p style="color:var(--muted);font-size:14.5px;margin:6px 0 12px">Ask about batches, company training or fees.</p><a class="btn sec sm" href="#contact">Contact us</a></div></aside></div></section>`}
+
+function journey(){const n=todayN();
+  view.innerHTML=pageHead('365 Days of Lean Excellence','cal','A free Lean lesson every day','The journey started on 11 November 2026. Pick any day to read its lesson.',bigIcon('cal'))+`<section class="blk"><div class="wrap">${roadHTML()}
+  <div class="tool-ui" style="margin-top:22px"><div class="box"><label style="font-weight:600;font-size:14px;color:var(--muted)" for="dsel">Choose a day</label><div style="display:flex;gap:8px;margin-top:6px"><button class="btn sec sm" type="button" id="dprev" aria-label="Previous day">←</button><input id="dsel" type="number" min="1" max="365" value="${n}"><button class="btn sec sm" type="button" id="dnext" aria-label="Next day">→</button></div><button class="btn sm" style="margin-top:12px;width:100%" type="button" id="dtoday">${ic('cal')}Go to today (Day ${n})</button><div id="dlist" style="margin-top:14px;max-height:400px;overflow:auto;display:flex;flex-direction:column;gap:2px;font-size:14px"></div></div>
+  <div class="box" id="dview"></div></div></div></section>`;
+  const show=k=>{k=Math.min(365,Math.max(1,k|0));$('#dsel').value=k;const d=DAYS&&DAYS[k-1];const ph=PHASES[Math.min(11,Math.floor((k-1)/30))];
+    $('#dview').innerHTML=d?`<div style="display:flex;gap:16px;align-items:center"><span class="tico" style="width:64px;height:64px">${ic(ph[2])}</span><div><span class="eyebrow">Day ${k} · ${esc(d[0])}</span><h2 style="font-size:32px;margin-top:6px">${esc(d[1])}</h2></div></div><p style="color:var(--muted);font-size:17px;margin-top:14px">${esc(d[2])}</p><p style="margin-top:14px;font-size:16.5px;max-width:65ch">${esc(d[3])}</p><div style="margin-top:18px;display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:10px;padding:14px">${ic('target')}<span><b>Key takeaway</b><br>${esc(d[4])}</span></div>${k>n?'<p class="hint">This lesson is scheduled for later in the journey.</p>':''}`:'<p>Loading lessons…</p>';
+    const s=Math.max(1,k-6);$('#dlist').innerHTML=DAYS?DAYS.slice(s-1,s+19).map((x,i)=>`<button type="button" data-d="${s+i}" style="text-align:left;border:0;background:${s+i===k?'var(--soft)':'transparent'};color:var(--fg);padding:6px 8px;border-radius:6px"><span style="font:600 12px var(--mono);color:${s+i===k?'var(--red)':'var(--muted)'};margin-right:6px">${s+i}</span>${esc(x[1])}</button>`).join(''):'';
+    view.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>show(+b.dataset.d))};
+  $('#dsel').onchange=e=>show(+e.target.value);$('#dprev').onclick=()=>show(+$('#dsel').value-1);$('#dnext').onclick=()=>show(+$('#dsel').value+1);$('#dtoday').onclick=()=>show(n);show(n);}
+
+function resources(tab){const t=tab||'articles';
+  view.innerHTML=pageHead('Resources','book','Knowledge library and templates','Articles with reading time and category, plus templates you can download and use at work.',bigIcon('book'))+`<section class="blk"><div class="wrap">
+  <div class="tabs"><button class="${t==='articles'?'on':''}" onclick="location.hash='resources'">${ic('book')}Articles</button><button class="${t==='templates'?'on':''}" onclick="location.hash='resources-templates'">${ic('doc')}Templates</button></div>
+  ${t==='articles'?`<div class="g3">${ARTICLES.map(artCard).join('')}</div>`:`<div class="grid">${TEMPLATES.map((x,i)=>`<div class="box tcard"><span class="tico">${ic(TPL_IC[i])}</span><span style="flex:1"><h3>${x}</h3><p>Excel / PDF template</p></span><button class="btn sec sm" type="button" data-dl>Download</button></div>`).join('')}</div>`}</div></section>`}
+
+/* ---------------- tools ---------------- */
+let pendingTool=null;
+const num=v=>{const x=parseFloat(v);return isFinite(x)?x:NaN};
+const f1=x=>isFinite(x)?x.toLocaleString('en-IN',{maximumFractionDigits:1}):'—';
+const f2=x=>isFinite(x)?x.toLocaleString('en-IN',{maximumFractionDigits:2,minimumFractionDigits:2}):'—';
+const pc=x=>isFinite(x)?(x*100).toFixed(1)+'%':'—';
+function gaugeSVG(v,label){const a=Math.max(0,Math.min(1,v));const ang=Math.PI*(1-a),x=160+110*Math.cos(ang),y=150-110*Math.sin(ang);
+  return `<svg viewBox="0 0 320 180"><path d="M50 150 A110 110 0 0 1 270 150" fill="none" stroke="var(--soft)" stroke-width="20" stroke-linecap="round"/><path d="M50 150 A110 110 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}" fill="none" stroke="var(--red)" stroke-width="20" stroke-linecap="round"/><line x1="160" y1="150" x2="${(160+80*Math.cos(ang)).toFixed(1)}" y2="${(150-80*Math.sin(ang)).toFixed(1)}" stroke="var(--fg)" stroke-width="4" stroke-linecap="round"/><circle cx="160" cy="150" r="8" fill="var(--fg)"/><text x="160" y="118" text-anchor="middle" font-family="Manrope,Arial" font-weight="800" font-size="30" fill="var(--fg)">${(a*100).toFixed(1)}%</text><text x="160" y="176" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="var(--muted)">${label}</text><text x="44" y="174" font-family="IBM Plex Mono" font-size="10" fill="var(--muted)">0</text><text x="266" y="174" font-family="IBM Plex Mono" font-size="10" fill="var(--muted)">100</text></svg>`}
+const TOOLS=[
+ {id:'oee',n:'OEE calculator',ic:'gauge',f:1,d:'Availability × Performance × Quality for any machine or line.',
+  fields:[['Planned production time (min)',480],['Downtime (min)',45],['Ideal cycle time (sec / piece)',20],['Total pieces produced',1150],['Good pieces',1100]],
+  calc:v=>{const run=v[0]-v[1],A=run/v[0],P=(v[2]*v[3]/60)/run,Q=v[4]/v[3],O=A*P*Q;const loss=[['Availability',A],['Performance',P],['Quality',Q]].sort((a,b)=>a[1]-b[1])[0][0];
+   return {g:[O,'OEE'],r:[['Availability',pc(A)],['Performance',pc(P)],['Quality',pc(Q)],['OEE',pc(O),1]],h:`Biggest loss: <b>${loss}</b>. A common benchmark for world-class OEE is about 85%.`}}},
+ {id:'takt',n:'Takt time calculator',ic:'stopwatch',f:1,d:'The pace of production needed to meet customer demand.',
+  fields:[['Available time per shift (min)',480],['Planned breaks per shift (min)',60],['Shifts per day',2],['Customer demand per day (pieces)',1200],['Slowest step cycle time (sec)',48]],
+  calc:v=>{const avail=(v[0]-v[1])*v[2]*60,T=avail/v[3];return {r:[['Available time (sec/day)',f1(avail)],['Takt time (sec)',f1(T),1],['Slowest step (sec)',f1(v[4])],['Status',v[4]<=T?'Meets takt':'Above takt']],h:v[4]<=T?'The slowest step is within takt.':`The slowest step is ${f1(v[4]-T)} sec above takt. Balance work or remove waste at this step.`}}},
+ {id:'cpk',n:'Cp / Cpk calculator',ic:'bell',f:1,d:'Process capability from your specification limits and data.',
+  fields:[['Lower spec limit (LSL)',9.80],['Upper spec limit (USL)',10.20],['Process mean',10.05],['Standard deviation',0.05]],
+  calc:v=>{const cp=(v[1]-v[0])/(6*v[3]),cpu=(v[1]-v[2])/(3*v[3]),cpl=(v[2]-v[0])/(3*v[3]),cpk=Math.min(cpu,cpl);return {bell:v,r:[['Cp',f2(cp)],['Cpu',f2(cpu)],['Cpl',f2(cpl)],['Cpk',f2(cpk),1]],h:`${cpk>=1.33?'Capable (Cpk ≥ 1.33).':cpk>=1?'Marginal (1.00 to 1.33).':'Not capable (Cpk below 1.00).'} ${cp-cpk>0.2?'The process is off-centre: centring it would raise Cpk toward Cp.':''}`}}},
+ {id:'mtbf',n:'MTBF / MTTR calculator',ic:'wrench',f:1,d:'Reliability and repair speed from your breakdown log.',
+  fields:[['Total operating time (hours)',720],['Number of breakdowns',6],['Total repair time (hours)',15]],
+  calc:v=>{const mtbf=(v[0]-v[2])/v[1],mttr=v[2]/v[1],av=mtbf/(mtbf+mttr);return {g:[av,'AVAILABILITY'],r:[['MTBF (hours)',f1(mtbf),1],['MTTR (hours)',f1(mttr)],['Availability',pc(av)]],h:'MTBF here uses operating time minus repair time. Raise MTBF with preventive maintenance; cut MTTR with spares and standard repair methods.'}}},
+ {id:'eoq',n:'EOQ calculator',ic:'boxes',f:1,d:'Economic order quantity for a purchased item.',
+  fields:[['Annual demand (units)',12000],['Ordering cost per order (₹)',1500],['Holding cost per unit per year (₹)',25]],
+  calc:v=>{const q=Math.sqrt(2*v[0]*v[1]/v[2]),o=v[0]/q;return {r:[['EOQ (units)',f1(q),1],['Orders per year',f1(o)],['Days between orders',f1(365/o)],['Total yearly cost (₹)',f1(o*v[1]+q/2*v[2])]],h:'EOQ balances ordering cost against holding cost. Round to the supplier’s pack size.'}}},
+ {id:'cap',n:'Capacity calculator',ic:'conveyor',f:1,d:'Daily output a line can achieve at a given efficiency.',
+  fields:[['Shift length (min)',480],['Breaks per shift (min)',60],['Shifts per day',2],['Cycle time (sec / piece)',30],['Efficiency (%)',85]],
+  calc:v=>{const t=(v[0]-v[1])*v[2]*60,max=t/v[3],real=max*v[4]/100;return {r:[['Theoretical (pieces/day)',f1(max)],['At efficiency (pieces/day)',f1(real),1],['Per hour',f1(real/((v[0]-v[1])*v[2]/60))]],h:'Use OEE as the efficiency figure for a more realistic estimate.'}}},
+ {id:'why',n:'5 Why builder',ic:'why',f:1,d:'Write down a problem and work to its root cause.',why:1},
+ {id:'pareto',n:'Pareto analyzer',ic:'pareto',f:1,d:'Find the vital few causes in your defect or downtime data.',par:1},
+ {id:'dt',n:'Downtime analyzer',ic:'andon',d:'Downtime analysis by category.'},{id:'fish',n:'Fishbone builder',ic:'fishbone',d:'Cause-and-effect diagram.'},{id:'kz',n:'Kaizen generator',ic:'bulb',d:'Improvement ideas.'},{id:'prod',n:'Productivity calculator',ic:'factory',d:'Productivity analysis.'},{id:'spc',n:'SPC calculator',ic:'chart',d:'Control limits.'},{id:'smed',n:'SMED analyzer',ic:'stopwatch',d:'Changeover analysis.'},{id:'more',n:'More Lean calculators',ic:'layers',d:'More calculators.'}];
+function bellSVG(v){const [l,u,m,s]=v;const lo=Math.min(l,m-4*s),hi=Math.max(u,m+4*s),X=x=>20+280*(x-lo)/(hi-lo);let d='';for(let i=0;i<=80;i++){const x=m-4*s+i*8*s/80;d+=(i?'L':'M')+X(x).toFixed(1)+' '+(140-110*Math.exp(-((x-m)**2)/(2*s*s))).toFixed(1)}
+  return `<svg viewBox="0 0 320 170"><path d="${d}" fill="color-mix(in srgb,var(--red) 18%,transparent)" stroke="var(--red)" stroke-width="2.5"/><line x1="20" y1="140" x2="300" y2="140" stroke="var(--line)" stroke-width="2"/>${[[l,'LSL'],[u,'USL']].map(([x,t])=>`<line x1="${X(x)}" y1="18" x2="${X(x)}" y2="140" stroke="var(--fg)" stroke-dasharray="5 4" stroke-width="1.5"/><text x="${X(x)}" y="160" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="var(--fg)">${t}</text>`).join('')}<text x="${X(m)}" y="160" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="var(--red)">MEAN</text></svg>`}
+function tools(){const sel=pendingTool||'oee';pendingTool=null;
+  view.innerHTML=pageHead('LeanPro tools','gauge','Free plant calculators and tools','Enter your own numbers. Sample values are filled in so you can see how each tool works.',bigIcon('gauge'))+`<section class="blk"><div class="wrap">
+  <div class="tool-ui"><div class="tlist" id="tl">${TOOLS.map(t=>`<button type="button" data-t="${t.id}" ${t.f?'':'disabled'}><span class="tico">${ic(t.ic)}</span>${t.n}${t.f?'':'<span class="pill">Soon</span>'}</button>`).join('')}</div><div class="box" id="tp"></div></div></div></section>`;
+  view.querySelectorAll('#tl [data-t]').forEach(b=>b.onclick=()=>openTool(b.dataset.t));openTool(sel);}
+function openTool(id){const t=TOOLS.find(x=>x.id===id);view.querySelectorAll('#tl [data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t===id));const tp=$('#tp');
+  const head=`<div class="toolhead"><span class="tico">${ic(t.ic)}</span><div><span class="eyebrow">${t.n}</span><h3 style="font-size:22px;margin-top:4px">${t.d}</h3></div></div>`;
+  if(t.why){tp.innerHTML=head+`<div class="form"><label class="full">Problem statement<input id="w0" value="Cap torque rejections increased on Line 2 this week"></label>${['Torque below specification','Capping chuck slipping on caps','Chuck inserts are worn','No replacement interval for inserts','Inserts not included in the PM plan'].map((x,i)=>`<label class="full">Why ${i+1}?<input id="w${i+1}" value="${x}"></label>`).join('')}<label class="full">Countermeasure<input id="wc" value="Replace inserts, add them to the PM plan, hourly torque check"></label></div><div style="margin-top:16px;display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:10px;padding:14px" id="wout"></div>`;
+    const up=()=>{const v=[...Array(6)].map((_,i)=>$('#w'+i).value.trim());const last=v.slice(1).reverse().find(x=>x);$('#wout').innerHTML=`${ic('target')}<span><b>Root cause:</b> ${esc(last||'—')}<br><b>Countermeasure:</b> ${esc($('#wc').value)}<br><span class="hint" style="display:block;margin-top:6px">Check each “why” with facts at the gemba before you act.</span></span>`};tp.querySelectorAll('input').forEach(i=>i.oninput=up);up();return}
+  if(t.par){tp.innerHTML=head+`<label style="font-weight:600;font-size:13.5px;color:var(--muted)" for="pin">One cause per line: cause, count</label><textarea id="pin" style="margin-top:6px">Label misalignment, 46
+Low cap torque, 38
+Leakage, 12
+Short fill, 9
+Carton damage, 6
+Other, 4</textarea><div class="bars" id="pout"></div>`;
+    const up=()=>{const rows=$('#pin').value.split('\n').map(l=>{const m=l.split(',');return [m.slice(0,-1).join(',').trim(),num(m[m.length-1])]}).filter(r=>r[0]&&r[1]>0).sort((a,b)=>b[1]-a[1]);const tot=rows.reduce((s,r)=>s+r[1],0);let cum=0;const mx=rows[0]?rows[0][1]:1;
+      $('#pout').innerHTML=rows.length?rows.map(r=>{const prev=cum/tot;cum+=r[1];return `<div class="bar"><span>${esc(r[0])}</span><span><i class="${prev<0.8?'':'b'}" style="width:${r[1]/mx*100}%"></i></span><span>${(cum/tot*100).toFixed(0)}% cum.</span></div>`}).join('')+`<p class="hint">Red bars are the vital few causes that make up about 80% of the total (${tot} in all). Start there.</p>`:'<p class="hint">Enter at least one line as cause, count.</p>'};$('#pin').oninput=up;up();return}
+  tp.innerHTML=head+`<div class="form">${t.fields.map((f,i)=>`<label>${f[0]}<input id="f${i}" type="number" step="any" value="${f[1]}" inputmode="decimal"></label>`).join('')}</div><div class="gauge" id="tg"></div><div class="result" id="tr"></div><p class="hint" id="th"></p>`;
+  const up=()=>{const v=t.fields.map((_,i)=>num($('#f'+i).value));if(v.some(x=>!isFinite(x)||x<0)){$('#tr').innerHTML='';$('#tg').innerHTML='';$('#th').textContent='Enter a number in every field.';return}const o=t.calc(v);$('#tg').innerHTML=o.g?gaugeSVG(o.g[0],o.g[1]):o.bell?bellSVG(o.bell):'';$('#tr').innerHTML=o.r.map(r=>`<div class="${r[2]?'key':''}"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');$('#th').innerHTML=o.h};
+  tp.querySelectorAll('input').forEach(i=>i.oninput=up);up();}
+
+function cases(){const STEP=[['Problem','search'],['Current situation','eye'],['Root cause','fishbone'],['Improvement','bulb'],['Results','chart'],['Lesson','book']];
+  view.innerHTML=pageHead('Case studies','factory','Practical industry case studies','Illustrative cases built on common plant situations. Each follows six steps from problem to lesson learned.',bigIcon('fishbone'))+`<section class="blk"><div class="wrap">
+  <div style="display:flex;flex-direction:column;gap:16px">${CASES.map((c,i)=>`<details class="box" ${i===0?'open':''}><summary style="display:flex;justify-content:space-between;gap:12px;align-items:center"><div style="display:flex;gap:14px;align-items:center"><span class="tico">${ic(CASE_IC[i])}</span><div><span class="pill">${esc(c.a)}</span><h3 style="font-size:20px;margin-top:6px">${esc(c.t)}</h3></div></div><span class="pill red">Case ${i+1}</span></summary>
+  <div class="flow6">${[c.p,'Before: '+c.b.join(', '),c.rc,c.im,'After: '+c.af.join(', '),c.l].map((x,j)=>`<div><b>${ic(STEP[j][1])}${STEP[j][0]}</b>${esc(x)}</div>`).join('')}</div></details>`).join('')}</div></div></section>`}
+
+function career(){view.innerHTML=pageHead('Career roadmap','users','Manufacturing career growth path','What to learn at each step, from engineer to plant head, with the LeanPro courses that build it.',bigIcon('users'))+`<section class="blk"><div class="wrap"><div class="stairs" style="margin-bottom:26px">${STAIRS()}</div>
+  <div style="display:flex;flex-direction:column;gap:12px">${CAREER.map((c,i)=>`<div class="box rung"><div class="who"><span class="tico">${ic(CAREER_IC[i])}</span><div><span style="font:600 12px var(--mono);color:var(--red)">STEP ${i+1}</span><h3 style="font-size:18px">${c.t}</h3></div></div><div class="g3" style="gap:14px"><div><b style="font-size:13.5px">Technical skills</b><div class="chips">${c.s.map(x=>`<span>${x}</span>`).join('')}</div></div><div><b style="font-size:13.5px">Leadership skills · Lean tools</b><div class="chips">${c.l.concat(c.tools).map(x=>`<span>${x}</span>`).join('')}</div></div><div><b style="font-size:13.5px">Recommended courses</b><div class="chips">${c.c.map(x=>`<a href="#course-${x}">${byId[x].code}</a>`).join('')}</div></div></div></div>`).join('')}</div>
+  <p class="hint">Interview preparation and practical projects for each step will be added in the live website.</p></div></section>`}
+
+function membership(){view.innerHTML=pageHead('Membership','star','Plans for learners, professionals and companies','Courses can still be bought one at a time. Membership plans are planned for later; prices will be announced.',bigIcon('star'))+`<section class="blk"><div class="wrap">${plansHTML()}</div></section>`}
+
+function about(){view.innerHTML=pageHead('About','factory','About LeanPro Academy','Building India’s practical Lean and Operational Excellence learning platform: courses, daily lessons, free tools and real case studies for manufacturing professionals.',bigIcon('target'))+`<section class="blk"><div class="wrap">
+  <div class="box director"><div class="mono-mark" aria-hidden="true">AP</div><div><span class="eyebrow">${ic('leader')}Director</span><h3 style="font-size:24px;margin:6px 0">Ankitkumar Patel</h3><p style="color:var(--muted);max-width:65ch">Brings extensive experience in manufacturing operations, plant management and operational excellence, with a focus on practical improvement that teams can sustain.</p></div></div>
+  <div class="g3" style="margin-top:18px">${[['target','Mission','Make practical, high-quality Lean and Six Sigma learning available to every plant team.'],['eye','Vision','A global knowledge platform for manufacturing professionals, from the shop floor to the plant head.'],['cert','Certification','Every course ends with a certificate carrying a unique number that employers can verify online.']].map(([k,h,p])=>`<div class="box tcard"><span class="tico">${ic(k)}</span><span><h3>${h}</h3><p>${p}</p></span></div>`).join('')}</div></div></section>`}
+
+function contact(){view.innerHTML=pageHead('Contact','mail','Contact us','Questions about a course, company training or certification? Send us a message.',bigIcon('mail'))+`<section class="blk"><div class="wrap">
+  <div class="g2"><div class="box"><div class="toolhead"><span class="tico">${ic('mail')}</span><h3>Reach LeanPro Academy</h3></div><p style="color:var(--muted)">Email: <b style="user-select:all;color:var(--fg)">info@leanproacademy.in</b></p><p style="color:var(--muted);margin-top:6px">For company programmes, mention your plant size and the topics you need.</p><div class="soc">${socHTML}</div></div>
+  <form class="box form" id="cf" novalidate><label>Full name<input id="c_n" required></label><label>Email<input id="c_e" type="email" required></label><label>Mobile<input id="c_m" inputmode="tel"></label><label>Company<input id="c_o"></label><label class="full">Subject<select id="c_s"><option>Course enquiry</option><option>Company / team training</option><option>Fees and payment</option><option>Certificate</option></select></label><label class="full">Message<textarea id="c_t" placeholder="How can we help?"></textarea></label><div class="full"><button class="btn" type="submit">${ic('mail')}Send message</button></div></form></div></div></section>`;
+  $('#cf').onsubmit=e=>{e.preventDefault();toast('In the live website this message reaches your Admin inbox')}}
+
+/* ======================= LIVE LAYER: accounts, enrolment, certificates, admin, visitors ======================= */
 const fmtDate=iso=>{try{return new Date(iso).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}catch(e){return iso}};
 const inr=n=>'₹'+Number(n).toLocaleString('en-IN');
-let tt;function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,3600)}
 const modal=$('#modal'),mcard=$('#mcard');
-function openModal(html,wide){mcard.className='card'+(wide?' wide':'');mcard.innerHTML=html;modal.hidden=false;const f=mcard.querySelector('input,button');f&&f.focus()}
+function openModal(html,wide){mcard.className='mcard'+(wide?' wide':'');mcard.innerHTML=html;modal.hidden=false;const f=mcard.querySelector('input,button');f&&f.focus()}
 function closeModal(){modal.hidden=true}
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 
-/* ---------------- Firebase ---------------- */
-const FB_CONFIG=window.LP_FIREBASE_CONFIG;
+const HAS_FB=typeof firebase!=='undefined'&&window.LP_FIREBASE_CONFIG;
 const ADMIN_EMAILS=['ankit599patel@gmail.com'];
-firebase.initializeApp(FB_CONFIG);
-const fauth=firebase.auth(),fs=firebase.firestore();
-let uid=null,isAdmin=false,fbUser=null;
-const doc=p=>({set:d=>fs.doc(p).set(d),get:()=>fs.doc(p).get()});
-async function getDoc(p){try{const s=await fs.doc(p).get();return s.exists?s.data():null}catch(e){return null}}
-async function listCol(p){try{const s=await fs.collection(p).get();return s.docs.map(d=>({id:d.id,...d.data()}))}catch(e){return []}}
-
-/* state */
+let fauth=null,fs=null,fbUser=null,uid=null,isAdmin=false;
 let profile=null,access={},requests={},config={prices:{},videos:{}},session=null;
+if(HAS_FB){try{firebase.initializeApp(window.LP_FIREBASE_CONFIG);fauth=firebase.auth();fs=firebase.firestore()}catch(e){console.error(e)}}
+async function getDoc(p){if(!fs)return null;try{const s=await fs.doc(p).get();return s.exists?s.data():null}catch(e){return null}}
+async function listCol(p){if(!fs)return [];try{const s=await fs.collection(p).get();return s.docs.map(d=>({id:d.id,...d.data()}))}catch(e){return []}}
+async function setDoc(p,d,merge){if(!fs)throw new Error('offline');return fs.doc(p).set(d,merge?{merge:true}:undefined)}
 async function loadState(){
   const c=await getDoc('config/courses');if(c)config={prices:c.prices||{},videos:c.videos||{}};
   if(fbUser){uid=fbUser.uid;isAdmin=ADMIN_EMAILS.includes((fbUser.email||'').toLowerCase())&&fbUser.emailVerified;
@@ -378,21 +683,30 @@ async function loadState(){
 }
 const loggedIn=()=>!!session;
 const status=cid=>access[cid]?.status||(requests[cid]?'pending':null);
+const priceText=cid=>config.prices[cid]?inr(config.prices[cid]):'Fee on request';
 
-/* ---------------- header ---------------- */
-function renderHeader(){
-  const a=$('#acct');
-  if(loggedIn()){a.innerHTML=`<span class="who">${esc(profile.name)}</span><button class="btn sec sm" id="lo" type="button">Log out</button>`;
+/* visitor counter: one count per browser session */
+(function countVisit(){if(!fs)return;try{if(sessionStorage.getItem('lp_v'))return;sessionStorage.setItem('lp_v','1')}catch(e){}
+  const d=new Date(),k='d'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+  const inc=firebase.firestore.FieldValue.increment(1);
+  fs.doc('stats/visits').set({total:inc,[k]:inc},{merge:true}).catch(()=>{});})();
+
+/* header */
+function renderHeader(){const a=$('.acct');
+  if(loggedIn()){a.innerHTML=`<a class="btn ghost sm" href="#dashboard">My learning</a>${isAdmin?'<a class="btn ghost sm" href="#admin">Admin</a>':''}<button class="btn sm" id="lo" type="button" title="${esc(profile.name)}">Log out</button>`;
     $('#lo').onclick=async()=>{await fauth.signOut();location.hash='home';toast('You are logged out')}}
-  else{a.innerHTML=`<button class="btn sec sm" id="li" type="button">Log in</button><button class="btn sm" id="su" type="button">Create account</button>`;
+  else{a.innerHTML=`<button class="btn ghost sm" id="li" type="button">Log in</button><button class="btn sm" id="su" type="button">Sign up</button>`;
     $('#li').onclick=()=>auth('login');$('#su').onclick=()=>auth('signup')}
   $('#navDash').hidden=!loggedIn();$('#navAdmin').hidden=!isAdmin;
+  const mob=$('#mobAcct');if(mob)mob.innerHTML=loggedIn()?`<a href="#dashboard">My learning</a><a href="#home" id="lo2">Log out</a>`:`<a href="#home" id="li2">Log in</a><a href="#home" id="su2">Sign up</a>`;
+  $('#li2')&&($('#li2').onclick=e=>{e.preventDefault();auth('login')});$('#su2')&&($('#su2').onclick=e=>{e.preventDefault();auth('signup')});$('#lo2')&&($('#lo2').onclick=async e=>{e.preventDefault();await fauth.signOut();toast('You are logged out')});
 }
 const AUTH_ERR={'auth/invalid-credential':'Email or password is incorrect.','auth/wrong-password':'Email or password is incorrect.','auth/user-not-found':'No account with this email. Create an account first.','auth/email-already-in-use':'An account with this email already exists. Log in instead.','auth/weak-password':'Choose a stronger password (at least 6 characters).','auth/too-many-requests':'Too many attempts. Wait a few minutes and try again.','auth/network-request-failed':'No internet connection. Check and try again.'};
 let pendingAfter=null;
-function auth(mode,after){
+function auth(mode,after,why){
+  if(!fauth){toast('Login is not available right now. Please try again shortly.');return}
   const login=mode==='login';
-  openModal(`<h2>${login?'Log in':'Create your account'}</h2><p class="lead">${login?'Use the email and password you registered with.':'Register once to enrol in courses, watch lectures and receive certificates.'}</p>
+  openModal(`<div class="mhead"><span class="tico">${ic(login?'users':'cert')}</span><div><h2>${login?'Log in':'Create your account'}</h2><p class="lead">${why||(login?'Use the email and password you registered with.':'Register once to enrol in courses, download resources and receive certificates.')}</p></div></div>
   <form class="form" id="af" novalidate>
    ${login?'':`<label class="full">Full name<input id="a_n" autocomplete="name" required></label><label>Mobile<input id="a_m" inputmode="tel" autocomplete="tel" required></label><label>Company / College<input id="a_o" autocomplete="organization"></label>`}
    <label class="full">Email<input id="a_e" type="email" autocomplete="email" required></label>
@@ -401,7 +715,7 @@ function auth(mode,after){
    <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><button class="btn" type="submit">${login?'Log in':'Create account'}</button><button class="linkbtn" type="button" id="sw">${login?'New here? Create an account':'Already registered? Log in'}</button></div>
    ${login?'<div class="full"><button class="linkbtn" type="button" id="fp" style="color:var(--muted)">Forgot password?</button></div>':''}
   </form>`);
-  $('#sw').onclick=()=>auth(login?'signup':'login',after);
+  $('#sw').onclick=()=>auth(login?'signup':'login',after,why);
   if(login)$('#fp').onclick=async()=>{const email=($('#a_e').value||'').trim();if(!/^\S+@\S+\.\S+$/.test(email)){$('#a_err').textContent='Enter your email above, then click Forgot password.';return}
     try{await fauth.sendPasswordResetEmail(email);$('#a_err').style.color='var(--ok)';$('#a_err').textContent='Password reset link sent to '+email+'.'}catch(x){$('#a_err').textContent=AUTH_ERR[x.code]||'Could not send the reset email.'}};
   $('#af').onsubmit=async e=>{e.preventDefault();const v=id=>($('#'+id)?.value||'').trim();const err=$('#a_err');err.style.color='';
@@ -423,284 +737,150 @@ function auth(mode,after){
     }catch(x){btn.disabled=false;err.textContent=AUTH_ERR[x.code]||('Could not continue: '+(x.message||x.code));}
   };
 }
-fauth.onAuthStateChanged(async u=>{fbUser=u;await loadState();renderHeader();
-  if(u&&pendingAfter){const f=pendingAfter;pendingAfter=null;toast('Welcome, '+profile.name.split(' ')[0]);f();}else route();});
+/* login gate for downloads and members-only actions */
+function needLogin(then,why){if(loggedIn()){then();return}auth('login',then,why||'Log in to download. It is free to create an account.')}
 
-/* ---------------- views ---------------- */
-const view=$('#view');
-function nav(k){document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===k))}
-function priceText(cid){const p=config.prices[cid];return p?inr(p):'Fee on request'}
-const LVC={Foundation:'#2F6FDB',Practitioner:'#0E9F6E',Advanced:'#C8102E',Leadership:'#7C4DDB'};
-const CI={lean:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
- '5s':'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
- kaizen:'<circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/>',
- yb:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>',
- gb:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
- qt:'<path d="M3 12h4l3-7 4 14 3-7h4"/>',
- tpm:'<path d="M14.5 5.5a4 4 0 0 0 4.9 4.9L11 18.8a2.1 2.1 0 1 1-3-3l8.4-8.4"/>',
- vsm:'<path d="M4 7l5-2 6 2 5-2v12l-5 2-6-2-5 2z"/><path d="M9 5v12M15 7v12"/>',
- sw:'<circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/>',
- scm:'<rect x="4" y="11" width="7" height="7" rx="1"/><rect x="13" y="11" width="7" height="7" rx="1"/><rect x="8.5" y="4" width="7" height="7" rx="1"/>',
- ehs:'<path d="M12 3l7 3v5.5c0 4.4-3 7.8-7 9.5-4-1.7-7-5.1-7-9.5V6z"/><path d="M9 12l2 2 4-4"/>',
- opex:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7"/>',
- ind2:'<path d="M3 20V10l5 3V10l5 3V7l8 4v9z"/>'};
-const ci=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${CI[k]||CI.lean}</svg>`;
-function card(c){const st=status(c.id);
-  return `<button class="course" type="button" data-c="${c.id}" style="--lv:${LVC[c.level]}"><span class="ch"><span class="ci">${ci(c.id)}</span><span class="code">${c.code} · ${c.level}</span></span><h3>${esc(c.name)}</h3><p>${esc(c.d)}</p>
-  <ul>${c.out.slice(0,3).map(o=>`<li>${esc(o)}</li>`).join('')}</ul>
-  <span class="foot"><span>${c.mods.length} modules · ${c.hours} hrs</span>${st==='active'?'<span class="pill ok">Enrolled</span>':st==='completed'?'<span class="pill ok">Completed</span>':st==='pending'?'<span class="pill warn">Payment pending</span>':`<b>${priceText(c.id)}</b>`}</span></button>`}
-function bindCards(){view.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>location.hash='course-'+b.dataset.c)}
-function directorHTML(){return `<div class="director"><div class="mono-mark" aria-hidden="true">AP</div><div>
-  <span class="eyebrow">Director</span><h3 style="margin-top:6px">Ankitkumar Patel</h3><div class="role">Director, LeanPro Academy</div>
-  <p>Ankitkumar Patel brings extensive experience in leading large-scale manufacturing operations and driving Lean, Six Sigma and Operational Excellence transformations across plants.</p>
-  <p>He founded LeanPro Academy to make proven improvement methods practical and accessible for every professional, from the operator on the line to the leadership team.</p>
-  <div class="soc" style="margin-top:14px">${socHTML}</div></div></div>`}
-const VIZ=`<div class="viz" aria-hidden="true"><svg viewBox="0 0 520 520">
-  <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#ff4d64"/><stop offset="1" stop-color="#ff8a5c"/></linearGradient></defs>
-  <g class="ring2"><circle cx="260" cy="260" r="236" fill="none" stroke="#ffffff1a" stroke-width="1.5" stroke-dasharray="3 9"/></g>
-  <g class="ring"><circle cx="260" cy="260" r="196" fill="none" stroke="#ffffff22" stroke-width="1"/>
-   ${['DEFINE','MEASURE','ANALYSE','IMPROVE','CONTROL'].map((t,i)=>{const a=(i*72-90)*Math.PI/180,x=260+196*Math.cos(a),y=260+196*Math.sin(a);return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><circle r="34" fill="#1C1F27" stroke="${i===3?'url(#gr)':'#ffffff33'}" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600">${t[0]}</text><text text-anchor="middle" dy="52" fill="#9EA4B0" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">${t}</text></g>`}).join('')}</g>
-  <circle cx="260" cy="260" r="128" fill="#16181F" stroke="#ffffff1f"/>
-  <path d="M170 300 L215 270 L250 285 L300 230 L350 210" fill="none" stroke="url(#gr)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="350" cy="210" r="8" fill="#ff8a5c"/>
-  <text x="260" y="196" text-anchor="middle" fill="#9EA4B0" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2">PROCESS SIGMA</text>
-  <text x="260" y="340" text-anchor="middle" fill="#fff" font-family="Manrope, Arial" font-size="40" font-weight="800">3σ → 6σ</text>
- </svg>
- <div class="float f1"><b>Less waste</b>shorter lead time</div><div class="float f2"><b>OEE 85%</b>world-class target</div><div class="float f3"><b>Right first time</b>fewer defects</div></div>`;
-function home(){nav('home');
-  view.innerHTML=`<section class="hero2"><div class="wrap"><div>
-   <span class="tag"><i></i>Enrolments open · Certified programmes</span>
-   <h1>Turn your plant into a <span class="grad">benchmark of excellence.</span></h1>
-   <p class="sub">Industry-grade training in Lean Manufacturing, Six Sigma and Operational Excellence. Practical methods, video lectures and a verifiable certificate for every professional who wants to lead improvement.</p>
-   <div class="row"><a class="btn" href="#courses">Explore courses →</a><a class="btn outline-light" href="#contact">Corporate training</a></div>
-   <div class="kpis"><div><b>${COURSES.length}</b><span>Professional courses</span></div><div><b>${COURSES.reduce((s,c)=>s+c.mods.length,0)}</b><span>Video modules</span></div><div><b>4</b><span>Learning levels</span></div><div><b>100%</b><span>Verifiable certificates</span></div></div>
-  </div>${VIZ}</div>
-  <div class="marquee"><div class="track">${[...Array(2)].map(()=>['Lean Manufacturing','Six Sigma Green Belt','Total Productive Maintenance','Value Stream Mapping','5S & Visual Workplace','Kaizen','Statistical Process Control','Operational Excellence','Safety & EHS','Industry 2.0'].map(t=>`<span>${t}</span>`).join('')).join('')}</div></div></section>
-
-  <section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Programmes</span><h2>Courses built for the shop floor</h2><p>Every course shows exactly what you will learn and the results you can deliver at work.</p></div><a class="btn sec" href="#courses">View all ${COURSES.length} courses</a></div>
-   <div class="grid">${['lean','gb','tpm','vsm','opex','5s'].map(i=>card(byId[i])).join('')}</div></div></section>
-
-  <section class="band"><div class="wrap blk"><div class="sec-head"><div><span class="eyebrow">Learning path</span><h2>Grow from operator to excellence leader</h2><p>Start where you are and move up level by level.</p></div></div>
-   <div class="paths">
-    <div class="path"><div class="dot">L1</div><h4>Foundation</h4><p>Lean basics, 5S, safety and Yellow Belt.</p><small>${COURSES.filter(c=>c.level==='Foundation').length} COURSES</small></div>
-    <div class="path"><div class="dot">L2</div><h4>Practitioner</h4><p>Kaizen, SPC, TPM, VSM and standard work.</p><small>${COURSES.filter(c=>c.level==='Practitioner').length} COURSES</small></div>
-    <div class="path"><div class="dot">L3</div><h4>Advanced</h4><p>Lead DMAIC projects as a Green Belt.</p><small>${COURSES.filter(c=>c.level==='Advanced').length} COURSE</small></div>
-    <div class="path"><div class="dot">L4</div><h4>Leadership</h4><p>Run an Operational Excellence system.</p><small>${COURSES.filter(c=>c.level==='Leadership').length} COURSE</small></div>
-   </div></div></section>
-
-  <section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Why LeanPro</span><h2>Training that shows up in your results</h2></div></div>
-   <div class="why">
-    <div class="wcard"><div class="wi">${ci('lean')}</div><h4>Shop-floor first</h4><p>Every concept is explained through real manufacturing situations, not theory slides.</p></div>
-    <div class="wcard"><div class="wi">${ci('qt')}</div><h4>Video lectures, any time</h4><p>Learn module by module at your own pace from mobile or laptop.</p></div>
-    <div class="wcard"><div class="wi">${ci('gb')}</div><h4>Tools you can use tomorrow</h4><p>Templates, checklists and worked examples for immediate application.</p></div>
-    <div class="wcard"><div class="wi">${ci('ehs')}</div><h4>Verifiable certificate</h4><p>A unique certificate number that employers can verify on this website.</p></div>
-    <div class="wcard"><div class="wi">${ci('opex')}</div><h4>Led by experience</h4><p>Designed by a practitioner with extensive experience running manufacturing operations.</p></div>
-    <div class="wcard"><div class="wi">${ci('scm')}</div><h4>Corporate programmes</h4><p>Customised batches for company teams, from operators to leadership.</p></div>
-   </div></div></section>
-
-  <section class="band"><div class="wrap blk certshow"><div><canvas id="certPrev" width="1600" height="1130" aria-label="Sample LeanPro Academy certificate"></canvas></div>
-   <div><span class="eyebrow">Certification</span><h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:800;margin-top:6px">A certificate that carries weight</h2>
-    <ul class="checks"><li>Issued on successful course completion</li><li>Unique certificate number on every certificate</li><li>Online verification for employers</li><li>Download anytime from “My learning”</li></ul>
-    <a class="btn" href="#courses">Start a course</a> <a class="btn sec" href="#certificate-check" style="margin-left:6px">Verify a certificate</a></div></div></section>
-
-  <section class="blk"><div class="wrap">${directorHTML()}</div></section>
-
-  <section class="blk" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">FAQ</span><h2>Common questions</h2></div></div>
-   <div class="faq">
-    <details><summary>Who can join these courses?</summary><p>Operators, supervisors, engineers, managers and students who want to build practical improvement skills. Each course page lists who it is designed for.</p></details>
-    <details><summary>How do I get access after paying?</summary><p>Create an account, enrol in a course and complete the payment. Once payment is confirmed, the course unlocks in “My learning” with all its video lectures.</p></details>
-    <details><summary>Will I get a certificate?</summary><p>Yes. On completing the course you receive a certificate with a unique number, downloadable from your account and verifiable on this website.</p></details>
-    <details><summary>Do you train company teams?</summary><p>Yes. We run customised programmes for plants and departments. Send us your requirement from the Contact page.</p></details>
-   </div></div></section>
-
-  <section class="blk" style="padding-top:0"><div class="wrap"><div class="cta"><div><h2>Ready to lead the next improvement in your plant?</h2><p>Create your free account and choose your first course today.</p></div>
-   <div class="row"><button class="btn light" type="button" id="ctaJoin">${loggedIn()?'Go to My learning':'Create free account'}</button><a class="btn outline-light" href="#contact">Talk to our team</a></div></div></div></section>`;
-  bindCards();
-  $('#ctaJoin').onclick=()=>loggedIn()?location.hash='dashboard':auth('signup');
-  const cp=$('#certPrev');const d=()=>drawCert(cp,'Your Name','Lean Six Sigma Green Belt',fmtDate(new Date().toISOString()),'LPA-2026-SAMPLE');
-  d();document.fonts&&document.fonts.ready.then(d);logoImg.addEventListener('load',d,{once:true});
-}
-function courses(){nav('courses');
-  const lv=['All','Foundation','Practitioner','Advanced','Leadership'];
-  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Programmes</span><h2>All courses</h2><p>Open a course to see its modules, outcomes and fee.</p></div></div>
-   <div class="tabs" id="lv">${lv.map((l,i)=>`<button type="button" class="${i?'':'on'}" data-l="${l}">${l}</button>`).join('')}</div><div class="grid" id="cg"></div></div></section>`;
-  const draw=l=>{$('#cg').innerHTML=COURSES.filter(c=>l==='All'||c.level===l).map(card).join('');bindCards()};
-  view.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{view.querySelectorAll('[data-l]').forEach(x=>x.classList.toggle('on',x===b));draw(b.dataset.l)});draw('All');
-}
-function course(id){const c=byId[id];if(!c){courses();return}nav('courses');const st=status(id);const vids=config.videos[id]||[];
-  const unlocked=st==='active'||st==='completed';
-  const mods=c.mods.map((m,i)=>{const v=vids[i];
-    let r;if(!unlocked)r='<span class="lock">Locked · enrol to unlock</span>';else if(v&&v.url)r=`<a class="btn sm" href="${esc(v.url)}" target="_blank" rel="noopener">Watch lecture</a>`;else r='<span class="pill">Lecture coming soon</span>';
-    return `<div class="mod"><span class="num">${String(i+1).padStart(2,'0')}</span><div><b>${esc(m)}</b><small>Video lecture · Module ${i+1}</small></div>${r}</div>`}).join('');
+/* course page with live enrolment state */
+course=function(id){const c=byId[id];if(!c){learning();return}const k=COURSE_IC[id];const st=status(id);const vids=config.videos[id]||[];const unlocked=st==='active'||st==='completed';
+  const mods=c.mods.map((m,i)=>{const v=vids[i];let r;
+    if(!unlocked)r='<span class="pill">🔒 Enrol to unlock</span>';else if(v&&v.url)r=`<a class="btn sm" href="${esc(v.url)}" target="_blank" rel="noopener">${ic('play')}Watch</a>`;else r='<span class="pill">Coming soon</span>';
+    return `<div class="mod"><span class="n">${String(i+1).padStart(2,'0')}</span><div><b>${esc(m)}</b><small>Video lecture · PDF notes</small></div>${r}</div>`}).join('');
   let action;
-  if(st==='completed')action=`<span class="pill ok">Completed</span><button class="btn" type="button" id="certBtn">View certificate</button>`;
-  else if(st==='active')action=`<span class="pill ok">You are enrolled</span><a class="btn sec" href="#dashboard">Go to My learning</a>`;
-  else if(st==='pending')action=`<span class="pill warn">Payment pending confirmation</span><p style="margin:0;color:var(--muted);font-size:14px">Your course unlocks as soon as payment is confirmed.</p>`;
-  else action=`<button class="btn" type="button" id="enrolBtn">Enrol now</button>`;
-  view.innerHTML=`<section class="blk"><div class="wrap"><button class="crumb" type="button" onclick="location.hash='courses'">← All courses</button>
-   <div class="cd"><div><span class="eyebrow">${c.code} · ${c.level}</span><h1>${esc(c.name)}</h1><p class="lead">${esc(c.d)}</p>
-    <div class="box" style="margin-bottom:18px"><h3>What you will learn</h3><ul class="outc">${c.out.map(o=>`<li>${esc(o)}</li>`).join('')}</ul></div>
-    <h3 style="font-size:20px;margin:6px 0 12px">Course modules</h3><div class="mods">${mods}</div></div>
-   <aside class="side"><div class="box"><div class="price">${priceText(id)}</div>
-    <dl class="kv"><dt>Level</dt><dd>${c.level}</dd><dt>Duration</dt><dd>${c.hours} hours</dd><dt>Modules</dt><dd>${c.mods.length} video modules</dd><dt>For</dt><dd>${esc(c.aud)}</dd><dt>Certificate</dt><dd>Yes, on completion</dd></dl>
-    <div style="display:flex;flex-direction:column;gap:10px">${action}</div></div>
-    <div class="box"><h3>Questions about this course?</h3><p style="margin:0 0 12px;color:var(--muted);font-size:14.5px">Ask about batches, company training or fees.</p><a class="btn sec sm" href="#contact">Contact us</a></div></aside></div></div></section>`;
-  $('#enrolBtn')&&($('#enrolBtn').onclick=()=>enrol(id));
-  $('#certBtn')&&($('#certBtn').onclick=()=>showCert(id));
-}
+  if(st==='completed')action=`<span class="pill ok">✓ Completed</span><button class="btn" type="button" id="certBtn">${ic('cert')}View certificate</button>`;
+  else if(st==='active')action=`<span class="pill ok">✓ You are enrolled</span><a class="btn sec" href="#dashboard">Go to My learning</a>`;
+  else if(st==='pending')action=`<span class="pill" style="background:color-mix(in srgb,var(--amber) 18%,transparent);color:#8A6200">Payment pending confirmation</span><p style="color:var(--muted);font-size:14px">Your course unlocks as soon as payment is confirmed.</p>`;
+  else action=`<button class="btn" style="width:100%" type="button" id="enrolBtn">${ic('play')}Enrol now</button>`;
+  view.innerHTML=`<section class="dark pagehead"><div class="wrap"><div><button class="crumb" type="button" onclick="location.hash='learning'">← All courses</button><br><span class="eyebrow">${ic(k)}${c.code} · ${c.level}</span><h1>${esc(c.name)}</h1><p>${esc(c.d)}</p></div>${bigIcon(k)}</div></section>
+  <section class="blk"><div class="wrap cd"><div>
+  <div class="box" style="margin-bottom:20px"><h3 style="display:flex;gap:8px;align-items:center">${ic('target')}What you will learn</h3><ul style="margin:12px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">${c.out.map(o=>`<li>${esc(o)}</li>`).join('')}</ul></div>
+  <h3 style="font-size:20px;margin:6px 0 12px">Course lectures</h3><div class="mods">${mods}</div></div>
+  <aside style="display:flex;flex-direction:column;gap:14px"><div class="box"><span style="font:800 28px var(--head)">${priceText(id)}</span><dl class="kv"><dt>Level</dt><dd>${c.level}</dd><dt>Duration</dt><dd>${c.hours} hours</dd><dt>Lectures</dt><dd>${c.mods.length} video lectures</dd><dt>For</dt><dd>${esc(c.aud)}</dd><dt>Certificate</dt><dd>Yes, on completion</dd></dl><div style="display:flex;flex-direction:column;gap:10px">${action}</div></div>
+  <div class="box"><h3 style="font-size:17px">Questions about this course?</h3><p style="color:var(--muted);font-size:14.5px;margin:6px 0 12px">Ask about batches, company training or fees.</p><a class="btn sec sm" href="#contact">Contact us</a></div></aside></div></section>`;
+  $('#enrolBtn')&&($('#enrolBtn').onclick=()=>enrol(id));$('#certBtn')&&($('#certBtn').onclick=()=>showCert(id));};
 function enrol(id){
   if(!loggedIn()){auth('signup',()=>enrol(id));return}
   const c=byId[id];const p=config.prices[id];
-  openModal(`<h2>Enrol: ${esc(c.name)}</h2><p class="lead">Course fee: <b>${p?inr(p):'shared by our team after you submit'}</b></p>
-   <p class="note">Online card / UPI payment is being set up. For now, submit your enrolment and our team will contact you on <b>${esc(profile.mobile)}</b> with payment details. The course unlocks in “My learning” as soon as payment is confirmed.</p>
-   <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="cf" type="button">Submit enrolment</button><button class="btn sec" type="button" id="cx">Cancel</button></div>`);
+  openModal(`<div class="mhead"><span class="tico">${ic(COURSE_IC[id])}</span><div><h2>Enrol: ${esc(c.name)}</h2><p class="lead">Course fee: <b>${p?inr(p):'shared by our team after you submit'}</b></p></div></div>
+   <p class="note">Online card / UPI payment is being set up. For now, submit your enrolment and our team will contact you on <b>${esc(profile.mobile||profile.email)}</b> with payment details. The course unlocks in “My learning” as soon as payment is confirmed.</p>
+   <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="cf2" type="button">Submit enrolment</button><button class="btn sec" type="button" id="cx">Cancel</button></div>`);
   $('#cx').onclick=closeModal;
-  $('#cf').onclick=async()=>{const b=$('#cf');b.disabled=true;
-    requests={...requests,[id]:{requestedAt:new Date().toISOString(),price:p||null}};
-    const rec={name:profile.name,email:profile.email,mobile:profile.mobile,org:profile.org||'',courses:requests,updatedAt:new Date().toISOString()};
-    try{ await fs.doc('requests/'+uid).set(rec); }catch(e){b.disabled=false;toast('Could not submit. Please try again.');return}
-    closeModal();toast('Enrolment submitted. We will contact you with payment details.');route();};
-}
-function about(){nav('about');
-  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">About</span><h2>About LeanPro Academy</h2><p>LeanPro Academy offers practical, certified training in Lean Manufacturing, Six Sigma and Operational Excellence. Every course is built around real manufacturing situations so that learning turns into measurable results at work.</p></div></div>
-   ${directorHTML()}
-   <div class="grid" style="margin-top:22px">
-    <div class="box"><h3>Our approach</h3><p style="margin:0;color:var(--muted)">Concepts are taught through shop-floor cases, simple tools and clear templates that teams can use the next day.</p></div>
-    <div class="box"><h3>Who we train</h3><p style="margin:0;color:var(--muted)">Operators, supervisors, engineers, managers and plant leadership teams across manufacturing industries.</p></div>
-    <div class="box"><h3>Certification</h3><p style="margin:0;color:var(--muted)">Each course ends with a certificate carrying a unique number that employers can verify on this website.</p></div></div></div></section>`;
-}
-function contact(){nav('contact');
-  const p=profile&&loggedIn()?profile:{};
-  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Contact</span><h2>Contact us</h2><p>Questions about a course, company training or certification? Send us a message and our team will get back to you.</p></div></div>
-   <div class="contact"><div class="box"><h3>Reach LeanPro Academy</h3><p>Follow us for updates and new course announcements.</p><div class="soc">${socHTML}</div>
-    <p style="margin-top:16px">For company programmes, mention your plant size and the topics you need in the message.</p></div>
-   <form class="box form" id="cform" novalidate>
-    <label>Full name<input id="c_n" autocomplete="name" value="${esc(p.name||'')}" required></label>
-    <label>Email<input id="c_e" type="email" autocomplete="email" value="${esc(p.email||'')}" required></label>
-    <label>Mobile<input id="c_m" inputmode="tel" autocomplete="tel" value="${esc(p.mobile||'')}" required></label>
-    <label>Company / College<input id="c_o" autocomplete="organization" value="${esc(p.org||'')}"></label>
-    <label class="full">Subject<select id="c_s"><option>Course enquiry</option><option>Company / team training</option><option>Fees and payment</option><option>Certificate</option><option>Other</option></select></label>
-    <label class="full">Message<textarea id="c_t" required placeholder="How can we help?"></textarea></label>
-    <p class="err full" id="c_err" role="alert"></p>
-    <div class="full"><button class="btn" type="submit">Send message</button></div></form></div></div></section>`;
-  $('#cform').onsubmit=async e=>{e.preventDefault();const v=id=>$('#'+id).value.trim();const err=$('#c_err');
-    if(!v('c_n')){err.textContent='Enter your name.';return}
-    if(!/^\S+@\S+\.\S+$/.test(v('c_e'))){err.textContent='Enter a valid email address.';return}
-    if(!/^[0-9+ ]{10,14}$/.test(v('c_m'))){err.textContent='Enter a valid 10-digit mobile number.';return}
-    if(!v('c_t')){err.textContent='Write your message.';return}
-    err.textContent='';const b=e.submitter;b.disabled=true;
-    const msg={subject:v('c_s'),message:v('c_t'),at:new Date().toISOString()};
-    try{
-      await fs.collection('inquiries').add({name:v('c_n'),email:v('c_e').toLowerCase(),mobile:v('c_m'),org:v('c_o'),subject:msg.subject,message:msg.message,at:msg.at,uid:uid||null});
-      $('#c_t').value='';toast('Message sent. Our team will contact you soon.');
-    }catch(x){err.textContent='Could not send your message. Please try again.'}
-    b.disabled=false;};
-}
-function dashboard(){nav('dashboard');
-  if(!loggedIn()){view.innerHTML=`<section class="blk"><div class="wrap"><div class="empty"><h3>Log in to see your courses</h3><p>Your enrolled courses, lectures and certificates appear here.</p><button class="btn" type="button" id="dl">Log in</button></div></div></section>`;$('#dl').onclick=()=>auth('login');return}
-  const ids=[...new Set([...Object.keys(access),...Object.keys(requests)])].filter(i=>byId[i]);
-  const rows=ids.map(i=>{const c=byId[i],st=status(i);
-    const pill=st==='completed'?'<span class="pill ok">Completed</span>':st==='active'?'<span class="pill ok">Active</span>':'<span class="pill warn">Payment pending</span>';
-    const acts=st==='completed'?`<a class="btn sec sm" href="#course-${i}">Lectures</a><button class="btn sm" type="button" data-cert="${i}">Certificate</button>`:st==='active'?`<a class="btn sm" href="#course-${i}">Open lectures</a>`:`<a class="btn sec sm" href="#contact">Ask about payment</a>`;
-    return `<div class="enr"><div><span class="eyebrow" style="color:var(--muted)">${c.code}</span><h3>${esc(c.name)}</h3><div style="margin-top:6px">${pill}</div></div><div class="acts">${acts}</div></div>`}).join('');
-  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">My learning</span><h2>Welcome, ${esc(profile.name.split(' ')[0])}</h2><p>Your courses, lectures and certificates.</p></div><a class="btn sec" href="#courses">Browse courses</a></div>
-   <div class="dash">${rows||'<div class="empty"><h3>No courses yet</h3><p>Choose a course and enrol to start learning.</p><a class="btn" href="#courses">View courses</a></div>'}</div></div></section>`;
-  view.querySelectorAll('[data-cert]').forEach(b=>b.onclick=()=>showCert(b.dataset.cert));
+  $('#cf2').onclick=async()=>{const b=$('#cf2');b.disabled=true;
+    const nreq={...requests,[id]:{requestedAt:new Date().toISOString(),price:p||null}};
+    const rec={name:profile.name,email:profile.email,mobile:profile.mobile||'',org:profile.org||'',courses:nreq,updatedAt:new Date().toISOString()};
+    try{await setDoc('requests/'+uid,rec);requests=nreq}catch(e){b.disabled=false;toast('Could not submit. Please try again.');return}
+    closeModal();toast('Enrolment submitted. We will contact you with payment details.');route(true);};
 }
 
-/* ---------------- certificate ---------------- */
+/* my learning */
+function dashboard(){nav('dashboard');
+  if(!loggedIn()){view.innerHTML=pageHead('My learning','play','Log in to see your courses','Your enrolled courses, lectures and certificates appear here.',bigIcon('cert'))+`<section class="blk"><div class="wrap"><button class="btn" type="button" id="dl">${ic('users')}Log in</button></div></section>`;$('#dl').onclick=()=>auth('login');return}
+  const ids=[...new Set([...Object.keys(access),...Object.keys(requests)])].filter(i=>byId[i]);
+  const rows=ids.map(i=>{const c=byId[i],st=status(i);
+    const pill=st==='completed'?'<span class="pill ok">Completed</span>':st==='active'?'<span class="pill ok">Active</span>':'<span class="pill" style="background:color-mix(in srgb,var(--amber) 18%,transparent);color:#8A6200">Payment pending</span>';
+    const acts=st==='completed'?`<a class="btn sec sm" href="#course-${i}">Lectures</a><button class="btn sm" type="button" data-cert="${i}">${ic('cert')}Certificate</button>`:st==='active'?`<a class="btn sm" href="#course-${i}">${ic('play')}Open lectures</a>`:`<a class="btn sec sm" href="#contact">Ask about payment</a>`;
+    return `<div class="box" style="display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap"><div style="display:flex;gap:14px;align-items:center"><span class="tico">${ic(COURSE_IC[i])}</span><div><span style="font:600 12px var(--mono);color:var(--muted)">${c.code}</span><h3 style="font-size:19px">${esc(c.name)}</h3><div style="margin-top:6px">${pill}</div></div></div><div style="display:flex;gap:8px;flex-wrap:wrap">${acts}</div></div>`}).join('');
+  view.innerHTML=pageHead('My learning','play','Welcome, '+esc(profile.name.split(' ')[0]),'Your courses, lectures and certificates.',bigIcon('cert'))+`<section class="blk"><div class="wrap"><div style="display:flex;flex-direction:column;gap:14px">${rows||`<div class="box" style="text-align:center;padding:36px"><h3>No courses yet</h3><p style="color:var(--muted);margin:6px 0 16px">Choose a course and enrol to start learning.</p><a class="btn" href="#learning">View courses</a></div>`}</div></div></section>`;
+  view.querySelectorAll('[data-cert]').forEach(b=>b.onclick=()=>showCert(b.dataset.cert));}
+
+/* certificate */
 const logoImg=new Image();logoImg.src='logo.png';
 function drawCert(cv,name,cname,date,no){
   const W=1600,H=1130;cv.width=W;cv.height=H;const x=cv.getContext('2d');
-  x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);
-  x.strokeStyle='#15171C';x.lineWidth=14;x.strokeRect(30,30,W-60,H-60);
-  x.strokeStyle='#C8102E';x.lineWidth=3;x.strokeRect(58,58,W-116,H-116);
+  x.fillStyle='#FFFFFF';x.fillRect(0,0,W,H);x.strokeStyle='#15171C';x.lineWidth=14;x.strokeRect(30,30,W-60,H-60);x.strokeStyle='#C8102E';x.lineWidth=3;x.strokeRect(58,58,W-116,H-116);
   if(logoImg.complete&&logoImg.naturalWidth){const lw=520,lh=lw*logoImg.naturalHeight/logoImg.naturalWidth;x.drawImage(logoImg,(W-lw)/2,110,lw,lh)}
-  x.textAlign='center';x.fillStyle='#15171C';
-  x.font='600 26px "IBM Plex Mono", monospace';x.fillText('CERTIFICATE OF COMPLETION',W/2,350);
+  x.textAlign='center';x.fillStyle='#15171C';x.font='600 26px "IBM Plex Mono", monospace';x.fillText('CERTIFICATE OF COMPLETION',W/2,350);
   x.font='500 28px Inter, Arial';x.fillStyle='#5B6170';x.fillText('This is to certify that',W/2,430);
-  x.fillStyle='#15171C';x.font='700 84px "Cormorant Garamond", Georgia, serif';x.fillText(name,W/2,530);
-  x.fillStyle='#C8102E';x.fillRect(W/2-260,560,520,3);
+  x.fillStyle='#15171C';x.font='700 84px Georgia, serif';x.fillText(name,W/2,530);x.fillStyle='#C8102E';x.fillRect(W/2-260,560,520,3);
   x.fillStyle='#5B6170';x.font='500 28px Inter, Arial';x.fillText('has successfully completed the course',W/2,630);
-  x.fillStyle='#15171C';x.font='800 46px Manrope, Arial';x.fillText(cname,W/2,705);
-  x.fillStyle='#5B6170';x.font='500 26px Inter, Arial';x.fillText('Awarded on '+date,W/2,770);
-  x.textAlign='left';x.fillStyle='#15171C';x.font='italic 600 44px "Cormorant Garamond", Georgia, serif';x.fillText('Ankitkumar Patel',180,930);
+  x.fillStyle='#15171C';x.font='800 46px Manrope, Arial';x.fillText(cname,W/2,705);x.fillStyle='#5B6170';x.font='500 26px Inter, Arial';x.fillText('Awarded on '+date,W/2,770);
+  x.textAlign='left';x.fillStyle='#15171C';x.font='italic 600 44px Georgia, serif';x.fillText('Ankitkumar Patel',180,930);
   x.fillRect(180,950,380,2);x.font='600 22px Inter, Arial';x.fillText('Ankitkumar Patel',180,985);x.fillStyle='#5B6170';x.font='500 20px Inter, Arial';x.fillText('Director, LeanPro Academy',180,1015);
   x.textAlign='right';x.fillStyle='#5B6170';x.font='500 20px "IBM Plex Mono", monospace';x.fillText('Certificate No.',W-180,955);
-  x.fillStyle='#15171C';x.font='600 28px "IBM Plex Mono", monospace';x.fillText(no,W-180,995);
-  x.fillStyle='#5B6170';x.font='500 18px Inter, Arial';x.fillText('Verify on the LeanPro Academy website',W-180,1025);
-}
-function showCert(cid){const a=access[cid];if(!a||a.status!=='completed'){toast('Certificate is issued after course completion.');return}
-  const c=byId[cid];
-  openModal(`<h2>Your certificate</h2><p class="lead">${esc(c.name)} · No. ${esc(a.certNo)}</p><canvas class="cert" id="cv"></canvas>
-   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="dlc" type="button">Download certificate (PNG)</button><button class="btn sec" type="button" id="cc">Close</button></div><p class="err" id="dlerr"></p>`,true);
-  const cv=$('#cv');const draw=()=>drawCert(cv,a.name||profile.name,c.name,fmtDate(a.completedAt),a.certNo);
-  document.fonts&&document.fonts.ready.then(draw);draw();logoImg.onload=draw;
+  x.fillStyle='#15171C';x.font='600 28px "IBM Plex Mono", monospace';x.fillText(no,W-180,995);x.fillStyle='#5B6170';x.font='500 18px Inter, Arial';x.fillText('Verify at leanproacademy.in',W-180,1025);}
+function showCert(cid){const a=access[cid];if(!a||a.status!=='completed'){toast('Certificate is issued after course completion.');return}const c=byId[cid];
+  openModal(`<h2>Your certificate</h2><p class="lead">${esc(c.name)} · No. ${esc(a.certNo)}</p><canvas class="cert" id="cv"></canvas><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn" id="dlc" type="button">${ic('cert')}Download certificate (PNG)</button><button class="btn sec" type="button" id="cc">Close</button></div>`,true);
+  const cv=$('#cv');const draw=()=>drawCert(cv,a.name||profile.name,c.name,fmtDate(a.completedAt),a.certNo);document.fonts&&document.fonts.ready.then(draw);draw();logoImg.onload=draw;
   $('#cc').onclick=closeModal;
-  $('#dlc').onclick=()=>cv.toBlob(blob=>{const u=URL.createObjectURL(blob);const l=document.createElement('a');l.href=u;l.download='LeanPro_Certificate_'+a.certNo+'.png';document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)},'image/png');
-}
-async function verify(){nav('');
-  view.innerHTML=`<section class="blk"><div class="wrap" style="max-width:640px"><span class="eyebrow">Verification</span><h2 style="font-size:32px;margin:6px 0 10px">Verify a certificate</h2>
-   <p style="color:var(--muted)">Enter the certificate number printed on the certificate.</p>
-   <form class="form" id="vf"><label class="full">Certificate number<input id="v_no" placeholder="LPA-2026-XXXXX" required></label><div class="full"><button class="btn" type="submit">Verify</button></div></form><div id="vres" style="margin-top:16px"></div></div></section>`;
-  $('#vf').onsubmit=async e=>{e.preventDefault();const no=$('#v_no').value.trim().toUpperCase();const r=await getDoc('certs/'+no.replace(/[^A-Z0-9-]/g,''));
-    $('#vres').innerHTML=r?`<div class="box"><span class="pill ok">Valid certificate</span><h3 style="margin-top:10px">${esc(r.name)}</h3><p style="margin:4px 0 0;color:var(--muted)">${esc(r.course)} · Awarded ${fmtDate(r.completedAt)}</p></div>`:`<div class="box"><span class="pill red">Not found</span><p style="margin:8px 0 0;color:var(--muted)">No certificate matches this number. Check the number and try again.</p></div>`;};
-}
+  $('#dlc').onclick=()=>cv.toBlob(blob=>{const u=URL.createObjectURL(blob);const l=document.createElement('a');l.href=u;l.download='LeanPro_Certificate_'+a.certNo+'.png';document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)},'image/png');}
 
-/* ---------------- admin (owner only) ---------------- */
-let adminTab='enrol';
+/* verify */
+function verify(){nav('');
+  view.innerHTML=pageHead('Verification','shield','Verify a certificate','Enter the certificate number printed on the certificate.',bigIcon('cert'))+`<section class="blk"><div class="wrap" style="max-width:680px">
+   <form class="box form" id="vf"><label class="full">Certificate number<input id="v_no" placeholder="LPA-2026-XXXXX" required></label><div class="full"><button class="btn" type="submit">${ic('search')}Verify</button></div></form><div id="vres" style="margin-top:16px"></div></div></section>`;
+  $('#vf').onsubmit=async e=>{e.preventDefault();const no=$('#v_no').value.trim().toUpperCase();const r=await getDoc('certs/'+no.replace(/[^A-Z0-9-]/g,''));
+    $('#vres').innerHTML=r?`<div class="box"><span class="pill ok">✓ Valid certificate</span><h3 style="margin-top:10px">${esc(r.name)}</h3><p style="color:var(--muted);margin-top:4px">${esc(r.course)} · Awarded ${fmtDate(r.completedAt)}</p></div>`:`<div class="box"><span class="pill red">Not found</span><p style="margin-top:8px;color:var(--muted)">No certificate matches this number. Check the number and try again.</p></div>`;};}
+
+/* contact form saves to Admin → Messages */
+const _contact=contact;
+contact=function(){_contact();const f=$('#cf');const p=loggedIn()?profile:{};
+  $('#c_n').value=p.name||'';$('#c_e').value=p.email||'';$('#c_m').value=p.mobile||'';$('#c_o').value=p.org||'';
+  const err=document.createElement('p');err.className='err full';err.id='c_err';f.insertBefore(err,f.lastElementChild);
+  f.onsubmit=async e=>{e.preventDefault();const v=id=>$('#'+id).value.trim();
+    if(!v('c_n')){err.textContent='Enter your name.';return}
+    if(!/^\S+@\S+\.\S+$/.test(v('c_e'))){err.textContent='Enter a valid email address.';return}
+    if(v('c_m')&&!/^[0-9+ ]{10,14}$/.test(v('c_m'))){err.textContent='Enter a valid 10-digit mobile number.';return}
+    if(!v('c_t')){err.textContent='Write your message.';return}
+    err.textContent='';const b=e.submitter;b.disabled=true;
+    try{await fs.collection('inquiries').add({name:v('c_n'),email:v('c_e').toLowerCase(),mobile:v('c_m'),org:v('c_o'),subject:v('c_s'),message:v('c_t'),at:new Date().toISOString(),uid:uid||null});$('#c_t').value='';toast('Message sent. Our team will contact you soon.')}
+    catch(x){err.textContent='Could not send your message. Please try again.'}b.disabled=false;};};
+
+/* admin (owner only) */
+let adminTab='visits';
 async function admin(){nav('admin');
-  if(!isAdmin){view.innerHTML='<section class="blk"><div class="wrap"><div class="empty">This page is for the academy administrator.</div></div></section>';return}
-  view.innerHTML=`<section class="blk"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Admin</span><h2>Academy administration</h2><p>Visible only to you as the owner.</p></div></div>
-   <div class="tabs" id="at">${[['enrol','Enrolments'],['students','Students'],['inq','Messages'],['fees','Fees & lectures']].map(([k,l])=>`<button type="button" data-t="${k}" class="${k===adminTab?'on':''}">${l}</button>`).join('')}</div><div id="ab"><p style="color:var(--muted)">Loading…</p></div></div></section>`;
-  view.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{adminTab=b.dataset.t;admin()});
+  if(!isAdmin){view.innerHTML=pageHead('Admin','shield','Administrator only','This page is for the academy administrator.',bigIcon('shield'));return}
+  view.innerHTML=pageHead('Admin','shield','Academy administration','Visible only to you as the owner.',bigIcon('layers'))+`<section class="blk"><div class="wrap">
+   <div class="tabs" id="at">${[['visits','Visitors','eye'],['enrol','Enrolments','play'],['students','Students','users'],['inq','Messages','mail'],['fees','Fees & lectures','cert']].map(([k,l,i])=>`<button type="button" data-t="${k}" class="${k===adminTab?'on':''}">${ic(i)}${l}</button>`).join('')}</div><div id="ab"><p style="color:var(--muted)">Loading…</p></div></div></section>`;
+  view.querySelectorAll('#at [data-t]').forEach(b=>b.onclick=()=>{adminTab=b.dataset.t;admin()});
   const ab=$('#ab');
+  if(adminTab==='visits'){const v=await getDoc('stats/visits')||{};const d=new Date();const key=x=>'d'+x.getFullYear()+String(x.getMonth()+1).padStart(2,'0')+String(x.getDate()).padStart(2,'0');
+    const days=[...Array(14)].map((_,i)=>{const x=new Date(d.getTime()-(13-i)*864e5);return [x,v[key(x)]||0]});
+    const month=Object.entries(v).filter(([k])=>k.startsWith('d'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0'))).reduce((s,[,n])=>s+n,0);
+    const week=days.slice(7).reduce((s,[,n])=>s+n,0);const mx=Math.max(1,...days.map(x=>x[1]));
+    ab.innerHTML=`<div class="result" style="margin-top:0">${[['Today',days[13][1]],['Last 7 days',week],['This month',month],['All time',v.total||0]].map(([l,n],i)=>`<div class="${i==3?'key':''}"><span>${l}</span><b>${Number(n).toLocaleString('en-IN')}</b></div>`).join('')}</div>
+    <div class="box" style="margin-top:16px"><h3 style="font-size:17px;margin-bottom:12px">Visits, last 14 days</h3><div style="display:grid;grid-template-columns:repeat(14,1fr);gap:6px;align-items:end;height:180px">${days.map(([x,n])=>`<div style="display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end"><span style="font:600 11px var(--mono);color:var(--muted)">${n}</span><i style="display:block;width:100%;height:${Math.max(2,n/mx*130)}px;background:var(--red);border-radius:4px 4px 0 0"></i><span style="font:500 10px var(--mono);color:var(--muted)">${x.getDate()}/${x.getMonth()+1}</span></div>`).join('')}</div>
+    <p class="hint">One visit is counted per browser session. Your own visits are counted too.</p></div>`;}
   if(adminTab==='enrol'){
     const [reqs,acc]=await Promise.all([listCol('requests'),listCol('access')]);const accBy=Object.fromEntries(acc.map(a=>[a.id,a]));
     const rows=[];reqs.forEach(r=>Object.entries(r.courses||{}).forEach(([cid,q])=>{if(byId[cid])rows.push({u:r.id,r,cid,q,st:accBy[r.id]?.courses?.[cid]?.status||'pending'})}));
     rows.sort((a,b)=>(b.q.requestedAt||'').localeCompare(a.q.requestedAt||''));
-    ab.innerHTML=`<p class="note">When a student pays, click <b>Confirm payment</b> to unlock the course. After they finish, click <b>Issue certificate</b>; the certificate appears in their account and can be verified by number.</p>
-     <div class="tbl-wrap"><table><thead><tr><th>Student</th><th>Contact</th><th>Course</th><th>Requested</th><th>Status</th><th>Action</th></tr></thead><tbody>
+    ab.innerHTML=`<p class="note">When a student pays, click <b>Confirm payment</b> to unlock the course. After they finish, click <b>Issue certificate</b>; it appears in their account and can be verified by number.</p>
+     <div class="tblw"><table><thead><tr><th>Student</th><th>Contact</th><th>Course</th><th>Requested</th><th>Status</th><th>Action</th></tr></thead><tbody>
      ${rows.map((x,i)=>`<tr><td><b>${esc(x.r.name)}</b><br><small>${esc(x.r.org||'')}</small></td><td>${esc(x.r.email)}<br>${esc(x.r.mobile)}</td><td>${esc(byId[x.cid].name)}</td><td>${x.q.requestedAt?fmtDate(x.q.requestedAt):''}</td>
-      <td>${x.st==='completed'?'<span class="pill ok">Completed</span>':x.st==='active'?'<span class="pill ok">Active</span>':'<span class="pill warn">Payment pending</span>'}</td>
+      <td>${x.st==='completed'?'<span class="pill ok">Completed</span>':x.st==='active'?'<span class="pill ok">Active</span>':'<span class="pill">Payment pending</span>'}</td>
       <td>${x.st==='pending'?`<button class="btn sm" data-pay="${i}">Confirm payment</button>`:x.st==='active'?`<button class="btn sm" data-done="${i}">Issue certificate</button>`:`<button class="btn sec sm" data-mail="${i}">Email text</button>`}</td></tr>`).join('')||'<tr><td colspan="6" style="color:var(--muted)">No enrolments yet. They appear here when students enrol.</td></tr>'}
      </tbody></table></div>`;
-    const upd=async(x,patch)=>{const cur=accBy[x.u]||{courses:{}};const courses={...(cur.courses||{}),[x.cid]:{...(cur.courses||{})[x.cid],...patch}};
-      await doc('access/'+x.u).set({name:x.r.name,email:x.r.email,courses,updatedAt:new Date().toISOString()});};
+    const upd=async(x,patch)=>{const cur=accBy[x.u]||{courses:{}};const courses={...(cur.courses||{}),[x.cid]:{...(cur.courses||{})[x.cid],...patch}};await setDoc('access/'+x.u,{name:x.r.name,email:x.r.email,courses,updatedAt:new Date().toISOString()});};
     ab.querySelectorAll('[data-pay]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{await upd(rows[b.dataset.pay],{status:'active',activatedAt:new Date().toISOString()});toast('Payment confirmed. Course unlocked.');admin()}catch(e){b.disabled=false;toast('Could not update. Try again.')}});
     ab.querySelectorAll('[data-done]').forEach(b=>b.onclick=async()=>{b.disabled=true;const x=rows[b.dataset.done];const no='LPA-'+new Date().getFullYear()+'-'+Math.random().toString(36).slice(2,7).toUpperCase();const at=new Date().toISOString();
-      try{await upd(x,{status:'completed',completedAt:at,certNo:no,name:x.r.name});await doc('certs/'+no).set({name:x.r.name,course:byId[x.cid].name,completedAt:at});toast('Certificate '+no+' issued.');admin()}catch(e){b.disabled=false;toast('Could not issue. Try again.')}});
+      try{await upd(x,{status:'completed',completedAt:at,certNo:no,name:x.r.name});await setDoc('certs/'+no,{name:x.r.name,course:byId[x.cid].name,completedAt:at});toast('Certificate '+no+' issued.');admin()}catch(e){b.disabled=false;toast('Could not issue. Try again.')}});
     ab.querySelectorAll('[data-mail]').forEach(b=>b.onclick=()=>{const x=rows[b.dataset.mail];const a=accBy[x.u]?.courses?.[x.cid]||{};
       const txt=`Dear ${x.r.name},\n\nCongratulations on completing "${byId[x.cid].name}" at LeanPro Academy.\n\nYour certificate number is ${a.certNo}. You can download your certificate from "My learning" on the LeanPro Academy website and verify it using this number.\n\nBest regards,\nAnkitkumar Patel\nDirector, LeanPro Academy`;
-      openModal(`<h2>Certificate email</h2><p class="lead">To: <b>${esc(x.r.email)}</b></p><textarea id="mt" style="width:100%;min-height:220px;font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)">${esc(txt)}</textarea><div style="display:flex;gap:10px;margin-top:12px"><button class="btn" id="cp" type="button">Copy text</button><button class="btn sec" id="cx" type="button">Close</button></div>`);
-      $('#cx').onclick=closeModal;$('#cp').onclick=()=>navigator.clipboard.writeText($('#mt').value).then(()=>toast('Copied'),()=>{$('#mt').select()});});
-  }
+      openModal(`<h2>Certificate email</h2><p class="lead">To: <b>${esc(x.r.email)}</b></p><textarea id="mt" style="min-height:220px">${esc(txt)}</textarea><div style="display:flex;gap:10px;margin-top:12px"><button class="btn" id="cp" type="button">Copy text</button><button class="btn sec" id="cx" type="button">Close</button></div>`);
+      $('#cx').onclick=closeModal;$('#cp').onclick=()=>navigator.clipboard.writeText($('#mt').value).then(()=>toast('Copied'),()=>{$('#mt').select()});});}
   if(adminTab==='students'){const ps=await listCol('profiles');
-    ab.innerHTML=`<div class="tbl-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Mobile</th><th>Company / College</th><th>Registered</th></tr></thead><tbody>${ps.map(p=>`<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.email)}</td><td>${esc(p.mobile)}</td><td>${esc(p.org||'')}</td><td>${p.createdAt?fmtDate(p.createdAt):''}</td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">No students registered yet.</td></tr>'}</tbody></table></div>`}
-  if(adminTab==='inq'){const qs=await listCol('inquiries');const rows=qs.map(q=>({q,m:q}));rows.sort((a,b)=>(b.m.at||'').localeCompare(a.m.at||''));
-    ab.innerHTML=`<div class="tbl-wrap"><table><thead><tr><th>Date</th><th>From</th><th>Subject</th><th>Message</th></tr></thead><tbody>${rows.map(({q,m})=>`<tr><td>${fmtDate(m.at)}</td><td><b>${esc(q.name)}</b><br>${esc(q.email)}<br>${esc(q.mobile)}${q.org?'<br><small>'+esc(q.org)+'</small>':''}</td><td>${esc(m.subject)}</td><td style="max-width:420px">${esc(m.message)}</td></tr>`).join('')||'<tr><td colspan="4" style="color:var(--muted)">No messages yet.</td></tr>'}</tbody></table></div>`}
+    ab.innerHTML=`<div class="tblw"><table><thead><tr><th>Name</th><th>Email</th><th>Mobile</th><th>Company / College</th><th>Registered</th></tr></thead><tbody>${ps.map(p=>`<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.email)}</td><td>${esc(p.mobile)}</td><td>${esc(p.org||'')}</td><td>${p.createdAt?fmtDate(p.createdAt):''}</td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">No students registered yet.</td></tr>'}</tbody></table></div>`}
+  if(adminTab==='inq'){const qs=await listCol('inquiries');qs.sort((a,b)=>(b.at||'').localeCompare(a.at||''));
+    ab.innerHTML=`<div class="tblw"><table><thead><tr><th>Date</th><th>From</th><th>Subject</th><th>Message</th></tr></thead><tbody>${qs.map(q=>`<tr><td>${fmtDate(q.at)}</td><td><b>${esc(q.name)}</b><br>${esc(q.email)}<br>${esc(q.mobile)}${q.org?'<br><small>'+esc(q.org)+'</small>':''}</td><td>${esc(q.subject)}</td><td style="max-width:420px">${esc(q.message)}</td></tr>`).join('')||'<tr><td colspan="4" style="color:var(--muted)">No messages yet.</td></tr>'}</tbody></table></div>`}
   if(adminTab==='fees'){
-    ab.innerHTML=`<p class="note">Set the fee for each course (in ₹). Add video lecture links later, one per module; students see a “Watch lecture” button once their course is unlocked.</p>
-     <div class="dash">${COURSES.map(c=>`<div class="box"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><h3 style="margin:0">${c.code} · ${esc(c.name)}</h3>
-      <label style="display:flex;gap:8px;align-items:center;font-weight:600;font-size:14px">Fee ₹<input type="number" min="0" step="1" id="fee_${c.id}" value="${config.prices[c.id]||''}" style="width:120px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)"></label></div>
+    ab.innerHTML=`<p class="note">Set the fee for each course (in ₹) and paste lecture video links, one per module. Students see a Watch button once their course is unlocked.</p>
+     <div style="display:flex;flex-direction:column;gap:12px">${COURSES.map(c=>`<div class="box"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><h3 style="font-size:17px">${c.code} · ${esc(c.name)}</h3>
+      <label style="display:flex;gap:8px;align-items:center;font-weight:600;font-size:14px">Fee ₹<input type="number" min="0" step="1" id="fee_${c.id}" value="${config.prices[c.id]||''}" style="width:130px"></label></div>
       <details style="margin-top:10px"><summary style="cursor:pointer;font-weight:600">Lecture links (${(config.videos[c.id]||[]).filter(v=>v&&v.url).length}/${c.mods.length})</summary>
-      <div style="display:grid;gap:8px;margin-top:10px">${c.mods.map((m,i)=>`<label style="display:grid;gap:4px;font-size:13px;font-weight:600">${i+1}. ${esc(m)}<input id="vid_${c.id}_${i}" type="url" placeholder="https://…" value="${esc((config.videos[c.id]||[])[i]?.url||'')}" style="padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)"></label>`).join('')}</div></details></div>`).join('')}</div>
+      <div style="display:grid;gap:8px;margin-top:10px">${c.mods.map((m,i)=>`<label style="display:grid;gap:4px;font-size:13px;font-weight:600">${i+1}. ${esc(m)}<input id="vid_${c.id}_${i}" type="url" placeholder="https://youtu.be/…" value="${esc((config.videos[c.id]||[])[i]?.url||'')}"></label>`).join('')}</div></details></div>`).join('')}</div>
      <div style="margin-top:16px"><button class="btn" id="savecfg" type="button">Save fees and lectures</button></div>`;
     $('#savecfg').onclick=async()=>{const b=$('#savecfg');b.disabled=true;const prices={},videos={};
       COURSES.forEach(c=>{const f=Number($('#fee_'+c.id).value);if(f>0)prices[c.id]=f;videos[c.id]=c.mods.map((m,i)=>({url:$('#vid_'+c.id+'_'+i).value.trim()}))});
-      try{await doc('config/courses').set({prices,videos,updatedAt:new Date().toISOString()});config={prices,videos};toast('Saved')}catch(e){toast('Could not save. Try again.')}b.disabled=false;};
-  }
+      try{await setDoc('config/courses',{prices,videos,updatedAt:new Date().toISOString()});config={prices,videos};toast('Saved')}catch(e){toast('Could not save. Try again.')}b.disabled=false;};}
 }
 
-/* ---------------- router ---------------- */
-function route(){const h=location.hash.slice(1)||'home';
-  if(h==='courses')courses();else if(h.startsWith('course-'))course(h.slice(7));else if(h==='about')about();else if(h==='contact')contact();
-  else if(h==='dashboard')dashboard();else if(h==='admin')admin();else if(h==='certificate-check')verify();else home();
-  window.scrollTo(0,0);}
-window.addEventListener('hashchange',route);
-renderHeader();route();
-})();
-</script>
+/* wire routes and members-only actions */
+routes.course=course;routes.dashboard=dashboard;routes.admin=admin;routes['certificate-check']=verify;routes.contact=contact;
+document.addEventListener('click',e=>{const t=e.target.closest('[data-dl]');if(t){e.preventDefault();needLogin(()=>toast('Downloads open soon. You will find them here.'))}});
+if(fauth){fauth.onAuthStateChanged(async u=>{fbUser=u;await loadState();renderHeader();
+  if(u&&pendingAfter){const f=pendingAfter;pendingAfter=null;toast('Welcome, '+profile.name.split(' ')[0]);f();}else route(true);});}
+else{renderHeader();}
+route();
 
+</script>
 </body>
 </html>
