@@ -11,6 +11,10 @@ service cloud.firestore {
     match /inquiries/{id}  { allow create: if true; allow read, update, delete: if isAdmin(); }
     match /certs/{no}      { allow read: if true; allow write: if isAdmin(); }
     match /config/{d}      { allow read: if true; allow write: if isAdmin(); }
+    match /content/{d}     { allow read: if true; allow write: if isAdmin(); }
+    match /files/{id}      { allow read: if true; allow write: if isAdmin();
+      match /chunks/{n}    { allow read: if signedIn(); allow write: if isAdmin(); } }
+    match /private/{d}     { allow read: if signedIn(); allow write: if isAdmin(); }
     // visitor counter: anyone may add exactly 1 to the total (and to one day field); only the admin can read it
     match /stats/{d}       { allow read: if isAdmin();
                              allow create: if request.resource.data.total == 1;

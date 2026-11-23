@@ -308,7 +308,7 @@ canvas.cert{width:100%;height:auto;border:1px solid var(--line);border-radius:8p
   <div class="cols">
     <div><img src="logo.png" alt="LeanPro Academy"><p style="margin:14px 0 0;max-width:36ch;font-size:14.5px">The practical excellence ecosystem for Lean, Six Sigma, maintenance, quality and plant leadership.</p><div class="soc" id="soc1"></div></div>
     <div><h4>Learn</h4><a href="#learning">All courses</a><a href="#journey">365 Days of Lean</a><a href="#career">Career roadmaps</a><a href="#membership">Membership</a></div>
-    <div><h4>Resources</h4><a href="#resources">Articles</a><a href="#resources-templates">Templates</a><a href="#cases">Case studies</a></div>
+    <div><h4>Resources</h4><a href="#resources">Articles</a><a href="#resources-templates">Templates &amp; downloads</a><a href="#cases">Case studies</a><a href="/courses/">Course catalogue</a><a href="/lessons/">Daily lessons archive</a><a href="/articles/">Article archive</a></div>
     <div><h4>Tools</h4><a href="#tools">OEE calculator</a><a href="#tools">Takt time</a><a href="#tools">Cp / Cpk</a><a href="#tools">5 Why builder</a></div>
     <div><h4>Academy</h4><a href="#about">About</a><a href="#contact">Contact</a><a href="#certificate-check">Verify a certificate</a><a href="#dashboard">My learning</a></div>
   </div>
@@ -320,6 +320,8 @@ canvas.cert{width:100%;height:auto;border:1px solid var(--line);border-radius:8p
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="firebase-config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 
 <script>
 const C=(id,code,name,level,hours,aud,d,mods,out)=>({id,code,name,level,hours,aud,d,mods,out});
@@ -872,6 +874,230 @@ async function admin(){nav('admin');
       COURSES.forEach(c=>{const f=Number($('#fee_'+c.id).value);if(f>0)prices[c.id]=f;videos[c.id]=c.mods.map((m,i)=>({url:$('#vid_'+c.id+'_'+i).value.trim()}))});
       try{await setDoc('config/courses',{prices,videos,updatedAt:new Date().toISOString()});config={prices,videos};toast('Saved')}catch(e){toast('Could not save. Try again.')}b.disabled=false;};}
 }
+
+const ARTICLE_BODIES=[
+`A red-tag event is the fastest way to start 5S, because it forces one decision about every item in an area: is it needed here, for this work?
+
+Before the event, pick a small, visible area and take baseline photos from fixed spots. Agree a red-tag holding area outside the work zone and name one person who can decide what happens to tagged items.
+
+On the day, the team walks the area together. Any item that is not used regularly gets a red tag with the date, the person tagging it and a reason. Broken items, old drawings and extra stock usually make up most of the tags. Do not argue at the tag stage; just tag it.
+
+Tagged items go to the holding area for a fixed time, often two to four weeks. If nobody asks for an item in that time, the decision owner chooses to scrap it, sell it, return it to stores or move it to where it is really used.
+
+Finish by taking the same photos again and writing down what was freed: floor space, rack space and the number of items removed. Then plan the next step, Set in order, while the area is clear.`,
+`OEE (Overall Equipment Effectiveness) shows how much of the planned time a machine produced good parts at full speed. It multiplies three numbers.
+
+Availability is run time divided by planned production time. Breakdowns, changeovers and waiting for material reduce it.
+
+Performance is the ideal cycle time multiplied by the total count, divided by run time. Minor stops and slow running reduce it.
+
+Quality is good parts divided by total parts. Scrap and rework reduce it.
+
+For example, with 480 minutes planned, 45 minutes of downtime, an ideal cycle of 20 seconds, 1,150 parts made and 1,100 good, availability is about 90.6%, performance about 88.1% and quality about 95.7%. OEE is about 76.4%.
+
+The number itself matters less than the biggest loss behind it. Track the six big losses daily, put them on a simple board and attack the largest one first. Use the OEE calculator in LeanPro Tools to try your own numbers.`,
+`A good problem statement describes the gap between what should happen and what is happening, with facts. It does not contain a cause or a solution.
+
+Use simple questions: what is the problem, where was it seen, when did it start, how big is it and how do we know? “Cap torque rejections on Line 2 rose from 0.5% to 2.1% between 3 and 10 November, measured at final inspection” is a problem statement. “Operators are careless with capping” is a guess about the cause.
+
+Keep it narrow. A statement that covers every defect in the plant cannot be solved in one project. Pick the largest piece, usually found with a Pareto chart.
+
+Check it with the team at the gemba. If people who do the work do not recognise the problem as written, rewrite it.
+
+A clear statement makes root cause analysis faster, because everyone looks at the same facts instead of defending their own idea.`,
+`Cp and Cpk both compare the spread of a process with its specification limits, but they answer different questions.
+
+Cp asks whether the process spread would fit inside the limits if it were perfectly centred. It is the tolerance width divided by six standard deviations.
+
+Cpk asks whether it actually fits, given where the process mean sits today. It uses the distance from the mean to the nearest limit, divided by three standard deviations.
+
+If Cp is good but Cpk is poor, the process is capable but off-centre, and adjusting the mean is usually the quickest fix. If both are poor, the variation itself must come down, which needs root cause work on materials, methods or machines.
+
+A common guideline is Cpk of at least 1.33 for an established process. Always check that the process is stable on a control chart before calculating capability, and that the measurement system is trustworthy.`,
+`Tiered daily meetings connect the shop floor to plant leadership in a short, predictable rhythm.
+
+Tier 1 is the team at the start of the shift: yesterday’s safety, quality, output and problems, in front of a simple board. Ten minutes, standing up.
+
+Tier 2 brings team leaders and support functions together to take up problems Tier 1 could not solve. Tier 3 is the plant leadership meeting that reviews the most important issues and decides priorities.
+
+Keep each meeting short with a fixed agenda and the same board layout every day. Discuss only exceptions and actions, not every number. Each problem gets an owner and a date, and the next meeting starts by checking those actions.
+
+The meetings work when leaders visit the boards, ask good questions and remove obstacles quickly. When problems raised never get solved, people stop raising them.`,
+`A reorder point tells stores when to order more of an item so it arrives before stock runs out.
+
+The basic formula is average daily usage multiplied by supplier lead time in days, plus safety stock. Safety stock covers the normal ups and downs in usage and delivery.
+
+Start by classifying items with ABC analysis. A items, the few with high annual value, deserve careful calculation and frequent review. C items can follow simple rules such as two-bin systems.
+
+Use real consumption data from the last few months, not the planned figure. Check the actual lead time from recent orders, including the days lost in approvals and inspection.
+
+Review reorder points regularly, especially when demand changes. Put the reorder level visibly on the bin or rack location so anyone can see when to trigger an order. This is the first step towards a Kanban pull system.`,
+`Near misses are the cheapest lessons in safety: nobody was hurt, yet the same causes could lead to a serious injury next time.
+
+People report near misses when reporting is easy, safe and useful. Make the form short, available on the shop floor and quick to fill in. Accept reports in any language and by photo.
+
+Never punish the person who reports. If reporting brings blame, reports stop and the risk stays hidden.
+
+Respond quickly. Thank the person, review the report within a day or two and tell them what was done. A visible board of reported items and actions shows that reports lead to change.
+
+Count near misses as a positive indicator. A rising number of reports with falling injuries usually means a stronger safety culture, not a more dangerous plant.`,
+`Line balancing spreads work evenly across stations so that each one can finish within takt time, the pace the customer needs.
+
+First, calculate takt time: available working time divided by customer demand. Then break the job into small work elements and time each one with a stopwatch over several cycles.
+
+Draw a bar for each station showing its total work content, with a line at takt time. Stations above the line are bottlenecks; stations far below it are waiting.
+
+Move elements from overloaded stations to underloaded ones, respecting the order in which work must be done. Remove waste such as walking and searching before moving work, because removing waste is cheaper than moving it.
+
+When the line is balanced, write it into standard work so each operator knows exactly what to do within the takt.`,
+`Rejection data often looks overwhelming until it is sorted. A Pareto chart sorts it from the largest category to the smallest and shows the cumulative percentage.
+
+Collect counts by defect type for a fixed period, using the same definitions every day. Sort them, calculate each category’s share and add up the cumulative percentage.
+
+In most processes a few categories make up most of the total. Those are the vital few: the place to start root cause analysis.
+
+Look further inside the biggest bar. Stratify it by machine, shift, product or supplier to see whether one of these explains most of it.
+
+After acting, draw the Pareto chart again with new data. The old top bar should shrink, and the next one becomes the new priority. Try your own data in the Pareto analyzer in LeanPro Tools.`];
+
+/* ======================= CMS LAYER: editable articles & case studies, protected downloads, signature, verifiable certificates ======================= */
+ARTICLES.forEach((a,i)=>{a.id=a.id||('a'+(i+1));a.b=a.b||ARTICLE_BODIES[i]||''});
+CASES.forEach((c,i)=>{c.id=c.id||('c'+(i+1))});
+let FILES=[],SIGNATURE=null;
+async function loadContent(){
+  const [a,c]=await Promise.all([getDoc('content/articles'),getDoc('content/cases')]);
+  if(a&&Array.isArray(a.items))ARTICLES.splice(0,ARTICLES.length,...a.items);
+  if(c&&Array.isArray(c.items))CASES.splice(0,CASES.length,...c.items);
+  FILES=(await listCol('files')).sort((x,y)=>(x.title||'').localeCompare(y.title||''));
+}
+const contentReady=loadContent().then(()=>{if(['home','resources','resources-templates','cases'].includes(cur)||location.hash.startsWith('#article-'))route(true)});
+
+/* articles: cards open a full article page */
+artCard=function(a){const i=ARTICLES.indexOf(a);return `<a class="box artc" href="#article-${i}"><div class="th">${artThumb(a)}</div><div class="bd"><span class="pill red" style="align-self:flex-start">${esc(a.c)}</span><h3>${esc(a.t)}</h3><span class="meta"><span>${ic('clock')}${a.r} min read</span><span>${ic('book')}LeanPro Academy</span></span></div></a>`};
+function article(i){const a=ARTICLES[+i];if(!a){resources();return}nav('resources');
+  view.innerHTML=`<section class="dark pagehead"><div class="wrap"><div><button class="crumb" type="button" onclick="location.hash='resources'">← All articles</button><br><span class="eyebrow">${ic(ART_IC[a.v]||'book')}${esc(a.c)} · ${a.r} min read</span><h1>${esc(a.t)}</h1><p>LeanPro Academy knowledge library</p></div>${bigIcon(ART_IC[a.v]||'book')}</div></section>
+  <section class="blk"><div class="wrap" style="max-width:760px"><article style="font-size:17.5px;line-height:1.75;display:flex;flex-direction:column;gap:18px">${String(a.b||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('')||'<p style="color:var(--muted)">This article is being written.</p>'}</article>
+  <div class="box" style="margin-top:30px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between"><span><b>Go deeper with a certified course.</b><br><span style="color:var(--muted)">Video lectures, notes, exam and certificate.</span></span><a class="btn" href="#learning">${ic('play')}Explore courses</a></div></div></section>`;}
+
+/* resources: downloads come from Admin → Downloads; login required to download */
+resources=function(tab){const t=tab||'articles';
+  const groups={};FILES.forEach(f=>{(groups[f.cat||'Templates']=groups[f.cat||'Templates']||[]).push(f)});
+  const fileCard=f=>`<div class="box tcard"><span class="tico">${ic(/slide|ppt/i.test(f.name)?'play':/note/i.test(f.name)?'book':'doc')}</span><span style="flex:1;min-width:0"><h3>${esc(f.title)}</h3><p>${(f.ext||'pdf').toUpperCase()} · ${(f.size/1024/1024).toFixed(1)} MB · view only</p></span><button class="btn sec sm" type="button" data-file="${f.id}">${ic('doc')}Download</button></div>`;
+  const dl=FILES.length?Object.entries(groups).map(([g,l])=>`<h3 style="font-size:20px;margin:6px 0 12px">${esc(g)}</h3><div class="grid" style="margin-bottom:26px">${l.map(fileCard).join('')}</div>`).join('')
+    :`<div class="grid">${TEMPLATES.map((x,i)=>`<div class="box tcard"><span class="tico">${ic(TPL_IC[i])}</span><span style="flex:1"><h3>${x}</h3><p>PDF template</p></span><button class="btn sec sm" type="button" data-dl>Download</button></div>`).join('')}</div>`;
+  view.innerHTML=pageHead('Resources','book','Knowledge library and downloads','Articles for people who run processes, plus templates, notes and slides for registered learners.',bigIcon('book'))+`<section class="blk"><div class="wrap">
+  <div class="tabs"><button class="${t==='articles'?'on':''}" onclick="location.hash='resources'">${ic('book')}Articles</button><button class="${t==='templates'?'on':''}" onclick="location.hash='resources-templates'">${ic('doc')}Templates &amp; downloads</button></div>
+  ${t==='articles'?`<div class="g3">${ARTICLES.map(artCard).join('')}</div>`:`<p class="note">${ic('shield')} Downloads are free for registered learners. Files are view-only: they can be opened and read, but not edited, copied or printed.</p>${dl}`}</div></section>`;
+  view.querySelectorAll('[data-file]').forEach(b=>b.onclick=()=>needLogin(()=>downloadFile(b.dataset.file,b)));};
+async function downloadFile(id,btn){const f=FILES.find(x=>x.id===id);if(!f)return;const old=btn&&btn.innerHTML;if(btn){btn.disabled=true;btn.textContent='Preparing…'}
+  try{const parts=[];for(let n=0;n<f.chunks;n++){const c=await getDoc(`files/${id}/chunks/${n}`);if(!c)throw new Error('missing');parts.push(c.d)}
+    const bin=atob(parts.join(''));const u8=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u8[i]=bin.charCodeAt(i);
+    const url=URL.createObjectURL(new Blob([u8],{type:f.type||'application/pdf'}));const a=document.createElement('a');a.href=url;a.download=f.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);toast('Downloaded '+f.name)}
+  catch(e){toast('Could not download. Please try again.')}if(btn){btn.disabled=false;btn.innerHTML=old}}
+
+/* certificate: signature, QR verification and a locked PDF */
+async function loadSignature(){if(!SIGNATURE&&loggedIn()){const s=await getDoc('private/signature');SIGNATURE=s&&s.data||null}return SIGNATURE}
+const sigImg=new Image();
+function qrCanvas(text,size){if(typeof qrcode==='undefined')return null;const q=qrcode(0,'M');q.addData(text);q.make();const n=q.getModuleCount(),c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,size,size);const m=size/(n+4);x.fillStyle='#13151A';for(let r=0;r<n;r++)for(let k=0;k<n;k++)if(q.isDark(r,k))x.fillRect((k+2)*m,(r+2)*m,Math.ceil(m),Math.ceil(m));return c}
+const _drawCert=drawCert;
+drawCert=function(cv,name,cname,date,no){_drawCert(cv,name,cname,date,no);const x=cv.getContext('2d');
+  if(SIGNATURE&&sigImg.complete&&sigImg.naturalWidth){const h=86,w=Math.min(360,h*sigImg.naturalWidth/sigImg.naturalHeight);x.fillStyle='#fff';x.fillRect(176,880,388,66);x.drawImage(sigImg,180,946-h,w,h)}
+  const q=qrCanvas('https://leanproacademy.in/#verify-'+no,150);if(q){x.drawImage(q,1600-180-150-0,800,150,150);x.fillStyle='#fff';x.fillRect(1100,935,330,100);x.textAlign='right';x.fillStyle='#5B6170';x.font='500 18px "IBM Plex Mono", monospace';x.fillText('Certificate No.',1270,975);x.fillStyle='#15171C';x.font='600 26px "IBM Plex Mono", monospace';x.fillText(no,1270,1008);x.fillStyle='#5B6170';x.font='500 16px Inter, Arial';x.fillText('Scan the code to verify online',1420,1030);}};
+showCert=async function(cid){const a=access[cid];if(!a||a.status!=='completed'){toast('Certificate is issued after course completion.');return}const c=byId[cid];
+  await loadSignature();if(SIGNATURE)sigImg.src=SIGNATURE;
+  openModal(`<h2>Your certificate</h2><p class="lead">${esc(c.name)} · No. ${esc(a.certNo)}</p><canvas class="cert" id="cv"></canvas><p class="hint">${ic('shield')} Each certificate has a QR code and a number that anyone can check at leanproacademy.in. The PDF is locked against editing.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><button class="btn" id="dlpdf" type="button">${ic('cert')}Download PDF</button><button class="btn sec" type="button" id="cc">Close</button></div>`,true);
+  const cv=$('#cv');const draw=()=>drawCert(cv,a.name||profile.name,c.name,fmtDate(a.completedAt),a.certNo);document.fonts&&document.fonts.ready.then(draw);draw();logoImg.onload=draw;sigImg.onload=draw;
+  $('#cc').onclick=closeModal;
+  $('#dlpdf').onclick=()=>{if(!window.jspdf){toast('PDF tool is loading. Try again in a moment.');return}
+    const pw=Array.from(crypto.getRandomValues(new Uint8Array(18)),b=>b.toString(16).padStart(2,'0')).join('');
+    const pdf=new jspdf.jsPDF({orientation:'landscape',unit:'px',format:[1600,1130],hotfixes:['px_scaling'],encryption:{userPassword:'',ownerPassword:pw,userPermissions:['print']}});
+    pdf.setProperties({title:'LeanPro Academy Certificate '+a.certNo,author:'LeanPro Academy',subject:c.name});
+    pdf.addImage(cv.toDataURL('image/jpeg',0.95),'JPEG',0,0,1600,1130);saveBlob(pdf.output('blob'),'LeanPro_Certificate_'+a.certNo+'.pdf');};};
+function saveBlob(blob,name){const u=URL.createObjectURL(blob);const l=document.createElement('a');l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),3000)}
+const _verify=verify;
+verify=function(no){_verify();if(no){$('#v_no').value=decodeURIComponent(no);$('#vf').requestSubmit()}};
+
+/* ---------------- admin: content, downloads and certificate settings ---------------- */
+const _admin=admin;
+const CMS_TABS=[['articles','Articles','book'],['cases','Case studies','factory'],['files','Downloads','doc'],['certset','Certificate','cert']];
+admin=async function(){
+  if(CMS_TABS.some(t=>t[0]===adminTab)){if(!isAdmin){_admin();return}
+    view.innerHTML=pageHead('Admin','shield','Academy administration','Visible only to you as the owner.',bigIcon('layers'))+`<section class="blk"><div class="wrap"><div class="tabs" id="at"></div><div id="ab"><p style="color:var(--muted)">Loading…</p></div></div></section>`;
+    renderAdminTabs();nav('admin');const ab=$('#ab');
+    if(adminTab==='articles')cmsList(ab,'articles');
+    if(adminTab==='cases')cmsList(ab,'cases');
+    if(adminTab==='files')filesAdmin(ab);
+    if(adminTab==='certset')certAdmin(ab);
+    return}
+  await _admin();if(isAdmin)renderAdminTabs();};
+function renderAdminTabs(){const at=$('#at');if(!at)return;
+  const all=[['visits','Visitors','eye'],['enrol','Enrolments','play'],['students','Students','users'],['inq','Messages','mail'],['fees','Fees & lectures','cert'],...CMS_TABS];
+  at.innerHTML=all.map(([k,l,i])=>`<button type="button" data-t="${k}" class="${k===adminTab?'on':''}">${ic(i)}${l}</button>`).join('');
+  at.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{adminTab=b.dataset.t;admin()});}
+const CMS={
+  articles:{arr:()=>ARTICLES,doc:'content/articles',name:'article',cols:[['t','Title'],['c','Category'],['r','Read (min)']],
+    fields:[['t','Title','text'],['c','Category','text'],['r','Reading time (minutes)','number'],['v','Picture','select',Object.keys(ART_IC)],['b','Article text (leave an empty line between paragraphs)','area']],blank:()=>({id:'a'+Date.now(),t:'',c:'Lean Manufacturing',r:5,v:'s5',b:''})},
+  cases:{arr:()=>CASES,doc:'content/cases',name:'case study',cols:[['t','Title'],['a','Area']],
+    fields:[['t','Title','text'],['a','Area / process','text'],['p','1 · Problem','area'],['b0','2 · Before (point 1)','text'],['b1','Before (point 2)','text'],['rc','3 · Root cause','area'],['im','4 · Improvement','area'],['af0','5 · After (point 1)','text'],['af1','After (point 2)','text'],['l','6 · Lesson','area']],
+    blank:()=>({id:'c'+Date.now(),t:'',a:'',p:'',rc:'',im:'',b:['',''],af:['',''],l:''})}};
+const getF=(o,k)=>k==='b0'?(o.b||[])[0]:k==='b1'?(o.b||[])[1]:k==='af0'?(o.af||[])[0]:k==='af1'?(o.af||[])[1]:o[k];
+function setF(o,k,v){if(k==='b0'||k==='b1'){o.b=o.b||['',''];o.b[+k[1]]=v}else if(k==='af0'||k==='af1'){o.af=o.af||['',''];o.af[+k[2]]=v}else o[k]=k==='r'?(Number(v)||1):v}
+function cmsList(ab,kind){const C=CMS[kind],arr=C.arr();
+  ab.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px"><p class="note" style="margin:0;flex:1">Add, edit or remove ${C.name}s. Changes show on the website as soon as you save.</p><button class="btn" id="cadd" type="button">+ Add ${C.name}</button></div>
+  <div class="tblw"><table><thead><tr>${C.cols.map(c=>`<th>${c[1]}</th>`).join('')}<th style="width:190px">Action</th></tr></thead><tbody>${arr.map((o,i)=>`<tr>${C.cols.map(c=>`<td>${esc(o[c[0]])}</td>`).join('')}<td><button class="btn sec sm" data-e="${i}">Edit</button> <button class="btn sec sm" data-x="${i}" style="color:var(--red)">Remove</button></td></tr>`).join('')||`<tr><td colspan="${C.cols.length+1}" style="color:var(--muted)">Nothing here yet.</td></tr>`}</tbody></table></div>`;
+  $('#cadd').onclick=()=>cmsEdit(kind,-1);
+  ab.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>cmsEdit(kind,+b.dataset.e));
+  ab.querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>{const i=+b.dataset.x;openModal(`<h2>Remove this ${C.name}?</h2><p class="lead">“${esc(arr[i].t)}” will be removed from the website.</p><div style="display:flex;gap:10px;margin-top:14px"><button class="btn" id="yes" type="button">Remove</button><button class="btn sec" id="no" type="button">Cancel</button></div>`);
+    $('#no').onclick=closeModal;$('#yes').onclick=async()=>{const next=arr.filter((_,k)=>k!==i);try{await setDoc(C.doc,{items:next,updatedAt:new Date().toISOString()});arr.splice(i,1);closeModal();toast('Removed');admin()}catch(e){toast('Could not save. Try again.')}}});}
+function cmsEdit(kind,i){const C=CMS[kind],arr=C.arr();const o=i>=0?JSON.parse(JSON.stringify(arr[i])):C.blank();
+  openModal(`<h2>${i>=0?'Edit':'Add'} ${C.name}</h2><form class="form" id="cmsf" style="margin-top:14px">${C.fields.map(([k,l,t,opt])=>`<label class="full">${l}${t==='area'?`<textarea id="cf_${k}" style="min-height:${k==='b'?260:90}px">${esc(getF(o,k)||'')}</textarea>`:t==='select'?`<select id="cf_${k}">${opt.map(v=>`<option ${v===o[k]?'selected':''}>${v}</option>`).join('')}</select>`:`<input id="cf_${k}" type="${t}" value="${esc(getF(o,k)??'')}">`}</label>`).join('')}
+   <p class="err full" id="cf_err"></p><div class="full" style="display:flex;gap:10px"><button class="btn" type="submit">Save</button><button class="btn sec" type="button" id="cfx">Cancel</button></div></form>`,true);
+  $('#cfx').onclick=closeModal;
+  $('#cmsf').onsubmit=async e=>{e.preventDefault();C.fields.forEach(([k])=>setF(o,k,$('#cf_'+k).value.trim()));if(!o.t){$('#cf_err').textContent='Enter a title.';return}
+    const next=arr.slice();if(i>=0)next[i]=o;else next.push(o);
+    try{await setDoc(C.doc,{items:next,updatedAt:new Date().toISOString()});arr.splice(0,arr.length,...next);closeModal();toast('Saved');admin()}catch(x){$('#cf_err').textContent='Could not save. Try again.'}};}
+
+async function filesAdmin(ab){FILES=(await listCol('files')).sort((x,y)=>(x.title||'').localeCompare(y.title||''));
+  ab.innerHTML=`<p class="note">Upload PDF files for the Resources page. Registered learners can download them after logging in. Upload locked (view-only) PDFs so they cannot be edited or printed. Up to 15 MB per file.</p>
+  <div class="box" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px"><label class="btn" for="fup" style="cursor:pointer">${ic('doc')}Choose files to upload</label><input id="fup" type="file" multiple accept=".pdf,.ppt,.pptx,.doc,.docx,.xls,.xlsx" hidden><span class="mini" id="fst" style="color:var(--muted)">You can select many files at once.</span></div>
+  <div class="tblw"><table><thead><tr><th>Title</th><th>Section</th><th>File</th><th>Size</th><th style="width:190px">Action</th></tr></thead><tbody>${FILES.map(f=>`<tr><td><b>${esc(f.title)}</b></td><td>${esc(f.cat||'Templates')}</td><td><small>${esc(f.name)}</small></td><td>${(f.size/1024/1024).toFixed(2)} MB</td><td><button class="btn sec sm" data-fe="${f.id}">Edit</button> <button class="btn sec sm" data-fx="${f.id}" style="color:var(--red)">Remove</button></td></tr>`).join('')||'<tr><td colspan="5" style="color:var(--muted)">No files uploaded yet.</td></tr>'}</tbody></table></div>`;
+  $('#fup').onchange=async e=>{const list=[...e.target.files];const st=$('#fst');let ok=0;
+    for(const [n,file] of list.entries()){if(file.size>15*1024*1024){toast(file.name+' is larger than 15 MB');continue}
+      st.textContent=`Uploading ${n+1} of ${list.length}: ${file.name}`;
+      try{const b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(file)});
+        const CH=700000,chunks=Math.ceil(b64.length/CH);const id='f'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+        for(let k=0;k<chunks;k++)await setDoc(`files/${id}/chunks/${k}`,{d:b64.slice(k*CH,(k+1)*CH)});
+        const base=file.name.replace(/\.[^.]+$/,'');const title=base.replace(/_/g,' ').replace(/^(LP-T\d+)\s/,'$1 · ');
+        await setDoc('files/'+id,{name:file.name,title,cat:/^LP-T/i.test(base)?'Templates':'Course notes & slides',size:file.size,type:file.type||'application/pdf',ext:(file.name.split('.').pop()||'pdf').toLowerCase(),chunks,createdAt:new Date().toISOString()});ok++;}
+      catch(x){toast('Could not upload '+file.name)}}
+    toast(ok+' file(s) uploaded');filesAdmin(ab);};
+  ab.querySelectorAll('[data-fe]').forEach(b=>b.onclick=()=>{const f=FILES.find(x=>x.id===b.dataset.fe);
+    openModal(`<h2>Edit download</h2><form class="form" id="fef" style="margin-top:14px"><label class="full">Title<input id="fe_t" value="${esc(f.title)}"></label><label class="full">Section<input id="fe_c" value="${esc(f.cat||'Templates')}" list="fe_cl"><datalist id="fe_cl"><option>Templates</option><option>Course notes & slides</option><option>Checklists</option></datalist></label><div class="full" style="display:flex;gap:10px"><button class="btn" type="submit">Save</button><button class="btn sec" type="button" id="fex">Cancel</button></div></form>`);
+    $('#fex').onclick=closeModal;$('#fef').onsubmit=async e=>{e.preventDefault();try{await setDoc('files/'+f.id,{title:$('#fe_t').value.trim()||f.title,cat:$('#fe_c').value.trim()||'Templates'},true);closeModal();toast('Saved');filesAdmin(ab)}catch(x){toast('Could not save')}}});
+  ab.querySelectorAll('[data-fx]').forEach(b=>b.onclick=()=>{const f=FILES.find(x=>x.id===b.dataset.fx);
+    openModal(`<h2>Remove this file?</h2><p class="lead">“${esc(f.title)}” will no longer be available to download.</p><div style="display:flex;gap:10px;margin-top:14px"><button class="btn" id="yes" type="button">Remove</button><button class="btn sec" id="no" type="button">Cancel</button></div>`);
+    $('#no').onclick=closeModal;$('#yes').onclick=async()=>{try{for(let k=0;k<f.chunks;k++)await fs.doc(`files/${f.id}/chunks/${k}`).delete();await fs.doc('files/'+f.id).delete();closeModal();toast('Removed');filesAdmin(ab)}catch(x){toast('Could not remove')}}});}
+
+async function certAdmin(ab){const s=await getDoc('private/signature');SIGNATURE=s&&s.data||null;
+  ab.innerHTML=`<div class="g2"><div class="box"><h3 style="font-size:18px">Your signature</h3><p style="color:var(--muted);margin:6px 0 14px">Upload a photo or scan of your signature (dark ink on white paper works best). It is printed on every certificate above “Ankitkumar Patel, Director”.</p>
+   <div style="border:1px dashed var(--line);border-radius:10px;min-height:120px;display:grid;place-items:center;background:#fff;margin-bottom:14px" id="sgp">${SIGNATURE?`<img src="${SIGNATURE}" style="max-height:110px;max-width:90%">`:'<span style="color:#888">No signature uploaded</span>'}</div>
+   <div style="display:flex;gap:10px;flex-wrap:wrap"><label class="btn" for="sgf" style="cursor:pointer">${ic('cert')}Upload signature</label><input id="sgf" type="file" accept="image/*" hidden>${SIGNATURE?'<button class="btn sec" id="sgx" type="button" style="color:var(--red)">Remove</button>':''}</div></div>
+   <div class="box"><h3 style="font-size:18px">How certificates are protected</h3><ul style="color:var(--muted);padding-left:20px;display:flex;flex-direction:column;gap:6px;margin-top:10px"><li>Each certificate has a unique number and a QR code.</li><li>Scanning the QR or entering the number on the Verify page shows the name, course and date from your records.</li><li>An edited copy will not match the online record, so employers can spot it.</li><li>The PDF is locked against editing in normal PDF software.</li></ul></div></div>`;
+  $('#sgf').onchange=async e=>{const f=e.target.files[0];if(!f)return;const img=new Image();img.onload=async()=>{
+      const h=160,w=Math.round(h*img.width/img.height),c=document.createElement('canvas');c.width=Math.min(w,700);c.height=h;const x=c.getContext('2d');x.drawImage(img,0,0,c.width,h);
+      const d=x.getImageData(0,0,c.width,h);for(let i=0;i<d.data.length;i+=4){const l=(d.data[i]+d.data[i+1]+d.data[i+2])/3;if(l>200)d.data[i+3]=0;else{d.data[i]=d.data[i+1]=Math.min(60,d.data[i]);d.data[i+2]=Math.min(90,d.data[i+2])}}x.putImageData(d,0,0);
+      const data=c.toDataURL('image/png');try{await setDoc('private/signature',{data,updatedAt:new Date().toISOString()});SIGNATURE=data;toast('Signature saved');certAdmin(ab)}catch(x){toast('Could not save. Try again.')}};
+    img.src=URL.createObjectURL(f)};
+  $('#sgx')&&($('#sgx').onclick=async()=>{try{await fs.doc('private/signature').delete();SIGNATURE=null;toast('Signature removed');certAdmin(ab)}catch(x){toast('Could not remove')}});}
+
+/* routes */
+routes.resources=()=>resources();routes['resources-templates']=()=>resources('templates');
+const _route=route;
+route=function(keep){const h=(location.hash||'#home').slice(1);
+  if(h.startsWith('article-')){cur='resources';$('#menu').classList.remove('open');article(h.slice(8));if(keep!==true)window.scrollTo(0,0);return}
+  if(h.startsWith('verify-')){cur='verify';$('#menu').classList.remove('open');verify(h.slice(7));if(keep!==true)window.scrollTo(0,0);return}
+  routes.admin=admin;routes['certificate-check']=()=>verify();return _route(keep)};
+removeEventListener('hashchange',_route);addEventListener('hashchange',()=>route());
 
 /* wire routes and members-only actions */
 routes.course=course;routes.dashboard=dashboard;routes.admin=admin;routes['certificate-check']=verify;routes.contact=contact;
